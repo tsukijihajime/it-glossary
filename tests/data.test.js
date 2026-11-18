@@ -29,11 +29,26 @@ test('related の id がすべて存在し自己参照しない', () => {
     assert.notStrictEqual(r, t.id);
   }));
 });
-test('件数が 100 以上', () => { assert.ok(raw.length >= 100); });
+test('件数が 100 以上', () => { assert.ok(raw.length >= 120); });
 test('各分野 10 件以上', () => {
   CATEGORIES.forEach(c => assert.ok(raw.filter(t => t.category === c).length >= 10, c));
 });
 test('必須項目が空でない', () => {
   raw.forEach(t => ['term', 'reading', 'summary', 'description', 'analogy', 'example'].forEach(k =>
     assert.ok(t[k] && t[k].length > 0, t.id + '.' + k)));
+});
+test('description は 2〜4 文', () => {
+  raw.forEach(t => {
+    const n = (t.description.match(/。/g) || []).length;
+    assert.ok(n >= 2 && n <= 4, t.id + ': ' + n);
+  });
+});
+test('level は 1〜3', () => {
+  raw.forEach(t => assert.ok([1, 2, 3].includes(t.level), t.id));
+});
+test('reading はひらがな（長音可）のみ', () => {
+  raw.forEach(t => assert.match(t.reading, /^[ぁ-んー]+$/, t.id));
+});
+test('example は「」で囲まれる', () => {
+  raw.forEach(t => assert.match(t.example, /^「.+」$/, t.id));
 });
