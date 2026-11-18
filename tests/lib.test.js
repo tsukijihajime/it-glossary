@@ -9,7 +9,7 @@ const T = (o) => Object.assign({
 
 test('normalize', () => {
   assert.equal(L.normalize('ＡＰＩ'), L.normalize('api'));
-  assert.equal(L.normalize('エーピーアイ'), 'えーぴーあい');
+  assert.equal(L.normalize('エーピーアイ'), 'えぴあい');
   assert.equal(L.normalize(' A P I\u3000'), 'api');
 });
 
@@ -108,4 +108,42 @@ test('validateTerms: 文字列を trim し、空白のみの必須項目はス�
   assert.equal(r.valid[0].term, 'DNS');
   assert.equal(r.valid[0].category, 'ネットワーク');
   assert.equal(r.valid[0].reading, 'でぃーえぬえす');
+});
+
+test('normalize: 長音・中黒・小書きかな・ヴ の表記ゆれを吸収', () => {
+  assert.equal(L.normalize('サーバ'), L.normalize('サーバー'));
+  assert.equal(L.normalize('インタフェース'), L.normalize('インターフェース'));
+  assert.equal(L.normalize('データ・AI'), L.normalize('データAI'));
+  assert.equal(L.normalize('キャッシュ'), L.normalize('きやつしゆ'));
+  assert.equal(L.normalize('ヴィ'), L.normalize('ぶい'));
+});
+
+const FUZZY = [
+  { id: 'cloud', term: 'クラウド', reading: 'くらうど', fullName: 'Cloud Computing' },
+  { id: 'escalation', term: 'エスカレーション', reading: 'えすかれーしょん', fullName: 'Escalation' },
+  { id: 'v-model', term: 'V字モデル', reading: 'ぶいじもでる', fullName: 'V-Model' },
+  { id: 'api', term: 'API', reading: 'えーぴーあい', fullName: 'Application Programming Interface' },
+  { id: 'ut', term: 'UT（単体テスト）', reading: 'ゆーてぃー', fullName: 'Unit Test' },
+  { id: 'st', term: 'ST（総合テスト）', reading: 'えすてぃー', fullName: 'System Test' }
+];
+const ids = (r) => r.map((t) => t.id);
+
+test('fuzzySearch: 1 文字違いでヒット', () => {
+  assert.equal(ids(L.fuzzySearch(FUZZY, 'くらうと'))[0], 'cloud');
+  assert.equal(ids(L.fuzzySearch(FUZZY, 'えすかれーじょん'))[0], 'escalation');
+  assert.equal(ids(L.fuzzySearch(FUZZY, 'ぶいしもでる'))[0], 'v-model');
+});
+
+test('fuzzySearch: 長い正式名称の一部の綴り違いでヒット', () => {
+  assert.deepEqual(ids(L.fuzzySearch(FUZZY, 'aplication')), ['api']);
+});
+
+test('fuzzySearch: 2 文字以下はあいまい検索しない', () => {
+  assert.deepEqual(L.fuzzySearch(FUZZY, 'ot'), []);
+  assert.deepEqual(L.fuzzySearch(FUZZY, ''), []);
+});
+
+test('fuzzySearch: 違いが許容数を超えるとヒットしない、件数上限あり', () => {
+  assert.deepEqual(L.fuzzySearch(FUZZY, 'まったく無関係'), []);
+  assert.ok(L.fuzzySearch(FUZZY, 'くらうと', 1).length <= 1);
 });

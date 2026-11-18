@@ -14,9 +14,16 @@
     });
   }
 
+  var SMALL_KANA = { 'ぁ': 'あ', 'ぃ': 'い', 'ぅ': 'う', 'ぇ': 'え', 'ぉ': 'お', 'っ': 'つ',
+    'ゃ': 'や', 'ゅ': 'ゆ', 'ょ': 'よ', 'ゎ': 'わ', 'ゕ': 'か', 'ゖ': 'け' };
+
+  // 表記ゆれを吸収した比較用文字列。長音・中黒は無視し、小書きかなと「ゔ」を通常のかなに寄せる
   function normalize(s) {
     s = String(s == null ? '' : s).normalize('NFKC').toLowerCase();
-    return kataToHira(s).replace(/\s+/g, '');
+    return kataToHira(s)
+      .replace(/[\sー・\-ｰ･]/g, '')
+      .replace(/ゔ/g, 'ぶ')
+      .replace(/[ぁぃぅぇぉっゃゅょゎゕゖ]/g, function (c) { return SMALL_KANA[c]; });
   }
 
   var SEARCH_FIELDS = ['term', 'reading', 'fullName', 'summary', 'description'];
@@ -31,6 +38,45 @@
       (normalize(t.term).indexOf(q) === 0 ? prefix : rest).push(t);
     });
     return prefix.concat(rest);
+  }
+
+  // query と text の任意の部分文字列との最小編集距離（置換・挿入・削除を 1 として数える）
+  function substringDistance(query, text) {
+    var m = query.length, n = text.length, prev = [], cur, i, j;
+    for (j = 0; j <= n; j++) prev[j] = 0;
+    for (i = 1; i <= m; i++) {
+      cur = [i];
+      for (j = 1; j <= n; j++) {
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1,
+          prev[j - 1] + (query[i - 1] === text[j - 1] ? 0 : 1));
+      }
+      prev = cur;
+    }
+    return Math.min.apply(null, prev);
+  }
+
+  function allowedDistance(len) {
+    if (len <= 2) return -1;
+    return len <= 5 ? 1 : 2;
+  }
+
+  // 綴り違い・聞き間違いを想定した「もしかして」候補。term/reading/fullName が対象
+  function fuzzySearch(terms, query, limit) {
+    var q = normalize(query);
+    var max = allowedDistance(q.length);
+    if (max < 0) return [];
+    var scored = [];
+    terms.forEach(function (t) {
+      var best = Infinity;
+      [t.term, t.reading, t.fullName].forEach(function (f) {
+        var s = normalize(f);
+        if (s.length + max < q.length) return;
+        best = Math.min(best, substringDistance(q, s));
+      });
+      if (best <= max) scored.push({ t: t, d: best });
+    });
+    scored.sort(function (a, b) { return a.d - b.d; });
+    return scored.slice(0, limit || 10).map(function (x) { return x.t; });
   }
 
   function csvCell(v) {
@@ -153,7 +199,7 @@
   }
 
   return {
-    normalize: normalize, searchTerms: searchTerms, toCSV: toCSV, parseCSV: parseCSV,
+    normalize: normalize, searchTerms: searchTerms, fuzzySearch: fuzzySearch, toCSV: toCSV, parseCSV: parseCSV,
     validateTerms: validateTerms, mergeTerms: mergeTerms, termOfTheDay: termOfTheDay,
     initialOf: initialOf
   };

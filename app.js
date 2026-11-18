@@ -126,7 +126,12 @@
     grid.textContent = '';
     state.view.forEach(function (t) { grid.appendChild(renderCard(t)); });
     var count = $('count');
+    var suggestions = !state.view.length && state.query ? Lib.fuzzySearch(state.all, state.query) : [];
     if (!state.all.length) count.textContent = '';
+    else if (suggestions.length) {
+      count.textContent = '「' + state.query + '」に一致する用語はありませんでした。もしかして：';
+      suggestions.forEach(function (t) { grid.appendChild(renderCard(t)); });
+    }
     else if (!state.view.length) count.textContent = '該当する用語が見つかりませんでした。検索ワードや絞り込みを変えてみてください。';
     else count.textContent = state.view.length + '件の用語';
     renderToday();
