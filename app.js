@@ -3,7 +3,8 @@
 
   var Lib = window.GlossaryLib;
   var CATEGORIES = ['ネットワーク', 'セキュリティ', 'クラウド', '開発・プログラミング',
-    'データ・AI', 'ハードウェア・組込み', 'プロジェクト・業務', 'よく聞く略語'];
+    'データ・AI', 'ハードウェア・組込み', 'プロジェクト・業務', 'よく聞く略語',
+    '医療機器・内視鏡'];
   var INDEX_KEYS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').concat('あかさたなはまやらわ'.split(''), ['#']);
   var FAV_KEY = 'glossary.favorites';
   var LOCAL_KEY = 'glossary.localTerms';
