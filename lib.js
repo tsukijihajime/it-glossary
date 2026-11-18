@@ -6,7 +6,7 @@
   'use strict';
 
   var KEYS = ['id', 'term', 'reading', 'fullName', 'category', 'summary',
-    'description', 'analogy', 'example', 'related', 'level'];
+    'description', 'analogy', 'example', 'related', 'level', 'aliases'];
 
   function kataToHira(s) {
     return s.replace(/[\u30a1-\u30f6]/g, function (c) {
@@ -26,19 +26,30 @@
       .replace(/[ぁぃぅぇぉっゃゅょゎゕゖ]/g, function (c) { return SMALL_KANA[c]; });
   }
 
-  var SEARCH_FIELDS = ['term', 'reading', 'fullName', 'summary', 'description'];
+  var SEARCH_FIELDS = ['term', 'reading', 'fullName', 'aliases', 'summary', 'description'];
+
+  // aliases（配列）も含め、比較用に正規化した文字列の一覧を返す
+  function fieldValues(t, k) {
+    var v = t[k];
+    return (Array.isArray(v) ? v : [v]).map(normalize);
+  }
+
+  function matchesAny(t, keys, test) {
+    return keys.some(function (k) { return fieldValues(t, k).some(test); });
+  }
 
   function searchTerms(terms, query) {
     var q = normalize(query);
     if (!q) return terms.slice();
-    var prefix = [], rest = [];
+    var NAME_FIELDS = ['term', 'reading', 'aliases'];
+    var exact = [], prefix = [], rest = [];
     terms.forEach(function (t) {
-      var hit = SEARCH_FIELDS.some(function (k) { return normalize(t[k]).indexOf(q) !== -1; });
-      if (!hit) return;
-      var isPrefix = normalize(t.term).indexOf(q) === 0 || normalize(t.reading).indexOf(q) === 0;
-      (isPrefix ? prefix : rest).push(t);
+      if (!matchesAny(t, SEARCH_FIELDS, function (v) { return v.indexOf(q) !== -1; })) return;
+      if (matchesAny(t, NAME_FIELDS, function (v) { return v === q; })) exact.push(t);
+      else if (matchesAny(t, NAME_FIELDS, function (v) { return v.indexOf(q) === 0; })) prefix.push(t);
+      else rest.push(t);
     });
-    return prefix.concat(rest);
+    return exact.concat(prefix, rest);
   }
 
   // query と text の任意の部分文字列との最小編集距離（置換・挿入・削除を 1 として数える）
@@ -68,15 +79,17 @@
     if (max < 0) return [];
     var scored = [];
     terms.forEach(function (t) {
-      var best = Infinity;
-      [t.term, t.reading, t.fullName].forEach(function (f) {
+      var best = Infinity, lenGap = Infinity;
+      [t.term, t.reading, t.fullName].concat(t.aliases || []).forEach(function (f) {
         var s = normalize(f);
         if (s.length + max < q.length) return;
-        best = Math.min(best, substringDistance(q, s));
+        var d = substringDistance(q, s), gap = Math.abs(s.length - q.length);
+        if (d < best || (d === best && gap < lenGap)) { best = d; lenGap = gap; }
       });
-      if (best <= max) scored.push({ t: t, d: best });
+      if (best <= max) scored.push({ t: t, d: best, gap: lenGap });
     });
-    scored.sort(function (a, b) { return a.d - b.d; });
+    // 距離が同じなら、長さが近い（＝語全体が似ている）候補を先にする
+    scored.sort(function (a, b) { return a.d - b.d || a.gap - b.gap; });
     return scored.slice(0, limit || 10).map(function (x) { return x.t; });
   }
 
@@ -129,6 +142,7 @@
         if (KEYS.indexOf(h) !== -1) o[h] = r[idx] == null ? '' : r[idx];
       });
       o.related = o.related ? o.related.split('|').filter(Boolean) : [];
+      o.aliases = o.aliases ? o.aliases.split('|').filter(Boolean) : [];
       var lv = Number(o.level);
       o.level = o.level === '' || isNaN(lv) ? 1 : lv;
       return o;
@@ -149,6 +163,8 @@
       KEYS.forEach(function (k) { t[k] = str(r[k]); });
       ['id', 'term', 'category', 'reading'].forEach(function (k) { t[k] = t[k].trim(); });
       t.related = Array.isArray(r.related) ? r.related.map(str) : [];
+      t.aliases = (Array.isArray(r.aliases) ? r.aliases : [])
+        .map(function (a) { return str(a).trim(); }).filter(Boolean);
       t.level = Math.min(3, Math.max(1, lv));
       valid.push(t);
     });

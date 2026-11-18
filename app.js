@@ -203,6 +203,9 @@
     $('d-term').textContent = t.term;
     $('d-reading').textContent = t.reading;
     $('d-full').textContent = t.fullName;
+    var aliases = t.aliases || [];
+    $('d-aliases').textContent = aliases.length ? '別の呼び方：' + aliases.join('／') : '';
+    $('d-aliases').hidden = !aliases.length;
     $('d-cat').textContent = t.category;
     $('d-level').textContent = '難易度 ' + stars(t.level);
     $('d-desc').textContent = t.description;

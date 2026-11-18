@@ -16,7 +16,8 @@
       "mac-address",
       "packet"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "dns",
@@ -33,7 +34,10 @@
       "domain",
       "https"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "ネームサーバー"
+    ]
   },
   {
     "id": "router",
@@ -51,7 +55,8 @@
       "lan",
       "dhcp"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "wifi",
@@ -69,7 +74,10 @@
       "bandwidth",
       "bluetooth"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "無線LAN"
+    ]
   },
   {
     "id": "lan",
@@ -86,7 +94,8 @@
       "wifi",
       "router"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "wan",
@@ -103,7 +112,8 @@
       "vpn",
       "router"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "vpn",
@@ -120,7 +130,8 @@
       "wan",
       "zero-trust"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "https",
@@ -137,7 +148,8 @@
       "encryption",
       "domain"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "bandwidth",
@@ -155,7 +167,8 @@
       "cdn",
       "packet"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "latency",
@@ -173,7 +186,8 @@
       "wan",
       "timeout"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "proxy",
@@ -190,7 +204,8 @@
       "ip-address",
       "vpn"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "domain",
@@ -207,7 +222,8 @@
       "ip-address",
       "https"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "packet",
@@ -224,7 +240,8 @@
       "bandwidth",
       "router"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "dhcp",
@@ -241,7 +258,8 @@
       "router",
       "mac-address"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "mac-address",
@@ -258,7 +276,10 @@
       "dhcp",
       "wifi"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "物理アドレス"
+    ]
   },
   {
     "id": "5g",
@@ -275,7 +296,8 @@
       "latency",
       "iot"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "firewall",
@@ -292,7 +314,8 @@
       "vulnerability",
       "zero-trust"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "phishing",
@@ -310,7 +333,8 @@
       "malware",
       "spam-mail"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "ransomware",
@@ -327,7 +351,8 @@
       "backup",
       "vulnerability"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "malware",
@@ -344,7 +369,8 @@
       "ransomware",
       "phishing"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "antivirus",
@@ -361,7 +387,8 @@
       "patch",
       "vulnerability"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "two-factor-auth",
@@ -379,7 +406,13 @@
       "phishing",
       "login"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "2FA",
+      "多要素認証",
+      "MFA",
+      "二段階認証"
+    ]
   },
   {
     "id": "ssl-tls",
@@ -396,7 +429,12 @@
       "encryption",
       "domain"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "SSL",
+      "TLS",
+      "SSL証明書"
+    ]
   },
   {
     "id": "encryption",
@@ -413,7 +451,8 @@
       "vpn",
       "https"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "password-manager",
@@ -431,7 +470,8 @@
       "phishing",
       "byod"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "sso",
@@ -450,7 +490,8 @@
       "byod",
       "account"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "zero-trust",
@@ -467,7 +508,8 @@
       "two-factor-auth",
       "firewall"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "vulnerability",
@@ -484,7 +526,8 @@
       "malware",
       "firewall"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "patch",
@@ -503,7 +546,8 @@
       "update",
       "hotfix"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "ddos",
@@ -520,7 +564,11 @@
       "cdn",
       "malware"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "DoS攻撃",
+      "でぃどす"
+    ]
   },
   {
     "id": "social-engineering",
@@ -537,7 +585,8 @@
       "two-factor-auth",
       "password-manager"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "cloud",
@@ -556,7 +605,8 @@
       "hybrid-cloud",
       "cloud-storage"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "saas",
@@ -574,7 +624,10 @@
       "iaas",
       "sso"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "さーず"
+    ]
   },
   {
     "id": "paas",
@@ -592,7 +645,8 @@
       "cloud",
       "serverless"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "iaas",
@@ -609,7 +663,10 @@
       "paas",
       "virtual-machine"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "あいあーす"
+    ]
   },
   {
     "id": "aws",
@@ -626,7 +683,8 @@
       "gcp",
       "cloud"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "azure",
@@ -643,7 +701,11 @@
       "gcp",
       "cloud"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "あずーる",
+      "あじゅあ"
+    ]
   },
   {
     "id": "gcp",
@@ -660,7 +722,8 @@
       "azure",
       "big-data"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "serverless",
@@ -677,7 +740,8 @@
       "paas",
       "container"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "container",
@@ -694,7 +758,8 @@
       "kubernetes",
       "virtual-machine"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "docker",
@@ -709,9 +774,11 @@
     "related": [
       "container",
       "kubernetes",
-      "virtual-machine"
+      "virtual-machine",
+      "golang"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "kubernetes",
@@ -728,7 +795,11 @@
       "docker",
       "cloud"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "くーばねてぃす",
+      "k8s"
+    ]
   },
   {
     "id": "virtual-machine",
@@ -746,7 +817,12 @@
       "server",
       "os"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "VM",
+      "ぶいえむ",
+      "仮想サーバー"
+    ]
   },
   {
     "id": "data-center",
@@ -763,7 +839,10 @@
       "server",
       "on-premises"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "DC"
+    ]
   },
   {
     "id": "on-premises",
@@ -780,7 +859,10 @@
       "data-center",
       "hybrid-cloud"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "オンプレ"
+    ]
   },
   {
     "id": "cdn",
@@ -797,7 +879,8 @@
       "bandwidth",
       "ddos"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "hybrid-cloud",
@@ -815,7 +898,8 @@
       "data-center",
       "bcp"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "api",
@@ -834,7 +918,8 @@
       "backend",
       "interface"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "git",
@@ -853,7 +938,8 @@
       "branch",
       "commit"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "github",
@@ -872,7 +958,8 @@
       "source-code",
       "pull-request"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "open-source",
@@ -889,7 +976,11 @@
       "source-code",
       "library"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "OSS",
+      "オープンソースソフトウェア"
+    ]
   },
   {
     "id": "python",
@@ -904,9 +995,11 @@
     "related": [
       "machine-learning",
       "library",
-      "javascript"
+      "javascript",
+      "ruby"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "javascript",
@@ -921,9 +1014,11 @@
     "related": [
       "frontend",
       "framework",
-      "python"
+      "python",
+      "typescript"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "framework",
@@ -938,9 +1033,11 @@
     "related": [
       "library",
       "frontend",
-      "backend"
+      "backend",
+      "ruby"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "library",
@@ -957,7 +1054,8 @@
       "open-source",
       "api"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "bug",
@@ -976,7 +1074,11 @@
       "exception",
       "degrade"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "不具合",
+      "障害"
+    ]
   },
   {
     "id": "debug",
@@ -995,7 +1097,8 @@
       "log",
       "debug-log"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "source-code",
@@ -1012,7 +1115,11 @@
       "repository",
       "open-source"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "ソース",
+      "コード"
+    ]
   },
   {
     "id": "compiler",
@@ -1028,9 +1135,11 @@
       "source-code",
       "ide",
       "debug",
-      "build"
+      "build",
+      "c-language"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "frontend",
@@ -1045,9 +1154,13 @@
     "related": [
       "backend",
       "javascript",
-      "framework"
+      "framework",
+      "css"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "フロント"
+    ]
   },
   {
     "id": "backend",
@@ -1063,9 +1176,11 @@
       "frontend",
       "database",
       "api",
-      "server"
+      "server",
+      "php"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "ci-cd",
@@ -1084,7 +1199,8 @@
       "devops",
       "build"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "version-control",
@@ -1102,7 +1218,8 @@
       "github",
       "branch"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "repository",
@@ -1119,7 +1236,11 @@
       "github",
       "version-control"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "リポ",
+      "レポジトリ"
+    ]
   },
   {
     "id": "ide",
@@ -1136,7 +1257,10 @@
       "compiler",
       "debug"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "あいでぃーいー"
+    ]
   },
   {
     "id": "sdk",
@@ -1153,7 +1277,8 @@
       "library",
       "framework"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "ai",
@@ -1170,7 +1295,8 @@
       "generative-ai",
       "deep-learning"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "machine-learning",
@@ -1188,7 +1314,10 @@
       "algorithm",
       "big-data"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "ML"
+    ]
   },
   {
     "id": "deep-learning",
@@ -1205,7 +1334,8 @@
       "ai",
       "gpu"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "generative-ai",
@@ -1224,7 +1354,10 @@
       "ai",
       "chatbot"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "ジェネレーティブAI"
+    ]
   },
   {
     "id": "llm",
@@ -1242,7 +1375,10 @@
       "hallucination",
       "ai-agent"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "えるえるえむ"
+    ]
   },
   {
     "id": "prompt",
@@ -1259,7 +1395,8 @@
       "llm",
       "hallucination"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "hallucination",
@@ -1276,7 +1413,8 @@
       "llm",
       "prompt"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "database",
@@ -1294,7 +1432,11 @@
       "backend",
       "big-data"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "DB",
+      "でーびー"
+    ]
   },
   {
     "id": "sql",
@@ -1311,7 +1453,10 @@
       "csv",
       "bi"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "しーくぇる"
+    ]
   },
   {
     "id": "big-data",
@@ -1329,7 +1474,8 @@
       "bi",
       "iot"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "bi",
@@ -1347,7 +1493,8 @@
       "kpi",
       "data-cleansing"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "csv",
@@ -1364,7 +1511,8 @@
       "database",
       "sql"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "json",
@@ -1381,7 +1529,10 @@
       "csv",
       "javascript"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "じぇーそん"
+    ]
   },
   {
     "id": "data-cleansing",
@@ -1398,7 +1549,8 @@
       "big-data",
       "bi"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "algorithm",
@@ -1415,7 +1567,8 @@
       "source-code",
       "ai"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "cpu",
@@ -1430,9 +1583,13 @@
     "related": [
       "ram",
       "gpu",
-      "microcontroller"
+      "microcontroller",
+      "assembly"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "プロセッサ"
+    ]
   },
   {
     "id": "gpu",
@@ -1449,7 +1606,8 @@
       "deep-learning",
       "ram"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "ram",
@@ -1466,7 +1624,11 @@
       "ssd",
       "hdd"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "らむ",
+      "メインメモリ"
+    ]
   },
   {
     "id": "ssd",
@@ -1484,7 +1646,8 @@
       "nas",
       "storage"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "hdd",
@@ -1502,7 +1665,8 @@
       "backup",
       "storage"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "server",
@@ -1518,9 +1682,11 @@
       "data-center",
       "virtual-machine",
       "nas",
-      "backend"
+      "backend",
+      "cgi"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "embedded-system",
@@ -1538,9 +1704,14 @@
       "rtos",
       "sensor",
       "raspberry-pi",
-      "video-processor"
+      "video-processor",
+      "c-language"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "組込み",
+      "組み込み"
+    ]
   },
   {
     "id": "microcontroller",
@@ -1558,7 +1729,11 @@
       "cpu",
       "sensor"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "MCU",
+      "マイクロコントローラー"
+    ]
   },
   {
     "id": "firmware",
@@ -1574,9 +1749,11 @@
       "embedded-system",
       "microcontroller",
       "patch",
-      "os"
+      "os",
+      "c-language"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "rtos",
@@ -1594,7 +1771,11 @@
       "firmware",
       "fpga"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "あーるとす",
+      "リアルタイムOS"
+    ]
   },
   {
     "id": "iot",
@@ -1612,7 +1793,8 @@
       "5g",
       "big-data"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "sensor",
@@ -1630,7 +1812,8 @@
       "microcontroller",
       "image-sensor"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "fpga",
@@ -1647,7 +1830,8 @@
       "embedded-system",
       "cpu"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "raspberry-pi",
@@ -1664,7 +1848,8 @@
       "sensor",
       "microcontroller"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "usb",
@@ -1682,7 +1867,8 @@
       "hdd",
       "interface"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "bluetooth",
@@ -1699,7 +1885,8 @@
       "usb",
       "iot"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "nas",
@@ -1717,7 +1904,8 @@
       "backup",
       "lan"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "backup",
@@ -1735,7 +1923,8 @@
       "ransomware",
       "bcp"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "agile",
@@ -1752,7 +1941,8 @@
       "waterfall",
       "mvp"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "scrum",
@@ -1769,7 +1959,8 @@
       "retrospective",
       "backlog"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "waterfall",
@@ -1787,7 +1978,8 @@
       "uat",
       "v-model"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "requirements-definition",
@@ -1806,7 +1998,10 @@
       "se",
       "rd"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "要件"
+    ]
   },
   {
     "id": "wbs",
@@ -1824,7 +2019,8 @@
       "kickoff",
       "estimation"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "gantt-chart",
@@ -1842,7 +2038,8 @@
       "kickoff",
       "critical-path"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "milestone",
@@ -1859,7 +2056,8 @@
       "gantt-chart",
       "release"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "kickoff",
@@ -1876,7 +2074,8 @@
       "wbs",
       "milestone"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "poc",
@@ -1893,7 +2092,11 @@
       "agile",
       "requirements-definition"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "ぽっく",
+      "概念実証"
+    ]
   },
   {
     "id": "mvp",
@@ -1910,7 +2113,8 @@
       "agile",
       "release"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "sla",
@@ -1927,7 +2131,8 @@
       "release",
       "stakeholder"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "nda",
@@ -1944,7 +2149,8 @@
       "rfp",
       "sla"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "uat",
@@ -1963,7 +2169,8 @@
       "spec",
       "ot"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "stakeholder",
@@ -1981,7 +2188,8 @@
       "nda",
       "steering-committee"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "retrospective",
@@ -1998,7 +2206,11 @@
       "agile",
       "kickoff"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "レトロスペクティブ",
+      "レトロ"
+    ]
   },
   {
     "id": "backlog",
@@ -2016,7 +2228,8 @@
       "milestone",
       "issue-log"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "release",
@@ -2036,7 +2249,8 @@
       "cutover",
       "deploy"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "maintenance",
@@ -2051,9 +2265,15 @@
     "related": [
       "sla",
       "release",
-      "patch"
+      "patch",
+      "cobol"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "メンテナンス",
+      "メンテ",
+      "保守運用"
+    ]
   },
   {
     "id": "rfp",
@@ -2070,7 +2290,8 @@
       "stakeholder",
       "nda"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "dx",
@@ -2088,7 +2309,8 @@
       "cloud",
       "ai"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "ict",
@@ -2106,7 +2328,8 @@
       "cloud",
       "it"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "kpi",
@@ -2123,7 +2346,8 @@
       "bi",
       "milestone"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "roi",
@@ -2140,7 +2364,8 @@
       "dx",
       "poc"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "faq",
@@ -2157,7 +2382,8 @@
       "crm",
       "url"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "os",
@@ -2172,9 +2398,11 @@
     "related": [
       "patch",
       "firmware",
-      "antivirus"
+      "antivirus",
+      "shell-script"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "url",
@@ -2193,7 +2421,8 @@
       "qr-code",
       "browser"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "ui",
@@ -2212,7 +2441,8 @@
       "iec-62366",
       "interface"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "ux",
@@ -2229,7 +2459,8 @@
       "faq",
       "frontend"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "ocr",
@@ -2247,7 +2478,8 @@
       "csv",
       "qr-code"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "qr-code",
@@ -2264,7 +2496,8 @@
       "ocr",
       "ui"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "erp",
@@ -2281,7 +2514,8 @@
       "database",
       "dx"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "crm",
@@ -2298,7 +2532,8 @@
       "database",
       "faq"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "rpa",
@@ -2314,9 +2549,11 @@
       "dx",
       "ocr",
       "ai",
-      "ai-agent"
+      "ai-agent",
+      "vba"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "byod",
@@ -2333,7 +2570,8 @@
       "two-factor-auth",
       "sso"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "bcp",
@@ -2350,7 +2588,8 @@
       "data-center",
       "sla"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "it",
@@ -2368,7 +2607,8 @@
       "os",
       "integration-test"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "se",
@@ -2385,7 +2625,8 @@
       "spec",
       "stakeholder"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "browser",
@@ -2401,9 +2642,11 @@
       "url",
       "cookie",
       "cache",
-      "https"
+      "https",
+      "html"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "cookie",
@@ -2420,7 +2663,8 @@
       "login",
       "cache"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "cache",
@@ -2437,7 +2681,8 @@
       "cookie",
       "cdn"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "upload",
@@ -2454,7 +2699,8 @@
       "server",
       "bandwidth"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "login",
@@ -2472,7 +2718,11 @@
       "sso",
       "password-manager"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "サインイン",
+      "ログオン"
+    ]
   },
   {
     "id": "account",
@@ -2489,7 +2739,10 @@
       "sso",
       "password-manager"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "ID"
+    ]
   },
   {
     "id": "spam-mail",
@@ -2506,7 +2759,11 @@
       "malware",
       "antivirus"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "スパム",
+      "スパムメール"
+    ]
   },
   {
     "id": "cloud-storage",
@@ -2524,7 +2781,8 @@
       "upload",
       "backup"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "log",
@@ -2542,7 +2800,8 @@
       "server",
       "log-level"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "devops",
@@ -2560,7 +2819,8 @@
       "release",
       "maintenance"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "update",
@@ -2578,7 +2838,8 @@
       "vulnerability",
       "os"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "storage",
@@ -2597,7 +2858,8 @@
       "cloud-storage",
       "nas"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "spec",
@@ -2614,7 +2876,11 @@
       "se",
       "uat"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "スペック",
+      "仕様"
+    ]
   },
   {
     "id": "chatbot",
@@ -2632,7 +2898,10 @@
       "faq",
       "ai-agent"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "ボット"
+    ]
   },
   {
     "id": "ai-agent",
@@ -2650,7 +2919,10 @@
       "chatbot",
       "rpa"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "エージェント"
+    ]
   },
   {
     "id": "pm",
@@ -2668,7 +2940,8 @@
       "qcd",
       "stakeholder"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "pmo",
@@ -2686,7 +2959,8 @@
       "issue-log",
       "evm"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "pl",
@@ -2703,7 +2977,8 @@
       "wbs",
       "escalation"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "pmbok",
@@ -2720,7 +2995,10 @@
       "project-scope",
       "risk-management"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "ぴーえむぼっく"
+    ]
   },
   {
     "id": "qcd",
@@ -2737,7 +3015,8 @@
       "sla",
       "estimation"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "project-scope",
@@ -2754,7 +3033,8 @@
       "change-management",
       "wbs"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "risk-management",
@@ -2772,7 +3052,8 @@
       "bcp",
       "iso-14971"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "issue-log",
@@ -2789,7 +3070,12 @@
       "progress-report",
       "backlog"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "課題表",
+      "QA表",
+      "懸案事項一覧"
+    ]
   },
   {
     "id": "progress-report",
@@ -2807,7 +3093,10 @@
       "pmo",
       "milestone"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "進捗"
+    ]
   },
   {
     "id": "evm",
@@ -2824,7 +3113,8 @@
       "estimation",
       "pmo"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "critical-path",
@@ -2841,7 +3131,8 @@
       "wbs",
       "milestone"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "escalation",
@@ -2858,7 +3149,10 @@
       "pl",
       "issue-log"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "エスカレ"
+    ]
   },
   {
     "id": "steering-committee",
@@ -2875,7 +3169,10 @@
       "stakeholder",
       "change-management"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "ステコミ"
+    ]
   },
   {
     "id": "change-management",
@@ -2892,7 +3189,8 @@
       "spec",
       "traceability"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "estimation",
@@ -2910,7 +3208,12 @@
       "evm",
       "death-march"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "工数",
+      "人月",
+      "見積"
+    ]
   },
   {
     "id": "v-model",
@@ -2929,7 +3232,10 @@
       "integration-test",
       "st"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "V字"
+    ]
   },
   {
     "id": "rd",
@@ -2946,7 +3252,10 @@
       "bd",
       "v-model"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "要件定義"
+    ]
   },
   {
     "id": "bd",
@@ -2964,7 +3273,11 @@
       "spec",
       "v-model"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "基本設計",
+      "外部設計"
+    ]
   },
   {
     "id": "dd",
@@ -2981,7 +3294,11 @@
       "pg",
       "ut"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "詳細設計",
+      "内部設計"
+    ]
   },
   {
     "id": "pg",
@@ -2998,7 +3315,12 @@
       "ut",
       "source-code"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "製造",
+      "実装",
+      "コーディング"
+    ]
   },
   {
     "id": "ut",
@@ -3016,7 +3338,11 @@
       "bug",
       "v-model"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "単体テスト",
+      "単体"
+    ]
   },
   {
     "id": "integration-test",
@@ -3034,7 +3360,11 @@
       "v-model",
       "it"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "結合テスト",
+      "結合"
+    ]
   },
   {
     "id": "st",
@@ -3052,7 +3382,11 @@
       "uat",
       "v-model"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "総合テスト",
+      "システムテスト"
+    ]
   },
   {
     "id": "ot",
@@ -3069,7 +3403,10 @@
       "uat",
       "cutover"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "運用テスト"
+    ]
   },
   {
     "id": "review",
@@ -3086,7 +3423,8 @@
       "bd",
       "bug"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "death-march",
@@ -3103,7 +3441,8 @@
       "estimation",
       "critical-path"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "rework",
@@ -3120,7 +3459,8 @@
       "change-management",
       "v-model"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "cutover",
@@ -3137,7 +3477,12 @@
       "production-env",
       "ot"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "本番稼働",
+      "サービスイン",
+      "本番リリース"
+    ]
   },
   {
     "id": "production-env",
@@ -3155,7 +3500,11 @@
       "release",
       "deploy"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "本番",
+      "プロダクション環境"
+    ]
   },
   {
     "id": "staging-env",
@@ -3172,7 +3521,13 @@
       "st",
       "release"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "ステージング",
+      "ステージング環境",
+      "テスト環境",
+      "検証機"
+    ]
   },
   {
     "id": "endoscope",
@@ -3190,7 +3545,11 @@
       "light-source",
       "video-processor"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "スコープ",
+      "ファイバースコープ"
+    ]
   },
   {
     "id": "insertion-tube",
@@ -3207,7 +3566,8 @@
       "forceps-channel",
       "image-sensor"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "image-sensor",
@@ -3224,7 +3584,12 @@
       "sensor",
       "video-processor"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "CCD",
+      "CMOS",
+      "撮像素子"
+    ]
   },
   {
     "id": "light-source",
@@ -3241,7 +3606,8 @@
       "image-enhanced-endoscopy",
       "video-processor"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "video-processor",
@@ -3259,7 +3625,10 @@
       "image-enhanced-endoscopy",
       "embedded-system"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "プロセッサー装置"
+    ]
   },
   {
     "id": "forceps-channel",
@@ -3276,7 +3645,12 @@
       "reprocessing",
       "endoscope"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "かんしぐち",
+      "鉗子チャンネル",
+      "ワーキングチャンネル"
+    ]
   },
   {
     "id": "image-enhanced-endoscopy",
@@ -3293,7 +3667,8 @@
       "video-processor",
       "ai"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "reprocessing",
@@ -3310,7 +3685,11 @@
       "risk-management",
       "medical-device-class"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "洗浄消毒",
+      "リプロセッシング"
+    ]
   },
   {
     "id": "medical-device-class",
@@ -3327,7 +3706,8 @@
       "iso-13485",
       "iec-60601"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "pmd-act",
@@ -3344,7 +3724,12 @@
       "iso-13485",
       "traceability"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "医薬品医療機器等法",
+      "旧薬事法",
+      "薬事法"
+    ]
   },
   {
     "id": "iso-13485",
@@ -3362,7 +3747,8 @@
       "traceability",
       "iec-62304"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "iec-62304",
@@ -3380,7 +3766,8 @@
       "traceability",
       "iso-14971"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "iec-60601",
@@ -3397,7 +3784,8 @@
       "iso-14971",
       "light-source"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "iso-14971",
@@ -3415,7 +3803,8 @@
       "iec-62366",
       "iec-60601"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "iec-62366",
@@ -3432,7 +3821,8 @@
       "ux",
       "iso-14971"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "traceability",
@@ -3450,7 +3840,8 @@
       "change-management",
       "v-model"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": []
   },
   {
     "id": "interface",
@@ -3468,7 +3859,11 @@
       "usb",
       "spec"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "I/F",
+      "IF"
+    ]
   },
   {
     "id": "log-level",
@@ -3488,7 +3883,8 @@
       "info",
       "debug-log"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "fatal",
@@ -3505,7 +3901,12 @@
       "error-log",
       "escalation"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "CRITICAL",
+      "クリティカル",
+      "致命的エラー"
+    ]
   },
   {
     "id": "error-log",
@@ -3523,7 +3924,10 @@
       "stack-trace",
       "bug"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "エラーログ"
+    ]
   },
   {
     "id": "warning",
@@ -3540,7 +3944,12 @@
       "error-log",
       "info"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": [
+      "WARN",
+      "警告",
+      "ウォーニング"
+    ]
   },
   {
     "id": "info",
@@ -3558,7 +3967,8 @@
       "debug-log",
       "log"
     ],
-    "level": 1
+    "level": 1,
+    "aliases": []
   },
   {
     "id": "debug-log",
@@ -3575,7 +3985,10 @@
       "debug",
       "info"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "DEBUGログ"
+    ]
   },
   {
     "id": "stack-trace",
@@ -3593,7 +4006,11 @@
       "debug",
       "log"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "トレースバック",
+      "バックトレース"
+    ]
   },
   {
     "id": "exception",
@@ -3610,7 +4027,10 @@
       "stack-trace",
       "bug"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "エクセプション"
+    ]
   },
   {
     "id": "timeout",
@@ -3627,7 +4047,8 @@
       "server",
       "error-log"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "build",
@@ -3645,7 +4066,8 @@
       "deploy",
       "ci-cd"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "deploy",
@@ -3664,7 +4086,10 @@
       "production-env",
       "ci-cd"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "デプロイメント"
+    ]
   },
   {
     "id": "rollback",
@@ -3682,7 +4107,10 @@
       "backup",
       "hotfix"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "切り戻し"
+    ]
   },
   {
     "id": "hotfix",
@@ -3700,7 +4128,11 @@
       "deploy",
       "rollback"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "緊急修正",
+      "緊急パッチ"
+    ]
   },
   {
     "id": "branch",
@@ -3718,7 +4150,8 @@
       "commit",
       "version-control"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "commit",
@@ -3736,7 +4169,8 @@
       "repository",
       "version-control"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "merge",
@@ -3754,7 +4188,8 @@
       "pull-request",
       "git"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": []
   },
   {
     "id": "pull-request",
@@ -3772,7 +4207,12 @@
       "merge",
       "branch"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "プルリク",
+      "PR",
+      "マージリクエスト"
+    ]
   },
   {
     "id": "conflict",
@@ -3789,7 +4229,10 @@
       "branch",
       "version-control"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "競合"
+    ]
   },
   {
     "id": "refactoring",
@@ -3806,7 +4249,10 @@
       "degrade",
       "maintenance"
     ],
-    "level": 3
+    "level": 3,
+    "aliases": [
+      "リファクタ"
+    ]
   },
   {
     "id": "degrade",
@@ -3824,6 +4270,388 @@
       "ut",
       "review"
     ],
-    "level": 2
+    "level": 2,
+    "aliases": [
+      "デグレード",
+      "デグレーション",
+      "リグレッション"
+    ]
+  },
+  {
+    "id": "cgi",
+    "term": "CGI",
+    "reading": "しーじーあい",
+    "fullName": "Common Gateway Interface",
+    "category": "開発・プログラミング",
+    "summary": "Webサーバーがプログラムを動かして、その結果をWebページとして返す仕組みです。",
+    "description": "プログラミング言語の名前ではなく、Webサーバーと外部のプログラムをつなぐための決まりごとです。掲示板やアクセスカウンターなど、表示のたびに内容が変わるページを作るために、昔からよく使われてきました。PerlやC言語などで書かれたプログラムが、この仕組みで動かされます。現在は、より効率のよい別の仕組みに置き換わっていることが多いです。",
+    "analogy": "お店の窓口係が、注文を奥の職人に伝えて、できあがった品物をお客様に渡すような「取り次ぎ」の仕組みです。",
+    "example": "「古い問い合わせフォームはCGIで動いているので、移行を検討しています」",
+    "related": [
+      "perl",
+      "php",
+      "server",
+      "interface"
+    ],
+    "level": 3,
+    "aliases": []
+  },
+  {
+    "id": "php",
+    "term": "PHP",
+    "reading": "ぴーえいちぴー",
+    "fullName": "PHP: Hypertext Preprocessor",
+    "category": "開発・プログラミング",
+    "summary": "Webサイトやwebアプリケーションを作るのによく使われるプログラミング言語です。",
+    "description": "サーバー側で動き、データベースと連携して、利用者ごとに違う内容のページを作れます。WordPressなど、世界中で使われているサービスもPHPで作られています。学びやすく、レンタルサーバーで手軽に動かせるのが特長です。",
+    "analogy": "Webページの「厨房」で、注文（アクセス）に応じて料理（ページ）を作る料理人のような役割です。",
+    "example": "「会社のWebサイトはPHPで作られていて、WordPressで更新しています」",
+    "related": [
+      "cgi",
+      "backend",
+      "database",
+      "javascript"
+    ],
+    "level": 2,
+    "aliases": []
+  },
+  {
+    "id": "java",
+    "term": "Java",
+    "reading": "じゃば",
+    "fullName": "Java",
+    "category": "開発・プログラミング",
+    "summary": "大規模な業務システムなどで広く使われているプログラミング言語です。",
+    "description": "銀行や官公庁のシステム、企業の業務システム、Androidアプリなど、さまざまな場面で使われています。一度書いたプログラムを、WindowsやLinuxなど異なる環境で動かしやすいのが特長です。名前は似ていますが、JavaScriptとは別の言語です。",
+    "analogy": "どこの国でも使える「国際規格の工具」のように、いろいろな環境で同じように動かせます。",
+    "example": "「この基幹システムはJavaで作られています」",
+    "related": [
+      "kotlin",
+      "javascript",
+      "backend",
+      "framework",
+      "cobol"
+    ],
+    "level": 2,
+    "aliases": []
+  },
+  {
+    "id": "c-language",
+    "term": "C言語",
+    "reading": "しーげんご",
+    "fullName": "C",
+    "category": "開発・プログラミング",
+    "summary": "機器を細かく制御でき、組込み開発などで広く使われているプログラミング言語です。",
+    "description": "1970年代に生まれた歴史のある言語で、OSや家電、医療機器などの組込みソフトの開発で今も多く使われています。メモリなどを直接扱えるため、高速で小さなプログラムを作れます。その分、書き間違いが不具合につながりやすく、慎重な開発が求められます。",
+    "analogy": "自動車でいえば「マニュアル車」のようなものです。細かく操作できる分、運転の腕が必要です。",
+    "example": "「ファームウェアはC言語で書かれています」",
+    "related": [
+      "cpp",
+      "embedded-system",
+      "firmware",
+      "assembly",
+      "compiler",
+      "rust"
+    ],
+    "level": 2,
+    "aliases": [
+      "C"
+    ]
+  },
+  {
+    "id": "cpp",
+    "term": "C++",
+    "reading": "しーぷらすぷらす",
+    "fullName": "C Plus Plus",
+    "category": "開発・プログラミング",
+    "summary": "C言語を発展させた、高速で大規模な開発にも向いたプログラミング言語です。",
+    "description": "C言語の特長を受け継ぎつつ、大きなプログラムを部品に分けて整理しやすい機能が加えられています。ゲーム、画像処理、組込み機器、OSなど、処理の速さが求められる分野でよく使われます。機能が多いぶん、習得には時間がかかる言語です。",
+    "analogy": "マニュアル車（C言語）に、便利な装備を追加した高性能車のようなものです。",
+    "example": "「画像処理の部分は、速度が必要なのでC++で実装します」",
+    "related": [
+      "c-language",
+      "csharp",
+      "embedded-system",
+      "rust"
+    ],
+    "level": 2,
+    "aliases": [
+      "しーぷらぷら",
+      "CPP",
+      "シープラ"
+    ]
+  },
+  {
+    "id": "csharp",
+    "term": "C#",
+    "reading": "しーしゃーぷ",
+    "fullName": "C Sharp",
+    "category": "開発・プログラミング",
+    "summary": "マイクロソフトが開発した、Windowsアプリや業務システムでよく使われる言語です。",
+    "description": "Windows向けのアプリケーションや、企業の業務システム、Webサービスなどの開発に使われます。ゲーム開発ツールのUnityでも使われていることで知られています。名前にCが付きますが、C言語とは書き方も考え方もかなり異なります。",
+    "analogy": "マイクロソフト製品と相性のよい「純正の工具」のようなものです。",
+    "example": "「検査装置の操作画面はC#で作られています」",
+    "related": [
+      "cpp",
+      "java",
+      "framework"
+    ],
+    "level": 2,
+    "aliases": [
+      "Cシャープ",
+      "しーしゃー"
+    ]
+  },
+  {
+    "id": "typescript",
+    "term": "TypeScript",
+    "reading": "たいぷすくりぷと",
+    "fullName": "TypeScript",
+    "category": "開発・プログラミング",
+    "summary": "JavaScriptに、間違いを見つけやすくする仕組みを加えたプログラミング言語です。",
+    "description": "マイクロソフトが開発した言語で、最終的にはJavaScriptに変換されて動きます。データの種類（型）をあらかじめ決めておくことで、書き間違いを動かす前に見つけられます。大規模なWebアプリの開発で広く使われています。",
+    "analogy": "手書きの書類に、記入ミスを自動でチェックしてくれる入力フォームを足したようなものです。",
+    "example": "「新しい画面はTypeScriptで開発します」",
+    "related": [
+      "javascript",
+      "frontend",
+      "compiler"
+    ],
+    "level": 2,
+    "aliases": [
+      "TS"
+    ]
+  },
+  {
+    "id": "ruby",
+    "term": "Ruby",
+    "reading": "るびー",
+    "fullName": "Ruby",
+    "category": "開発・プログラミング",
+    "summary": "日本人が開発した、読みやすく書きやすいプログラミング言語です。",
+    "description": "まつもとゆきひろ氏が開発し、世界中で使われている数少ない日本生まれの言語です。Webアプリを素早く作れる「Ruby on Rails」というフレームワークとともに広まりました。書いていて楽しいことを大切にした言語として知られています。",
+    "analogy": "日本で生まれて世界に広まった料理のように、国産で国際的に使われている言語です。",
+    "example": "「社内ツールはRuby on Railsで作られています」",
+    "related": [
+      "python",
+      "framework",
+      "backend"
+    ],
+    "level": 2,
+    "aliases": [
+      "Rails"
+    ]
+  },
+  {
+    "id": "golang",
+    "term": "Go",
+    "reading": "ごー",
+    "fullName": "Go（Golang）",
+    "category": "開発・プログラミング",
+    "summary": "Googleが開発した、シンプルで高速なプログラミング言語です。",
+    "description": "書き方がシンプルで覚えやすく、動作も速いのが特長です。たくさんの処理を同時にこなすのが得意で、クラウドやサーバーのソフトウェア開発でよく使われています。DockerやKubernetesも、この言語で作られています。",
+    "analogy": "必要な道具だけを厳選した、軽くて丈夫な「万能ナイフ」のようなものです。",
+    "example": "「新しいAPIサーバーはGoで書く予定です」",
+    "related": [
+      "docker",
+      "kubernetes",
+      "backend"
+    ],
+    "level": 3,
+    "aliases": [
+      "Golang",
+      "ごーらんぐ",
+      "Go言語"
+    ]
+  },
+  {
+    "id": "rust",
+    "term": "Rust",
+    "reading": "らすと",
+    "fullName": "Rust",
+    "category": "開発・プログラミング",
+    "summary": "高速で、しかも安全性の高いプログラムを作れるプログラミング言語です。",
+    "description": "C言語やC++と同じくらい速く動きながら、メモリの扱いによる不具合をプログラムを動かす前に防げるのが特長です。OSやブラウザ、組込み機器など、安全性と速さの両方が求められる分野で注目されています。その分、書き方のルールが厳しく、習得には時間がかかります。",
+    "analogy": "スピードの出るスポーツカーに、自動ブレーキなどの安全装置をしっかり付けたようなものです。",
+    "example": "「安全性を高めるため、一部のモジュールをRustで書き直しています」",
+    "related": [
+      "c-language",
+      "cpp",
+      "vulnerability"
+    ],
+    "level": 3,
+    "aliases": []
+  },
+  {
+    "id": "kotlin",
+    "term": "Kotlin",
+    "reading": "ことりん",
+    "fullName": "Kotlin",
+    "category": "開発・プログラミング",
+    "summary": "Androidアプリの開発で標準的に使われているプログラミング言語です。",
+    "description": "Javaと一緒に使えるように作られており、Javaよりも短く安全に書けるのが特長です。GoogleがAndroidアプリ開発の推奨言語としたことで、広く使われるようになりました。サーバー側の開発にも使われています。",
+    "analogy": "Java（従来の工具）と互換性がある、より使いやすい「新型の工具」です。",
+    "example": "「Androidアプリは、Kotlinで開発しています」",
+    "related": [
+      "java",
+      "swift"
+    ],
+    "level": 3,
+    "aliases": []
+  },
+  {
+    "id": "swift",
+    "term": "Swift",
+    "reading": "すうぃふと",
+    "fullName": "Swift",
+    "category": "開発・プログラミング",
+    "summary": "iPhoneやMacのアプリを作るために、Appleが開発したプログラミング言語です。",
+    "description": "iPhone、iPad、Macなど、Apple製品向けのアプリ開発で標準的に使われています。読みやすく、安全に書けるように工夫されています。Android向けのKotlinと並んで、スマートフォンアプリ開発の代表的な言語です。",
+    "analogy": "Apple製品のための「専用の工具セット」のようなものです。",
+    "example": "「iPhone版アプリはSwift、Android版はKotlinで作ります」",
+    "related": [
+      "kotlin",
+      "ui"
+    ],
+    "level": 3,
+    "aliases": []
+  },
+  {
+    "id": "html",
+    "term": "HTML",
+    "reading": "えいちてぃーえむえる",
+    "fullName": "HyperText Markup Language",
+    "category": "開発・プログラミング",
+    "summary": "Webページの文章や見出し、画像などの構造を書くための言語です。",
+    "description": "「ここは見出し」「ここは段落」「ここに画像」といった、ページの骨組みを記述します。計算や処理を行うプログラミング言語とは違い、内容の構造を表す「マークアップ言語」と呼ばれます。見た目の装飾はCSS、動きはJavaScriptと組み合わせて使います。",
+    "analogy": "家でいえば「柱や壁などの骨組み」にあたります。",
+    "example": "「メールのテンプレートはHTMLで作られています」",
+    "related": [
+      "css",
+      "javascript",
+      "browser",
+      "frontend"
+    ],
+    "level": 1,
+    "aliases": []
+  },
+  {
+    "id": "css",
+    "term": "CSS",
+    "reading": "しーえすえす",
+    "fullName": "Cascading Style Sheets",
+    "category": "開発・プログラミング",
+    "summary": "Webページの色や文字の大きさ、レイアウトなどの見た目を指定する言語です。",
+    "description": "HTMLで作ったページの骨組みに対して、色や余白、配置などのデザインを設定します。見た目の指定をHTMLと分けておくことで、デザインの変更がしやすくなります。スマートフォンとパソコンで表示を切り替える、といった調整もCSSで行います。",
+    "analogy": "家でいえば「壁紙や家具の配置などのインテリア」にあたります。",
+    "example": "「ボタンの色はCSSを変えればすぐに直せます」",
+    "related": [
+      "html",
+      "frontend",
+      "ui"
+    ],
+    "level": 1,
+    "aliases": [
+      "スタイルシート"
+    ]
+  },
+  {
+    "id": "shell-script",
+    "term": "シェルスクリプト",
+    "reading": "しぇるすくりぷと",
+    "fullName": "Shell Script",
+    "category": "開発・プログラミング",
+    "summary": "コンピューターへの命令をまとめて書き、自動で実行させるためのファイルです。",
+    "description": "本来は一つずつ手で打ち込む命令（コマンド）を、順番に並べて書いておくことで、まとめて実行できます。サーバーのバックアップやログの整理など、決まった作業の自動化によく使われます。主にLinuxなどで使われ、bashという種類が代表的です。",
+    "analogy": "料理の手順を全部書いたメモを渡して、その通りに自動で作ってもらうようなものです。",
+    "example": "「毎晩のバックアップは、シェルスクリプトで自動実行しています」",
+    "related": [
+      "os",
+      "server",
+      "rpa"
+    ],
+    "level": 2,
+    "aliases": [
+      "シェル",
+      "bash",
+      "sh"
+    ]
+  },
+  {
+    "id": "vba",
+    "term": "VBA",
+    "reading": "ぶいびーえー",
+    "fullName": "Visual Basic for Applications",
+    "category": "開発・プログラミング",
+    "summary": "ExcelなどのOffice製品の作業を自動化するためのプログラミング言語です。",
+    "description": "Excelでの集計や、決まった形式の書類作成など、繰り返しの作業を自動で行えます。いわゆる「Excelマクロ」の中身はこのVBAで書かれています。手軽に使える反面、作った人しか分からないマクロが増えると、引き継ぎが難しくなる点に注意が必要です。",
+    "analogy": "Excelに覚えさせる「作業手順の録音テープ」のようなものです。ボタン一つで同じ作業を繰り返してくれます。",
+    "example": "「月次の集計はVBAのマクロで自動化しています」",
+    "related": [
+      "rpa",
+      "csv"
+    ],
+    "level": 1,
+    "aliases": [
+      "マクロ",
+      "Excelマクロ"
+    ]
+  },
+  {
+    "id": "cobol",
+    "term": "COBOL",
+    "reading": "こぼる",
+    "fullName": "Common Business Oriented Language",
+    "category": "開発・プログラミング",
+    "summary": "事務処理向けに作られた、歴史の長いプログラミング言語です。",
+    "description": "1959年に生まれた言語で、銀行や保険、官公庁などの大規模な基幹システムで今も使われています。英語の文章に近い書き方で、お金の計算などの事務処理を正確に行うのが得意です。扱える技術者が減っており、新しい言語への移行が課題になっています。",
+    "analogy": "長年使われ続けている「老舗の帳簿システム」のようなものです。",
+    "example": "「基幹システムはCOBOLで作られているので、改修できる人が限られています」",
+    "related": [
+      "java",
+      "maintenance"
+    ],
+    "level": 3,
+    "aliases": []
+  },
+  {
+    "id": "perl",
+    "term": "Perl",
+    "reading": "ぱーる",
+    "fullName": "Perl",
+    "category": "開発・プログラミング",
+    "summary": "文字の処理が得意な、歴史のあるプログラミング言語です。",
+    "description": "テキストの検索や置き換え、ログの集計などが得意で、サーバー管理の現場でよく使われてきました。初期のWebでは、CGIの仕組みで動く掲示板などを作る言語として広く普及しました。現在は、PythonやPHPなどに置き換えられることも増えています。",
+    "analogy": "大量の書類から必要な部分を探し出して書き換える「文書整理の達人」のような言語です。",
+    "example": "「古いCGIのスクリプトがPerlで書かれています」",
+    "related": [
+      "cgi",
+      "python",
+      "shell-script"
+    ],
+    "level": 3,
+    "aliases": []
+  },
+  {
+    "id": "assembly",
+    "term": "アセンブリ言語",
+    "reading": "あせんぶりげんご",
+    "fullName": "Assembly Language",
+    "category": "開発・プログラミング",
+    "summary": "CPUへの命令を、人が読める形でほぼそのまま書く低水準のプログラミング言語です。",
+    "description": "CPUが直接理解する機械語と、ほぼ一対一で対応する言語です。CPUの種類ごとに書き方が異なり、非常に細かく制御できる反面、書くのに手間がかかります。現在は、組込み機器の起動処理や、極めて高速な処理が必要な部分など、限られた場面で使われます。",
+    "analogy": "機械に対して、身振り手振りの一つひとつまで細かく指示を出すようなものです。",
+    "example": "「起動直後の初期化処理だけは、アセンブリ言語で書かれています」",
+    "related": [
+      "c-language",
+      "cpu",
+      "embedded-system",
+      "compiler"
+    ],
+    "level": 3,
+    "aliases": [
+      "アセンブラ",
+      "asm"
+    ]
   }
 ]

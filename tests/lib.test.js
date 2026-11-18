@@ -4,7 +4,7 @@ const L = require('../lib.js');
 
 const T = (o) => Object.assign({
   id: 'x', term: 'X', reading: '', fullName: '', category: 'c',
-  summary: '', description: '', analogy: '', example: '', related: [], level: 1,
+  summary: '', description: '', analogy: '', example: '', related: [], level: 1, aliases: [],
 }, o);
 
 test('normalize', () => {
@@ -26,14 +26,14 @@ test('searchTerms: 半角カナ・前方一致優先', () => {
 
 test('toCSV/parseCSV round trip', () => {
   const x = [
-    T({ id: 'a', term: 'API', description: 'a,b "q"\nline2', related: ['b', 'c'], level: 2 }),
+    T({ id: 'a', term: 'API', description: 'a,b "q"\nline2', related: ['b', 'c'], level: 2, aliases: ['えーぴーあい', 'I/F'] }),
     T({ id: 'b', term: 'B', related: [], level: 3, _local: true }),
   ];
   const csv = L.toCSV(x);
   assert.ok(csv.startsWith('\uFEFF'));
   assert.ok(!csv.includes('_local'));
   assert.equal(csv.split('\n')[0].replace('\uFEFF', ''),
-    'id,term,reading,fullName,category,summary,description,analogy,example,related,level');
+    'id,term,reading,fullName,category,summary,description,analogy,example,related,level,aliases');
   const back = L.parseCSV(csv);
   assert.deepEqual(back, x.map((t) => { const c = { ...t }; delete c._local; return c; }));
 });
@@ -154,4 +154,49 @@ test('searchTerms: 読みの前方一致も優先する', () => {
     { id: 'error', term: 'ERROR（エラー）', reading: 'えらー', description: '処理が失敗したことを表します' }
   ];
   assert.equal(L.searchTerms(T, 'エラー')[0].id, 'error');
+});
+
+test('parseCSV: aliases 列がない古い CSV は空配列', () => {
+  const r = L.parseCSV('id,term,category\na,A,c\n');
+  assert.deepEqual(r[0].aliases, []);
+});
+
+test('validateTerms: aliases を文字列配列に整え、未指定は空配列', () => {
+  const r = L.validateTerms([
+    { id: 'a', term: 'A', category: 'c', aliases: [' ぽっく ', '', 'PoC'] },
+    { id: 'b', term: 'B', category: 'c' }
+  ]).valid;
+  assert.deepEqual(r[0].aliases, ['ぽっく', 'PoC']);
+  assert.deepEqual(r[1].aliases, []);
+});
+
+const AL = [
+  { id: 'kickoff', term: 'キックオフ', reading: 'きっくおふ', aliases: [] },
+  { id: 'poc', term: 'PoC', reading: 'ぴーおーしー', description: '概念実証です', aliases: ['ぽっく'] },
+  { id: 'k8s', term: 'Kubernetes', reading: 'くーばねてぃす', aliases: ['くばねてす', 'k8s'] }
+];
+
+test('searchTerms: aliases でヒットし、前方一致として上位に並ぶ', () => {
+  assert.deepEqual(L.searchTerms(AL, 'ぽっく').map((t) => t.id), ['poc']);
+  assert.equal(L.searchTerms(AL, 'k8s')[0].id, 'k8s');
+});
+
+test('fuzzySearch: aliases も対象', () => {
+  assert.equal(L.fuzzySearch(AL, 'ぽっぐ')[0].id, 'poc');
+});
+
+test('searchTerms: 完全一致を前方一致より先に並べる', () => {
+  const T2 = [
+    { id: 'javascript', term: 'JavaScript', reading: 'じゃばすくりぷと', aliases: [] },
+    { id: 'java', term: 'Java', reading: 'じゃば', aliases: [] }
+  ];
+  assert.equal(L.searchTerms(T2, 'ジャバ')[0].id, 'java');
+});
+
+test('fuzzySearch: 同じ距離なら長さの近い候補を先に並べる', () => {
+  const T3 = [
+    { id: 'debug', term: 'デバッグ', reading: 'でばっぐ', aliases: [] },
+    { id: 'poc', term: 'PoC', reading: 'ぴーおーしー', aliases: ['ぽっく'] }
+  ];
+  assert.equal(L.fuzzySearch(T3, 'ぽっぐ')[0].id, 'poc');
 });

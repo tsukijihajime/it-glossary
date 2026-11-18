@@ -52,3 +52,11 @@ test('reading はひらがな（長音可）のみ', () => {
 test('example は「」で囲まれる', () => {
   raw.forEach(t => assert.match(t.example, /^「.+」$/, t.id));
 });
+
+test('aliases は空でない文字列の配列で、重複しない', () => {
+  raw.forEach(t => {
+    assert.ok(Array.isArray(t.aliases), t.id + ': aliases が配列ではない');
+    t.aliases.forEach(a => assert.ok(typeof a === 'string' && a.trim() === a && a, t.id + ': ' + a));
+    assert.strictEqual(new Set(t.aliases).size, t.aliases.length, t.id + ': aliases 重複');
+  });
+});
