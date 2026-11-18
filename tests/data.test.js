@@ -29,7 +29,7 @@ test('related の id がすべて存在し自己参照しない', () => {
     assert.notStrictEqual(r, t.id);
   }));
 });
-test('件数が 100 以上', () => { assert.ok(raw.length >= 120); });
+test('件数が 120 以上', () => { assert.ok(raw.length >= 120); });
 test('各分野 10 件以上', () => {
   CATEGORIES.forEach(c => assert.ok(raw.filter(t => t.category === c).length >= 10, c));
 });

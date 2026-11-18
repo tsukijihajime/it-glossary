@@ -87,3 +87,25 @@ test('initialOf', () => {
   assert.equal(L.initialOf({ term: '5G' }), '#');
   assert.equal(L.initialOf({ reading: 'カタカナ' }), 'か');
 });
+
+test('mergeTerms: local の重複 id は 1 件だけ出力し、後勝ち', () => {
+  const base = [T({ id: 'a', term: 'A' })];
+  const m = L.mergeTerms(base, [T({ id: 'x', term: 'X1' }), T({ id: 'x', term: 'X2' })]);
+  assert.deepEqual(m.map((t) => t.id), ['a', 'x']);
+  assert.equal(m[1].term, 'X2');
+});
+
+test('validateTerms: 文字列を trim し、空白のみの必須項目はスキップ', () => {
+  const r = L.validateTerms([
+    { id: 'dns ', term: ' DNS ', category: ' ネットワーク ', reading: ' でぃーえぬえす ' },
+    { id: '  ', term: 'X', category: 'ネットワーク' },
+    { id: 'y', term: '  ', category: 'ネットワーク' },
+    { id: 'z', term: 'Z', category: '  ' },
+  ]);
+  assert.equal(r.valid.length, 1);
+  assert.equal(r.skipped, 3);
+  assert.equal(r.valid[0].id, 'dns');
+  assert.equal(r.valid[0].term, 'DNS');
+  assert.equal(r.valid[0].category, 'ネットワーク');
+  assert.equal(r.valid[0].reading, 'でぃーえぬえす');
+});

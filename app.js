@@ -132,7 +132,7 @@
   }
 
   function renderToday() {
-    var t = Lib.termOfTheDay(state.all, new Date());
+    var t = Lib.termOfTheDay(state.base, new Date());
     var box = $('today');
     if (!t) { box.hidden = true; return; }
     box.hidden = false;
@@ -221,7 +221,13 @@
 
   function openDetail(id, fromHash) {
     var t = findTerm(id);
-    if (!t) return;
+    if (!t) {
+      if (fromHash) {
+        toast('指定された用語が見つかりませんでした');
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      return;
+    }
     currentId = id;
     renderDetail(t);
     var dlg = $('detail');
@@ -266,11 +272,12 @@
     var id = currentId;
     if (!confirm('この用語をローカルから削除します。よろしいですか？')) return;
     state.local = state.local.filter(function (t) { return t.id !== id; });
-    writeJSON(LOCAL_KEY, state.local);
+    var ok = writeJSON(LOCAL_KEY, state.local);
     recompute();
     $('detail').close();
     render();
-    toast('削除しました');
+    if (ok) toast('削除しました');
+    else toast('このブラウザでは保存できませんでした。', true);
   }
 
   // ---------- import / export ----------
@@ -282,6 +289,10 @@
       var raw;
       try {
         var text = String(reader.result);
+        if (text.indexOf('�') !== -1) {
+          toast('文字コードが UTF-8 ではありません。Excel では『CSV UTF-8（コンマ区切り）』で保存してください。既存のデータは変更していません。', true);
+          return;
+        }
         if (/\.csv$/i.test(file.name)) raw = Lib.parseCSV(text);
         else {
           raw = JSON.parse(text.replace(/^﻿/, ''));
@@ -295,7 +306,15 @@
       if (res.valid.length) {
         var map = {};
         res.valid.forEach(function (t) { map[t.id] = t; });
-        var merged = state.local.filter(function (t) { return !map[t.id]; }).concat(res.valid);
+        var seen = {};
+        var merged = state.local.filter(function (t) { return !map[t.id]; });
+        res.valid.forEach(function (t) {
+          if (seen[t.id]) {
+            merged = merged.filter(function (m) { return m.id !== t.id; });
+          }
+          seen[t.id] = true;
+          merged.push(t);
+        });
         if (!writeJSON(LOCAL_KEY, merged)) {
           toast('このブラウザでは保存できませんでした。', true);
           return;
@@ -304,7 +323,11 @@
         recompute();
         render();
       }
-      if (res.valid.length) toast(res.valid.length + '件取り込みました（' + res.skipped + '件スキップ）');
+      if (res.valid.length) {
+        var unknown = res.valid.filter(function (t) { return CATEGORIES.indexOf(t.category) === -1; }).length;
+        toast(res.valid.length + '件取り込みました（' + res.skipped + '件スキップ）' +
+          (unknown ? '（分野が不明な' + unknown + '件は「すべて」にのみ表示されます）' : ''));
+      }
       else toast('取り込める用語がありませんでした（' + res.skipped + '件スキップ）', true);
     };
     reader.readAsText(file, 'utf-8');
@@ -346,10 +369,11 @@
     if (!state.local.length) { toast('ローカル追加分はありません'); return; }
     if (!confirm('ローカルに追加した用語をすべて削除します。元に戻せません。よろしいですか？')) return;
     state.local = [];
-    writeJSON(LOCAL_KEY, []);
+    var ok = writeJSON(LOCAL_KEY, []);
     recompute();
     render();
-    toast('ローカル追加分を削除しました');
+    if (ok) toast('ローカル追加分を削除しました');
+    else toast('このブラウザでは保存できませんでした。', true);
   }
 
   // ---------- init ----------

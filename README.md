@@ -6,7 +6,7 @@
 
 - 対象: 新入社員・非技術者
 - 主な機能
-  - 用語の検索（用語名・読み・解説文）
+  - 用語の検索（用語名・読み・正式名称・解説文）
   - 分野（カテゴリ）とレベル（1〜3）での絞り込み
   - お気に入り登録
   - 関連用語へのリンク
@@ -21,7 +21,8 @@
 
 ## GitHub Pages の公開手順
 
-1. GitHub で新しいリポジトリを作成します（Public）。
+0. 現在の作業はブランチ `feat/initial-site` 上にあります。公開前に `main` へマージするか、手順 2 で `git push -u origin feat/initial-site:main` を使って `main` に push してください。
+1. GitHub で新しいリポジトリを作成します（Public）。README などは追加せず、空で作成します。
 2. ローカルのリポジトリを push します。
    ```
    git remote add origin git@github.com:<ユーザー名>/<リポジトリ名>.git

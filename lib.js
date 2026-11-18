@@ -93,13 +93,14 @@
   function validateTerms(raw) {
     var valid = [], skipped = 0;
     (Array.isArray(raw) ? raw : []).forEach(function (r) {
-      if (!r || typeof r !== 'object' || !str(r.id) || !str(r.term) || !str(r.category)) {
+      if (!r || typeof r !== 'object' || !str(r.id).trim() || !str(r.term).trim() || !str(r.category).trim()) {
         skipped++; return;
       }
       var lv = Math.round(Number(r.level));
       if (isNaN(lv)) lv = 1;
       var t = {};
       KEYS.forEach(function (k) { t[k] = str(r[k]); });
+      ['id', 'term', 'category', 'reading'].forEach(function (k) { t[k] = t[k].trim(); });
       t.related = Array.isArray(r.related) ? r.related.map(str) : [];
       t.level = Math.min(3, Math.max(1, lv));
       valid.push(t);
@@ -118,7 +119,8 @@
     });
     local.forEach(function (t) {
       if (!used[t.id] && !base.some(function (b) { return b.id === t.id; })) {
-        out.push(Object.assign({}, t, { _local: true }));
+        used[t.id] = true;
+        out.push(Object.assign({}, map[t.id], { _local: true }));
       }
     });
     return out;
