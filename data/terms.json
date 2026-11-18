@@ -32,7 +32,8 @@
     "related": [
       "ip-address",
       "domain",
-      "https"
+      "https",
+      "route53"
     ],
     "level": 2,
     "aliases": [
@@ -312,7 +313,8 @@
     "related": [
       "proxy",
       "vulnerability",
-      "zero-trust"
+      "zero-trust",
+      "security-group"
     ],
     "level": 1,
     "aliases": []
@@ -681,7 +683,12 @@
     "related": [
       "azure",
       "gcp",
-      "cloud"
+      "cloud",
+      "ec2",
+      "s3",
+      "rds",
+      "lambda",
+      "aws-region"
     ],
     "level": 2,
     "aliases": []
@@ -738,7 +745,8 @@
     "related": [
       "cloud",
       "paas",
-      "container"
+      "container",
+      "lambda"
     ],
     "level": 3,
     "aliases": []
@@ -756,7 +764,8 @@
     "related": [
       "docker",
       "kubernetes",
-      "virtual-machine"
+      "virtual-machine",
+      "ecs"
     ],
     "level": 3,
     "aliases": []
@@ -877,7 +886,8 @@
     "related": [
       "latency",
       "bandwidth",
-      "ddos"
+      "ddos",
+      "cloudfront"
     ],
     "level": 3,
     "aliases": []
@@ -1352,7 +1362,8 @@
       "prompt",
       "hallucination",
       "ai",
-      "chatbot"
+      "chatbot",
+      "bedrock"
     ],
     "level": 1,
     "aliases": [
@@ -1430,7 +1441,8 @@
       "sql",
       "csv",
       "backend",
-      "big-data"
+      "big-data",
+      "rdbms"
     ],
     "level": 1,
     "aliases": [
@@ -1451,7 +1463,8 @@
     "related": [
       "database",
       "csv",
-      "bi"
+      "bi",
+      "postgresql"
     ],
     "level": 3,
     "aliases": [
@@ -1472,7 +1485,8 @@
       "machine-learning",
       "database",
       "bi",
-      "iot"
+      "iot",
+      "nosql"
     ],
     "level": 2,
     "aliases": []
@@ -1705,7 +1719,8 @@
       "sensor",
       "raspberry-pi",
       "video-processor",
-      "c-language"
+      "c-language",
+      "sqlite"
     ],
     "level": 2,
     "aliases": [
@@ -2679,7 +2694,8 @@
     "related": [
       "browser",
       "cookie",
-      "cdn"
+      "cdn",
+      "redis"
     ],
     "level": 2,
     "aliases": []
@@ -4652,6 +4668,641 @@
     "aliases": [
       "アセンブラ",
       "asm"
+    ]
+  },
+  {
+    "id": "rdbms",
+    "term": "RDBMS",
+    "reading": "あーるでぃーびーえむえす",
+    "fullName": "Relational Database Management System",
+    "category": "データ・AI",
+    "summary": "データを表（テーブル）の形で管理するデータベースの仕組みです。",
+    "description": "顧客表や注文表のように、行と列でできた表にデータを保存し、表どうしを関連づけて管理します。データの取り出しや更新にはSQLという言語を使います。PostgreSQL、MySQL、Oracle Database、SQL Serverなどが代表的な製品です。",
+    "analogy": "複数のExcelの表を、「顧客番号」などの共通の列でつないで管理する、とても大きく丈夫な表計算の仕組みのようなものです。",
+    "example": "「業務データはRDBMSで管理し、分析用のデータは別に保存しています」",
+    "related": [
+      "database",
+      "sql",
+      "postgresql",
+      "mysql",
+      "nosql",
+      "sqlite"
+    ],
+    "level": 2,
+    "aliases": [
+      "リレーショナルデータベース",
+      "RDB",
+      "関係データベース"
+    ]
+  },
+  {
+    "id": "postgresql",
+    "term": "PostgreSQL",
+    "reading": "ぽすとぐれすきゅーえる",
+    "fullName": "PostgreSQL",
+    "category": "データ・AI",
+    "summary": "無料で使える、高機能で信頼性の高いオープンソースのデータベースです。",
+    "description": "誰でも無料で使えるオープンソースのRDBMSで、業務システムやWebサービスで広く使われています。複雑な検索や大量のデータの扱いが得意で、機能が豊富なことで知られています。AWSなどのクラウドでも、手軽に利用できるサービスが用意されています。",
+    "analogy": "無料で使えるのに、プロ仕様の機能がそろった「高性能な業務用の金庫」のようなものです。",
+    "example": "「新しいシステムのデータベースはPostgreSQLを使います」",
+    "related": [
+      "rdbms",
+      "mysql",
+      "sql",
+      "open-source",
+      "rds"
+    ],
+    "level": 2,
+    "aliases": [
+      "ポスグレ",
+      "Postgres",
+      "ポストグレス"
+    ]
+  },
+  {
+    "id": "mysql",
+    "term": "MySQL",
+    "reading": "まいえすきゅーえる",
+    "fullName": "MySQL",
+    "category": "データ・AI",
+    "summary": "Webサービスで特によく使われている、オープンソースのデータベースです。",
+    "description": "動作が軽く、扱いやすいことから、Webサイトやネットショップなどで広く使われてきたRDBMSです。PHPと組み合わせてWebサイトを作る構成は、定番として知られています。現在はOracle社が開発を主導しています。",
+    "analogy": "多くの人に使われている「定番の収納棚」のようなものです。扱いやすく、使い方の情報も豊富です。",
+    "example": "「WordPressのデータはMySQLに保存されています」",
+    "related": [
+      "rdbms",
+      "mariadb",
+      "postgresql",
+      "php",
+      "rds"
+    ],
+    "level": 2,
+    "aliases": [
+      "まいしーくぇる"
+    ]
+  },
+  {
+    "id": "mariadb",
+    "term": "MariaDB",
+    "reading": "まりあでぃーびー",
+    "fullName": "MariaDB",
+    "category": "データ・AI",
+    "summary": "MySQLから枝分かれして生まれた、オープンソースのデータベースです。",
+    "description": "MySQLの開発者たちが中心となって作ったもので、MySQLとほぼ同じ使い方ができます。オープンソースとして自由に使い続けられることを重視して開発されています。Linuxの一部の環境では、MySQLの代わりに標準で用意されていることもあります。",
+    "analogy": "同じレシピから独立したお店のようなものです。味（使い方）はほぼ同じです。",
+    "example": "「サーバーにはMySQL互換のMariaDBが入っています」",
+    "related": [
+      "mysql",
+      "rdbms",
+      "open-source"
+    ],
+    "level": 3,
+    "aliases": [
+      "マリアDB"
+    ]
+  },
+  {
+    "id": "oracle-db",
+    "term": "Oracle Database",
+    "reading": "おらくるでーたべーす",
+    "fullName": "Oracle Database",
+    "category": "データ・AI",
+    "summary": "Oracle社が提供する、大規模な業務システムで使われてきた商用のデータベースです。",
+    "description": "銀行や大企業の基幹システムなど、止まることが許されない大規模なシステムで長年使われてきたRDBMSです。性能や信頼性、サポートが充実している一方、ライセンス費用が高額になることがあります。単に「Oracle（オラクル）」と呼ばれることも多いです。",
+    "analogy": "大銀行の地下にある「頑丈な大金庫」のようなものです。信頼性は高いですが、導入や維持にお金がかかります。",
+    "example": "「基幹システムのOracleを、クラウドのデータベースに移行する計画です」",
+    "related": [
+      "rdbms",
+      "sql",
+      "sql-server"
+    ],
+    "level": 2,
+    "aliases": [
+      "Oracle",
+      "オラクル",
+      "オラクルDB"
+    ]
+  },
+  {
+    "id": "sql-server",
+    "term": "SQL Server",
+    "reading": "えすきゅーえるさーばー",
+    "fullName": "Microsoft SQL Server",
+    "category": "データ・AI",
+    "summary": "マイクロソフトが提供する商用のデータベースです。",
+    "description": "Windowsとの相性がよく、企業の業務システムで広く使われているRDBMSです。Excelや分析ツールなど、マイクロソフト製品と連携しやすいのが特長です。小規模向けには、無料で使える版も用意されています。",
+    "analogy": "マイクロソフト製品とセットで使いやすい「純正の収納庫」のようなものです。",
+    "example": "「生産管理システムのデータはSQL Serverに入っています」",
+    "related": [
+      "rdbms",
+      "oracle-db",
+      "csharp"
+    ],
+    "level": 2,
+    "aliases": [
+      "MSSQL",
+      "SQLサーバー",
+      "しーくぇるさーばー"
+    ]
+  },
+  {
+    "id": "sqlite",
+    "term": "SQLite",
+    "reading": "えすきゅーらいと",
+    "fullName": "SQLite",
+    "category": "データ・AI",
+    "summary": "一つのファイルだけで動く、小さくて手軽なデータベースです。",
+    "description": "専用のサーバーを用意しなくても、アプリの中に組み込んで使えるRDBMSです。スマートフォンのアプリやブラウザ、組込み機器など、身近なところで数多く使われています。大人数で同時に大量のデータを書き込むような用途には向いていません。",
+    "analogy": "持ち運べる「ポケットサイズの手帳」のようなデータベースです。",
+    "example": "「装置の設定値は、本体の中のSQLiteに保存しています」",
+    "related": [
+      "rdbms",
+      "embedded-system",
+      "database"
+    ],
+    "level": 3,
+    "aliases": [
+      "しーくぇるらいと"
+    ]
+  },
+  {
+    "id": "nosql",
+    "term": "NoSQL",
+    "reading": "のーえすきゅーえる",
+    "fullName": "Not only SQL",
+    "category": "データ・AI",
+    "summary": "表の形にこだわらず、柔軟な形でデータを保存するデータベースの総称です。",
+    "description": "RDBMSのような決まった表の形ではなく、文書の形や「名前と値」の組み合わせなどでデータを保存します。大量のデータを高速に扱ったり、形がばらばらなデータを保存したりするのが得意です。MongoDB、Redis、DynamoDBなどが代表例です。",
+    "analogy": "きっちり区切られた書類棚ではなく、いろいろな形の物をそのまま入れられる「大きな収納ボックス」のようなものです。",
+    "example": "「アクセスログのような大量データはNoSQLに保存しています」",
+    "related": [
+      "rdbms",
+      "mongodb",
+      "redis",
+      "dynamodb",
+      "big-data"
+    ],
+    "level": 3,
+    "aliases": [
+      "のーしーくぇる"
+    ]
+  },
+  {
+    "id": "mongodb",
+    "term": "MongoDB",
+    "reading": "もんごでぃーびー",
+    "fullName": "MongoDB",
+    "category": "データ・AI",
+    "summary": "データを文書（ドキュメント）の形で保存する、代表的なNoSQLデータベースです。",
+    "description": "JSONに似た形式で、項目の数や種類が違うデータもそのまま保存できます。項目の追加や変更が多いWebサービスなどで使われています。表の形を前もって決めなくてよいため、開発を素早く進めやすいのが特長です。",
+    "analogy": "決まった用紙に書き込むのではなく、メモ書きをそのままファイルに綴じていくようなものです。",
+    "example": "「商品ごとに項目が違うので、MongoDBで管理しています」",
+    "related": [
+      "nosql",
+      "json",
+      "database"
+    ],
+    "level": 3,
+    "aliases": [
+      "モンゴ",
+      "Mongo"
+    ]
+  },
+  {
+    "id": "redis",
+    "term": "Redis",
+    "reading": "れでぃす",
+    "fullName": "Redis",
+    "category": "データ・AI",
+    "summary": "データをメモリ上に置いて、とても高速に読み書きできるデータベースです。",
+    "description": "「名前と値」の組み合わせでデータを保存するNoSQLの一種です。ディスクではなくメモリを使うため非常に速く、Webサービスのキャッシュやログイン状態の一時保存などによく使われます。電源が切れたときに備えて、データをディスクに保存する機能もあります。",
+    "analogy": "よく使う物を、倉庫ではなく「机の上」に置いておくようなものです。すぐに手に取れます。",
+    "example": "「表示を速くするため、検索結果をRedisにキャッシュしています」",
+    "related": [
+      "nosql",
+      "cache",
+      "ram"
+    ],
+    "level": 3,
+    "aliases": [
+      "リディス"
+    ]
+  },
+  {
+    "id": "aws-region",
+    "term": "リージョン",
+    "reading": "りーじょん",
+    "fullName": "Region",
+    "category": "クラウド",
+    "summary": "クラウドのデータセンターが置かれている地域の単位です。",
+    "description": "AWSなどのクラウドは、世界各地にデータセンターの拠点を持っており、その地域ごとの区切りをリージョンと呼びます。日本には東京リージョンと大阪リージョンがあります。利用者に近いリージョンを選ぶと通信が速くなり、データを国内に置く必要がある場合にも対応できます。",
+    "analogy": "チェーン店の「東京店」「大阪店」のような、地域ごとの拠点です。",
+    "example": "「データは国内に置く必要があるので、東京リージョンを使います」",
+    "related": [
+      "aws",
+      "availability-zone",
+      "data-center",
+      "latency"
+    ],
+    "level": 2,
+    "aliases": [
+      "東京リージョン"
+    ]
+  },
+  {
+    "id": "availability-zone",
+    "term": "アベイラビリティゾーン",
+    "reading": "あべいらびりてぃぞーん",
+    "fullName": "Availability Zone（AZ）",
+    "category": "クラウド",
+    "summary": "一つのリージョンの中にある、互いに独立したデータセンターのまとまりです。",
+    "description": "一つのリージョンは、電源やネットワークが独立した複数のアベイラビリティゾーンで構成されています。システムを複数のゾーンに分けて置いておけば、一つが災害や故障で止まっても、サービスを続けられます。この構成は「マルチAZ」と呼ばれます。",
+    "analogy": "同じ街の中にある、別々の電源を持つ「支店」のようなものです。一つの支店が停電しても、ほかの支店で営業を続けられます。",
+    "example": "「障害に備えて、サーバーを2つのAZに分けて配置しています」",
+    "related": [
+      "aws-region",
+      "bcp",
+      "elb"
+    ],
+    "level": 3,
+    "aliases": [
+      "AZ",
+      "マルチAZ"
+    ]
+  },
+  {
+    "id": "ec2",
+    "term": "EC2",
+    "reading": "いーしーつー",
+    "fullName": "Amazon Elastic Compute Cloud",
+    "category": "クラウド",
+    "summary": "AWS上で、必要なときに必要な分だけ使える仮想サーバーのサービスです。",
+    "description": "数分で仮想のサーバーを用意でき、性能の高さや台数を後から変更できます。使った時間に応じて料金がかかる仕組みで、自社でサーバーを買う必要がありません。一台一台のサーバーは「インスタンス」と呼ばれます。",
+    "analogy": "必要なときだけ借りられる「レンタルのパソコン」のようなものです。不要になれば返せます。",
+    "example": "「検証用のサーバーはEC2で立てて、終わったら停止します」",
+    "related": [
+      "aws",
+      "virtual-machine",
+      "iaas",
+      "ebs",
+      "auto-scaling"
+    ],
+    "level": 2,
+    "aliases": [
+      "インスタンス"
+    ]
+  },
+  {
+    "id": "ebs",
+    "term": "EBS",
+    "reading": "いーびーえす",
+    "fullName": "Amazon Elastic Block Store",
+    "category": "クラウド",
+    "summary": "EC2の仮想サーバーにつなげて使う、ディスクのサービスです。",
+    "description": "パソコンでいうSSDやハードディスクにあたる部分を、クラウド上で提供します。サーバーを停止してもデータは残り、容量を後から増やすこともできます。「スナップショット」という機能で、ある時点の状態を丸ごとバックアップできます。",
+    "analogy": "レンタルのパソコン（EC2）に取り付ける「外付けディスク」のようなものです。",
+    "example": "「ディスクの空きが少ないので、EBSの容量を増やしました」",
+    "related": [
+      "ec2",
+      "storage",
+      "backup",
+      "ssd"
+    ],
+    "level": 3,
+    "aliases": [
+      "EBSボリューム"
+    ]
+  },
+  {
+    "id": "s3",
+    "term": "S3",
+    "reading": "えすすりー",
+    "fullName": "Amazon Simple Storage Service",
+    "category": "クラウド",
+    "summary": "ファイルを容量を気にせず保存できる、AWSのストレージサービスです。",
+    "description": "画像、動画、ログ、バックアップなど、さまざまなファイルをほぼ無制限に保存できます。データが失われにくい設計になっており、保存した量に応じて料金がかかります。設定を誤って中身を外部に公開してしまう事故が起きやすいため、アクセス権の管理には注意が必要です。",
+    "analogy": "どれだけ荷物を入れてもいっぱいにならない「巨大な貸し倉庫」のようなものです。",
+    "example": "「ログファイルは毎日S3にバックアップしています」",
+    "related": [
+      "cloud-storage",
+      "storage",
+      "backup",
+      "cloudfront",
+      "iam"
+    ],
+    "level": 2,
+    "aliases": [
+      "Amazon S3",
+      "S3バケット",
+      "バケット"
+    ]
+  },
+  {
+    "id": "rds",
+    "term": "RDS",
+    "reading": "あーるでぃーえす",
+    "fullName": "Amazon Relational Database Service",
+    "category": "クラウド",
+    "summary": "AWSが管理を引き受けてくれる、データベースのサービスです。",
+    "description": "PostgreSQLやMySQLなどのデータベースを、AWS上ですぐに使えるようにするサービスです。バックアップや更新、障害時の切り替えなど、手間のかかる管理作業をAWSが自動で行ってくれます。自分でサーバーにデータベースを入れる場合に比べて、運用の負担を大きく減らせます。",
+    "analogy": "自分で金庫を管理するのではなく、警備や点検まで任せられる「管理付きの貸金庫」のようなものです。",
+    "example": "「データベースはRDSのPostgreSQLを使い、バックアップは自動にしています」",
+    "related": [
+      "rdbms",
+      "postgresql",
+      "mysql",
+      "aws",
+      "paas"
+    ],
+    "level": 2,
+    "aliases": [
+      "Amazon RDS",
+      "Aurora",
+      "オーロラ"
+    ]
+  },
+  {
+    "id": "dynamodb",
+    "term": "DynamoDB",
+    "reading": "だいなもでぃーびー",
+    "fullName": "Amazon DynamoDB",
+    "category": "クラウド",
+    "summary": "AWSが提供する、高速で規模を自在に広げられるNoSQLデータベースです。",
+    "description": "サーバーの管理をしなくても使え、アクセスが急に増えても自動で処理能力を調整できます。ゲームやスマートフォンアプリなど、たくさんの人が同時に使うサービスでよく使われます。表の形が決まったRDBMSとは、データの持ち方や検索の仕方が異なります。",
+    "analogy": "利用者が増えても自動で棚が増えていく「伸び縮みする倉庫」のようなものです。",
+    "example": "「セッション情報はDynamoDBに保存しています」",
+    "related": [
+      "nosql",
+      "serverless",
+      "lambda",
+      "aws"
+    ],
+    "level": 3,
+    "aliases": [
+      "ダイナモ",
+      "ダイナモDB"
+    ]
+  },
+  {
+    "id": "lambda",
+    "term": "Lambda",
+    "reading": "らむだ",
+    "fullName": "AWS Lambda",
+    "category": "クラウド",
+    "summary": "サーバーを用意せずに、プログラムを必要なときだけ動かせるAWSのサービスです。",
+    "description": "「ファイルが置かれたら」「決まった時刻になったら」などのきっかけで、登録したプログラムが自動で動きます。プログラムが動いた時間だけ料金がかかるため、たまにしか動かない処理に向いています。代表的なサーバーレスのサービスです。",
+    "analogy": "呼び鈴が鳴ったときだけ出てきて仕事をしてくれる「呼び出し式の担当者」のようなものです。",
+    "example": "「画像がアップロードされたら、Lambdaで自動的に縮小しています」",
+    "related": [
+      "serverless",
+      "api-gateway",
+      "dynamodb",
+      "aws"
+    ],
+    "level": 3,
+    "aliases": [
+      "AWS Lambda",
+      "ラムダ関数"
+    ]
+  },
+  {
+    "id": "aws-vpc",
+    "term": "VPC",
+    "reading": "ぶいぴーしー",
+    "fullName": "Amazon Virtual Private Cloud",
+    "category": "クラウド",
+    "summary": "クラウドの中に作る、自分専用のネットワークです。",
+    "description": "AWSの中に、ほかの利用者から切り離された専用のネットワーク空間を作れます。その中にサーバーやデータベースを置き、インターネットから見える部分と見えない部分を分けて安全に管理します。社内ネットワークとVPNでつなぐこともできます。",
+    "analogy": "大きなオフィスビル（クラウド）の中にある、鍵のかかった「自社専用フロア」のようなものです。",
+    "example": "「データベースは、VPCの中のインターネットから見えない場所に置きます」",
+    "related": [
+      "security-group",
+      "vpn",
+      "ec2",
+      "aws"
+    ],
+    "level": 3,
+    "aliases": [
+      "Amazon VPC"
+    ]
+  },
+  {
+    "id": "security-group",
+    "term": "セキュリティグループ",
+    "reading": "せきゅりてぃぐるーぷ",
+    "fullName": "Security Group",
+    "category": "クラウド",
+    "summary": "AWSのサーバーなどに設定する、通信を許可するかどうかのルールです。",
+    "description": "「どこから」「どの種類の通信を」受け付けるかを、サーバーごとに細かく決められる仮想のファイアウォールです。必要な通信だけを許可し、それ以外は通さないのが基本です。設定を広く開けすぎると、不正アクセスの原因になります。",
+    "analogy": "部屋ごとの「入室許可リスト」のようなものです。リストにない人は入れません。",
+    "example": "「管理用の接続は、社内のIPアドレスからだけ許可するようセキュリティグループを設定しました」",
+    "related": [
+      "firewall",
+      "aws-vpc",
+      "ec2",
+      "ip-address"
+    ],
+    "level": 3,
+    "aliases": [
+      "SG"
+    ]
+  },
+  {
+    "id": "iam",
+    "term": "IAM",
+    "reading": "あいあむ",
+    "fullName": "AWS Identity and Access Management",
+    "category": "クラウド",
+    "summary": "AWSを「誰が」「何を」使えるかを管理する仕組みです。",
+    "description": "利用者ごとのアカウントを作り、使えるサービスや操作の範囲を細かく決められます。プログラムに与える権限（ロール）も、ここで管理します。必要最小限の権限だけを与えることが、セキュリティの基本です。",
+    "analogy": "会社の「社員証と入館権限の管理」のようなものです。部署によって入れる部屋が違います。",
+    "example": "「新しいメンバーには、閲覧だけできるIAMユーザーを発行します」",
+    "related": [
+      "account",
+      "two-factor-auth",
+      "sso",
+      "aws"
+    ],
+    "level": 3,
+    "aliases": [
+      "あいえーえむ",
+      "IAMロール",
+      "IAMユーザー",
+      "IAMポリシー"
+    ]
+  },
+  {
+    "id": "cloudwatch",
+    "term": "CloudWatch",
+    "reading": "くらうどうぉっち",
+    "fullName": "Amazon CloudWatch",
+    "category": "クラウド",
+    "summary": "AWS上のシステムの状態やログを監視するサービスです。",
+    "description": "サーバーの負荷やエラーの件数などを、グラフで確認できます。決めた値を超えたらメールなどで知らせる「アラーム」を設定できます。アプリケーションのログを集めて、検索することもできます。",
+    "analogy": "システムの健康状態を見守る「監視カメラと健康診断の機械」のようなものです。",
+    "example": "「CPU使用率が80%を超えたら、CloudWatchのアラームで通知が来ます」",
+    "related": [
+      "log",
+      "error-log",
+      "aws",
+      "auto-scaling"
+    ],
+    "level": 3,
+    "aliases": [
+      "くらうどわっち",
+      "CloudWatch Logs"
+    ]
+  },
+  {
+    "id": "cloudfront",
+    "term": "CloudFront",
+    "reading": "くらうどふろんと",
+    "fullName": "Amazon CloudFront",
+    "category": "クラウド",
+    "summary": "AWSのCDNサービスで、Webサイトの表示を世界中で速くします。",
+    "description": "画像や動画などのデータを、世界各地にある配信拠点に一時保存しておきます。利用者は近くの拠点からデータを受け取れるため、表示が速くなります。アクセスが集中したときに、元のサーバーの負担を減らす効果もあります。",
+    "analogy": "本店の商品を全国の「コンビニ」に置いておき、近くの店で受け取れるようにする仕組みです。",
+    "example": "「動画の配信はCloudFrontを経由させて、表示を速くしています」",
+    "related": [
+      "cdn",
+      "s3",
+      "cache",
+      "latency"
+    ],
+    "level": 3,
+    "aliases": []
+  },
+  {
+    "id": "route53",
+    "term": "Route 53",
+    "reading": "るーとごじゅうさん",
+    "fullName": "Amazon Route 53",
+    "category": "クラウド",
+    "summary": "AWSのDNSサービスで、ドメイン名とサーバーを結びつけます。",
+    "description": "「example.com」のようなドメイン名を、実際のサーバーの場所（IPアドレス）に変換する役割を担います。ドメイン名の取得や、サーバーが止まったときに別のサーバーへ案内を切り替える機能もあります。名前の「53」は、DNSが使う通信の番号に由来しています。",
+    "analogy": "住所録を見て、「会社名」から「実際の住所」を教えてくれる「案内係」です。",
+    "example": "「新しいサイトのドメインは、Route 53で設定します」",
+    "related": [
+      "dns",
+      "domain",
+      "ip-address",
+      "aws"
+    ],
+    "level": 3,
+    "aliases": [
+      "るーとふぃふてぃすりー",
+      "ルート53"
+    ]
+  },
+  {
+    "id": "elb",
+    "term": "ELB",
+    "reading": "いーえるびー",
+    "fullName": "Elastic Load Balancing",
+    "category": "クラウド",
+    "summary": "たくさんのアクセスを、複数のサーバーに振り分けるAWSのサービスです。",
+    "description": "アクセスを複数のサーバーに分けることで、一台に負担が集中するのを防ぎます。調子の悪いサーバーには振り分けないため、一部が止まってもサービスを続けられます。Web向けのALBや、高速処理向けのNLBなどの種類があります。",
+    "analogy": "スーパーのレジで、お客さんを空いているレジに案内する「誘導係」のようなものです。",
+    "example": "「ELBの後ろにサーバーを2台置いて、負荷を分散しています」",
+    "related": [
+      "auto-scaling",
+      "availability-zone",
+      "ec2",
+      "server"
+    ],
+    "level": 3,
+    "aliases": [
+      "ALB",
+      "NLB",
+      "ロードバランサー",
+      "ロードバランサ",
+      "負荷分散"
+    ]
+  },
+  {
+    "id": "auto-scaling",
+    "term": "Auto Scaling",
+    "reading": "おーとすけーりんぐ",
+    "fullName": "Auto Scaling",
+    "category": "クラウド",
+    "summary": "アクセスの量に合わせて、サーバーの台数を自動で増やしたり減らしたりする仕組みです。",
+    "description": "アクセスが増えたらサーバーを自動で追加し、減ったら台数を減らします。混雑時にも安定して動かせるうえ、空いているときは費用を抑えられます。クラウドならではの便利な仕組みの一つです。",
+    "analogy": "お客さんが増えたらレジを開け、減ったら閉めるお店のようなものです。",
+    "example": "「セール期間はアクセスが増えるので、Auto Scalingの上限を上げておきます」",
+    "related": [
+      "ec2",
+      "elb",
+      "cloudwatch",
+      "cloud"
+    ],
+    "level": 3,
+    "aliases": [
+      "オートスケール",
+      "スケールアウト"
+    ]
+  },
+  {
+    "id": "ecs",
+    "term": "ECS",
+    "reading": "いーしーえす",
+    "fullName": "Amazon Elastic Container Service",
+    "category": "クラウド",
+    "summary": "AWS上でコンテナを動かし、管理するためのサービスです。",
+    "description": "Dockerなどで作ったコンテナを、AWS上でまとめて動かせます。「Fargate」という方式を使えば、サーバーの管理をせずにコンテナだけを動かせます。似たサービスに、Kubernetesを使うEKSもあります。",
+    "analogy": "たくさんの「コンテナ船の積み荷」を、港で効率よく積み下ろし・管理してくれる仕組みです。",
+    "example": "「アプリはコンテナにして、ECSのFargateで動かしています」",
+    "related": [
+      "container",
+      "docker",
+      "kubernetes",
+      "aws"
+    ],
+    "level": 3,
+    "aliases": [
+      "Fargate",
+      "ファーゲート",
+      "EKS"
+    ]
+  },
+  {
+    "id": "api-gateway",
+    "term": "API Gateway",
+    "reading": "えーぴーあいげーとうぇい",
+    "fullName": "Amazon API Gateway",
+    "category": "クラウド",
+    "summary": "APIの入口を作って管理する、AWSのサービスです。",
+    "description": "外部からの呼び出しを受け付けて、裏側のプログラム（Lambdaなど）に引き渡します。アクセスの制限や、利用者の確認などもまとめて設定できます。Lambdaと組み合わせると、サーバーを持たずにAPIを提供できます。",
+    "analogy": "会社の「総合受付」のようなものです。来客を確認して、担当部署につなぎます。",
+    "example": "「スマホアプリからの通信は、API Gateway経由でLambdaに渡しています」",
+    "related": [
+      "api",
+      "lambda",
+      "serverless"
+    ],
+    "level": 3,
+    "aliases": [
+      "APIゲートウェイ"
+    ]
+  },
+  {
+    "id": "bedrock",
+    "term": "Bedrock",
+    "reading": "べっどろっく",
+    "fullName": "Amazon Bedrock",
+    "category": "クラウド",
+    "summary": "複数の会社の生成AIモデルを、AWS上で利用できるサービスです。",
+    "description": "文章の生成や要約などができるAIモデルを、自分でAIの仕組みを用意しなくても、APIを通じて使えます。いくつかの会社のモデルから、用途に合ったものを選べます。社内のデータと組み合わせたチャットボットなどを作るのにも使われます。",
+    "analogy": "いろいろなAIの専門家が所属する「派遣会社」のようなものです。目的に合う専門家を選んで仕事を頼めます。",
+    "example": "「社内向けの問い合わせチャットボットは、Bedrockを使って作ります」",
+    "related": [
+      "generative-ai",
+      "llm",
+      "chatbot",
+      "aws"
+    ],
+    "level": 3,
+    "aliases": [
+      "Amazon Bedrock"
     ]
   }
 ]
