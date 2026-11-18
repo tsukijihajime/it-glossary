@@ -35,7 +35,8 @@
     terms.forEach(function (t) {
       var hit = SEARCH_FIELDS.some(function (k) { return normalize(t[k]).indexOf(q) !== -1; });
       if (!hit) return;
-      (normalize(t.term).indexOf(q) === 0 ? prefix : rest).push(t);
+      var isPrefix = normalize(t.term).indexOf(q) === 0 || normalize(t.reading).indexOf(q) === 0;
+      (isPrefix ? prefix : rest).push(t);
     });
     return prefix.concat(rest);
   }

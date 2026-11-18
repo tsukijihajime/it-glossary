@@ -147,3 +147,11 @@ test('fuzzySearch: 違いが許容数を超えるとヒットしない、件数�
   assert.deepEqual(L.fuzzySearch(FUZZY, 'まったく無関係'), []);
   assert.ok(L.fuzzySearch(FUZZY, 'くらうと', 1).length <= 1);
 });
+
+test('searchTerms: 読みの前方一致も優先する', () => {
+  const T = [
+    { id: 'wan', term: 'WAN', reading: 'わん', description: '通信エラーの原因になることもあります' },
+    { id: 'error', term: 'ERROR（エラー）', reading: 'えらー', description: '処理が失敗したことを表します' }
+  ];
+  assert.equal(L.searchTerms(T, 'エラー')[0].id, 'error');
+});
