@@ -829,7 +829,8 @@
       "sdk",
       "json",
       "library",
-      "backend"
+      "backend",
+      "interface"
     ],
     "level": 2
   },
@@ -1667,7 +1668,8 @@
     "related": [
       "bluetooth",
       "ssd",
-      "hdd"
+      "hdd",
+      "interface"
     ],
     "level": 1
   },
@@ -2195,7 +2197,8 @@
       "ux",
       "frontend",
       "faq",
-      "iec-62366"
+      "iec-62366",
+      "interface"
     ],
     "level": 1
   },
@@ -3434,5 +3437,23 @@
       "v-model"
     ],
     "level": 3
+  },
+  {
+    "id": "interface",
+    "term": "インターフェース",
+    "reading": "いんたーふぇーす",
+    "fullName": "Interface",
+    "category": "開発・プログラミング",
+    "summary": "二つのものが情報をやり取りするための「接点」や「取り決め」のことです。",
+    "description": "人とコンピューターの接点（画面やボタンなど）、機器どうしの接点（USB端子など）、ソフトどうしの接点（APIなど）を広く指します。どちらの側も同じ取り決めに従うことで、中身を知らなくても正しくつながれます。「インタフェース」「I/F」と書かれることもあります。",
+    "analogy": "コンセントとプラグのようなものです。形が決まっているので、どのメーカーの家電でも差し込めば使えます。",
+    "example": "「新しい装置とのインターフェース仕様を、来週までに決めましょう」",
+    "related": [
+      "api",
+      "ui",
+      "usb",
+      "spec"
+    ],
+    "level": 1
   }
 ]
