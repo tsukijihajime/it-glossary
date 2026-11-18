@@ -60,12 +60,23 @@
     state.all = Lib.mergeTerms(state.base, state.local);
   }
 
-  function toggleFav(id) {
+  function toggleFav(id, btn) {
     var i = state.favs.indexOf(id);
     if (i === -1) state.favs.push(id); else state.favs.splice(i, 1);
     writeJSON(FAV_KEY, state.favs);
-    render();
     if (currentId === id) renderDetail(findTerm(id));
+    if (btn && !state.favOnly) {
+      btn.textContent = isFav(id) ? '★' : '☆';
+      btn.setAttribute('aria-pressed', String(isFav(id)));
+      return;
+    }
+    var pos = state.view.findIndex(function (t) { return t.id === id; });
+    render();
+    if (btn) {
+      var favs = $('grid').querySelectorAll('.fav-btn');
+      var next = favs[Math.min(pos, favs.length - 1)];
+      (next || $('fav-only')).focus();
+    }
   }
 
   // ---------- filtering / rendering ----------
@@ -89,6 +100,7 @@
     var meta = el('span', 'card-meta');
     meta.appendChild(el('span', 'chip', t.category));
     var lv = el('span', 'level', stars(t.level));
+    lv.setAttribute('role', 'img');
     lv.setAttribute('aria-label', '難易度 ' + t.level);
     meta.appendChild(lv);
     if (t._local) meta.appendChild(el('span', 'chip local', 'ローカル'));
@@ -100,8 +112,9 @@
     var fav = el('button', 'fav-btn', isFav(t.id) ? '★' : '☆');
     fav.type = 'button';
     fav.setAttribute('aria-pressed', String(isFav(t.id)));
-    fav.setAttribute('aria-label', t.term + ' をお気に入り' + (isFav(t.id) ? 'から外す' : 'に追加'));
-    fav.addEventListener('click', function () { toggleFav(t.id); });
+    fav.setAttribute('aria-label', 'お気に入り');
+    fav.title = t.term + ' をお気に入りに追加/解除';
+    fav.addEventListener('click', function () { toggleFav(t.id, fav); });
     li.appendChild(fav);
     return li;
   }
@@ -130,9 +143,16 @@
     b.onclick = function () { openDetail(t.id); };
   }
 
+  function syncPressed(box, isOn) {
+    Array.prototype.forEach.call(box.children, function (b) {
+      b.setAttribute('aria-pressed', String(isOn(b.getAttribute('data-key'))));
+    });
+  }
+
   function pressedButton(label, pressed, onClick) {
     var b = el('button', null, label);
     b.type = 'button';
+    b.setAttribute('data-key', label);
     b.setAttribute('aria-pressed', String(pressed));
     b.addEventListener('click', onClick);
     return b;
@@ -140,7 +160,7 @@
 
   function renderTabs() {
     var box = $('tabs');
-    box.textContent = '';
+    if (box.children.length) { syncPressed(box, function (k) { return k === state.category; }); return; }
     ['すべて'].concat(CATEGORIES).forEach(function (c) {
       box.appendChild(pressedButton(c, state.category === c, function () {
         state.category = c; renderTabs(); render();
@@ -150,7 +170,7 @@
 
   function renderLevels() {
     var box = $('levels');
-    box.textContent = '';
+    if (box.children.length) { syncPressed(box, function (k) { return state.levels.indexOf(Number(k.slice(1))) !== -1; }); return; }
     [1, 2, 3].forEach(function (n) {
       box.appendChild(pressedButton('★' + n, state.levels.indexOf(n) !== -1, function () {
         var i = state.levels.indexOf(n);
@@ -162,7 +182,7 @@
 
   function renderIndex() {
     var box = $('index-bar');
-    box.textContent = '';
+    if (box.children.length) { syncPressed(box, function (k) { return k === state.initial; }); return; }
     INDEX_KEYS.forEach(function (k) {
       box.appendChild(pressedButton(k, state.initial === k, function () {
         state.initial = state.initial === k ? '' : k;
@@ -182,6 +202,8 @@
     $('d-desc').textContent = t.description;
     $('d-analogy').textContent = t.analogy;
     $('d-example').textContent = t.example;
+    $('d-analogy-wrap').hidden = !t.analogy;
+    $('d-example-wrap').hidden = !t.example;
     var rel = $('d-related');
     rel.textContent = '';
     (t.related || []).forEach(function (id) {
@@ -282,7 +304,8 @@
         recompute();
         render();
       }
-      toast(res.valid.length + '件取り込みました（' + res.skipped + '件スキップ）', !res.valid.length && res.skipped > 0);
+      if (res.valid.length) toast(res.valid.length + '件取り込みました（' + res.skipped + '件スキップ）');
+      else toast('取り込める用語がありませんでした（' + res.skipped + '件スキップ）', true);
     };
     reader.readAsText(file, 'utf-8');
   }
