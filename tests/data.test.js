@@ -1,0 +1,39 @@
+const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
+const { validateTerms } = require('../lib.js');
+
+const CATEGORIES = ['ネットワーク', 'セキュリティ', 'クラウド', '開発・プログラミング', 'データ・AI', 'ハードウェア・組込み', 'プロジェクト・業務', 'よく聞く略語'];
+const raw = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'terms.json'), 'utf8'));
+
+test('全件 validateTerms を通過する', () => {
+  const { valid, skipped } = validateTerms(raw);
+  assert.strictEqual(skipped, 0);
+  assert.strictEqual(valid.length, raw.length);
+});
+test('id が重複しない', () => {
+  const ids = raw.map(t => t.id);
+  assert.strictEqual(new Set(ids).size, ids.length);
+});
+test('id は小文字 ASCII の kebab-case', () => {
+  raw.forEach(t => assert.match(t.id, /^[a-z0-9]+(-[a-z0-9]+)*$/, t.id));
+});
+test('category が 8 種のいずれか', () => {
+  raw.forEach(t => assert.ok(CATEGORIES.includes(t.category), t.id + ': ' + t.category));
+});
+test('related の id がすべて存在し自己参照しない', () => {
+  const ids = new Set(raw.map(t => t.id));
+  raw.forEach(t => t.related.forEach(r => {
+    assert.ok(ids.has(r), t.id + ' -> ' + r);
+    assert.notStrictEqual(r, t.id);
+  }));
+});
+test('件数が 100 以上', () => { assert.ok(raw.length >= 100); });
+test('各分野 10 件以上', () => {
+  CATEGORIES.forEach(c => assert.ok(raw.filter(t => t.category === c).length >= 10, c));
+});
+test('必須項目が空でない', () => {
+  raw.forEach(t => ['term', 'reading', 'summary', 'description', 'analogy', 'example'].forEach(k =>
+    assert.ok(t[k] && t[k].length > 0, t.id + '.' + k)));
+});

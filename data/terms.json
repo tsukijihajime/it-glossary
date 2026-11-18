@@ -1,0 +1,2299 @@
+[
+  {
+    "id": "ip-address",
+    "term": "IPアドレス",
+    "reading": "あいぴーあどれす",
+    "fullName": "Internet Protocol Address",
+    "category": "ネットワーク",
+    "summary": "ネットワーク上の機器を見分けるための番号です。",
+    "description": "パソコンやスマートフォンなど、ネットワークにつながる機器に割り当てられる識別番号です。「192.168.1.10」のように数字をドットで区切って表します。この番号があるおかげで、データを正しい相手に届けられます。",
+    "analogy": "家やマンションの「住所」にあたります。住所があるから郵便が届くように、IPアドレスがあるからデータが届きます。",
+    "example": "「社内のプリンターのIPアドレスを教えてください」",
+    "related": [
+      "dns",
+      "router",
+      "dhcp",
+      "mac-address"
+    ],
+    "level": 1
+  },
+  {
+    "id": "dns",
+    "term": "DNS",
+    "reading": "でぃーえぬえす",
+    "fullName": "Domain Name System",
+    "category": "ネットワーク",
+    "summary": "ドメイン名をIPアドレスに変換する仕組みです。",
+    "description": "人間が覚えやすい「example.com」のような名前を、機械が使う数字のIPアドレスに変換します。ウェブサイトを開くたびに、裏側で自動的に使われています。DNSが止まると、サイトが開けなくなることがあります。",
+    "analogy": "電話帳のようなものです。名前から電話番号を調べるのと同じ役割を果たします。",
+    "example": "「DNSの設定を変えたので、反映まで少し待ってください」",
+    "related": [
+      "ip-address",
+      "domain",
+      "https"
+    ],
+    "level": 2
+  },
+  {
+    "id": "router",
+    "term": "ルーター",
+    "reading": "るーたー",
+    "fullName": "",
+    "category": "ネットワーク",
+    "summary": "ネットワークどうしをつなぎ、データの通り道を決める機器です。",
+    "description": "家庭や会社のネットワークとインターネットの間に置かれ、データを正しい方向へ送り出します。Wi-Fiの電波を出す機能を一緒に持つ製品が多くあります。",
+    "analogy": "交差点の交通整理をする人のように、データがどの道へ進むかを案内します。",
+    "example": "「ルーターを再起動したら、ネットがつながりました」",
+    "related": [
+      "ip-address",
+      "wifi",
+      "lan",
+      "dhcp"
+    ],
+    "level": 1
+  },
+  {
+    "id": "wifi",
+    "term": "Wi-Fi",
+    "reading": "わいふぁい",
+    "fullName": "",
+    "category": "ネットワーク",
+    "summary": "ケーブルなしで無線でネットワークにつなぐ技術です。",
+    "description": "電波を使って、パソコンやスマートフォンをルーターにつなぎます。つなぐ際は、ネットワーク名（SSID）とパスワードを入力するのが一般的です。電波の届く範囲は壁や距離に影響されます。",
+    "analogy": "水道の蛇口とホースの間を、ホースなしで水が飛んでくるようなものです。ただし遠いと勢いが弱まります。",
+    "example": "「会議室のWi-Fiが遅いので、有線にしてもらえますか」",
+    "related": [
+      "router",
+      "lan",
+      "bandwidth",
+      "bluetooth"
+    ],
+    "level": 1
+  },
+  {
+    "id": "lan",
+    "term": "LAN",
+    "reading": "らん",
+    "fullName": "Local Area Network",
+    "category": "ネットワーク",
+    "summary": "会社や家庭など、限られた範囲のネットワークです。",
+    "description": "同じ建物やフロアの中にある機器どうしをつなぐネットワークです。有線のLANケーブルでも、無線のWi-Fiでも構成できます。社内のファイル共有やプリンター利用は、主にLANの中で行われます。",
+    "analogy": "学校の校内放送のように、同じ敷地の中だけで通じる連絡網です。",
+    "example": "「LANケーブルを抜いたら、共有フォルダが見えなくなりました」",
+    "related": [
+      "wan",
+      "wifi",
+      "router"
+    ],
+    "level": 1
+  },
+  {
+    "id": "wan",
+    "term": "WAN",
+    "reading": "わん",
+    "fullName": "Wide Area Network",
+    "category": "ネットワーク",
+    "summary": "遠く離れた拠点どうしをつなぐ広い範囲のネットワークです。",
+    "description": "本社と支店のように、離れた場所にあるLAN同士を通信回線でつないだものです。インターネットもWANの一種と考えられます。",
+    "analogy": "市外局番をまたぐ長距離電話のように、遠い場所どうしをつなぐ回線です。",
+    "example": "「大阪支店とはWANで接続されています」",
+    "related": [
+      "lan",
+      "vpn",
+      "router"
+    ],
+    "level": 2
+  },
+  {
+    "id": "vpn",
+    "term": "VPN",
+    "reading": "ぶいぴーえぬ",
+    "fullName": "Virtual Private Network",
+    "category": "ネットワーク",
+    "summary": "インターネット上に作る、安全な専用通路のような仕組みです。",
+    "description": "通信の内容を暗号化し、外から見えないようにして社内ネットワークなどへつなぎます。在宅勤務や出張先から社内システムを使うときによく利用されます。",
+    "analogy": "公共の道路の中に、壁で囲まれた専用トンネルを通すようなイメージです。",
+    "example": "「在宅勤務のときはVPNにつないでから作業してください」",
+    "related": [
+      "encryption",
+      "wan",
+      "zero-trust"
+    ],
+    "level": 2
+  },
+  {
+    "id": "https",
+    "term": "HTTPS",
+    "reading": "えいちてぃーてぃーぴーえす",
+    "fullName": "HyperText Transfer Protocol Secure",
+    "category": "ネットワーク",
+    "summary": "ウェブの通信を暗号化して安全にやり取りする方式です。",
+    "description": "ウェブサイトを見るときの通信ルール「HTTP」に、暗号化を加えたものです。ブラウザのアドレス欄に鍵マークが出るサイトは、通常この方式を使っています。入力した情報が途中で盗み見されにくくなります。",
+    "analogy": "普通のはがきではなく、封筒に封をして送るようなものです。",
+    "example": "「ログイン画面がhttpsで始まっているか確認してください」",
+    "related": [
+      "ssl-tls",
+      "encryption",
+      "domain"
+    ],
+    "level": 1
+  },
+  {
+    "id": "bandwidth",
+    "term": "帯域",
+    "reading": "たいいき",
+    "fullName": "Bandwidth",
+    "category": "ネットワーク",
+    "summary": "一度に流せるデータ量の大きさを表す言葉です。",
+    "description": "通信回線が一定時間にどれだけのデータを運べるかを示します。帯域が狭いと、動画が止まったり会議の音声が途切れたりします。多くの人が同時に使うと、一人あたりの帯域は減ります。",
+    "analogy": "道路の車線数にあたります。車線が多いほど、たくさんの車が一度に通れます。",
+    "example": "「ビデオ会議が重いのは、帯域が足りないせいかもしれません」",
+    "related": [
+      "latency",
+      "wifi",
+      "cdn"
+    ],
+    "level": 2
+  },
+  {
+    "id": "latency",
+    "term": "遅延",
+    "reading": "ちえん",
+    "fullName": "Latency",
+    "category": "ネットワーク",
+    "summary": "データを送ってから届くまでにかかる時間のことです。",
+    "description": "通信の「反応の速さ」を表します。遅延が大きいと、オンライン会議で声がずれたり、操作への反応が遅れたりします。回線が速くても、遅延が大きいと快適に感じないことがあります。",
+    "analogy": "荷物を送ってから届くまでの日数に似ています。一度に運べる量とは別の話です。",
+    "example": "「海外サーバーなので、遅延が少し大きいです」",
+    "related": [
+      "bandwidth",
+      "cdn",
+      "wan"
+    ],
+    "level": 3
+  },
+  {
+    "id": "proxy",
+    "term": "プロキシ",
+    "reading": "ぷろきし",
+    "fullName": "Proxy Server",
+    "category": "ネットワーク",
+    "summary": "社内とインターネットの間に入り、通信を代わりに行うサーバーです。",
+    "description": "利用者の代わりにウェブサイトへアクセスし、結果を返します。危険なサイトへのアクセスを止めたり、通信の記録を残したりする目的で使われます。会社によっては設定が必要な場合があります。",
+    "analogy": "受付係のようなものです。来客の取り次ぎを代わりに行い、怪しい人は通しません。",
+    "example": "「社外のサイトが開けないのは、プロキシの制限かもしれません」",
+    "related": [
+      "firewall",
+      "ip-address",
+      "vpn"
+    ],
+    "level": 3
+  },
+  {
+    "id": "domain",
+    "term": "ドメイン",
+    "reading": "どめいん",
+    "fullName": "Domain Name",
+    "category": "ネットワーク",
+    "summary": "インターネット上の住所にあたる名前です。",
+    "description": "「example.co.jp」のように、ウェブサイトやメールアドレスの後半に使われる文字列です。会社や組織ごとに取得でき、世界で同じものは二つとありません。メールアドレスの「@」より右側もドメインです。",
+    "analogy": "建物の住所の「町名・番地」にあたる、組織ごとの固有の名前です。",
+    "example": "「新しいサービス用にドメインを取得しました」",
+    "related": [
+      "dns",
+      "ip-address",
+      "https"
+    ],
+    "level": 1
+  },
+  {
+    "id": "packet",
+    "term": "パケット",
+    "reading": "ぱけっと",
+    "fullName": "Packet",
+    "category": "ネットワーク",
+    "summary": "通信データを小さく分けた荷物のようなかたまりです。",
+    "description": "インターネットでは、大きなデータを小さな単位に分割して送ります。この小さな単位がパケットです。受け取った側で元の順番に組み立て直します。",
+    "analogy": "大きな荷物を小包に分けて送り、届いた先で組み立て直すイメージです。",
+    "example": "「パケットが失われると、通信が不安定になります」",
+    "related": [
+      "ip-address",
+      "bandwidth",
+      "router"
+    ],
+    "level": 3
+  },
+  {
+    "id": "dhcp",
+    "term": "DHCP",
+    "reading": "でぃーえいちしーぴー",
+    "fullName": "Dynamic Host Configuration Protocol",
+    "category": "ネットワーク",
+    "summary": "IPアドレスを自動で割り当てる仕組みです。",
+    "description": "機器をネットワークにつなぐと、空いているIPアドレスを自動で貸し出してくれます。これにより、利用者が番号を手入力する必要がなくなります。通常はルーターがこの役割を担います。",
+    "analogy": "ホテルのフロントが、空いている部屋の鍵を自動で渡してくれるようなものです。",
+    "example": "「DHCPが有効なので、つなぐだけで使えます」",
+    "related": [
+      "ip-address",
+      "router",
+      "mac-address"
+    ],
+    "level": 3
+  },
+  {
+    "id": "mac-address",
+    "term": "MACアドレス",
+    "reading": "まっくあどれす",
+    "fullName": "Media Access Control Address",
+    "category": "ネットワーク",
+    "summary": "ネットワーク機器ごとに付けられた固有の番号です。",
+    "description": "パソコンや無線機器の通信部分に、製造時に割り当てられる番号です。社内Wi-Fiで接続を許可する機器を絞るときなどに使われます。アップルのMacとは関係ありません。",
+    "analogy": "人でいえば、生まれたときから付いている名前のようなものです。住所のIPアドレスとは別です。",
+    "example": "「社内Wi-Fiを使うには、MACアドレスの登録が必要です」",
+    "related": [
+      "ip-address",
+      "dhcp",
+      "wifi"
+    ],
+    "level": 3
+  },
+  {
+    "id": "5g",
+    "term": "5G",
+    "reading": "ふぁいぶじー",
+    "fullName": "5th Generation",
+    "category": "ネットワーク",
+    "summary": "高速・大容量で遅延が小さい、第5世代の携帯電話通信です。",
+    "description": "従来の4Gより速く、多くの機器を同時につなげます。スマートフォンだけでなく、工場の機械や自動運転など、幅広い分野での活用が期待されています。",
+    "analogy": "一般道が高速道路に変わったように、通れる量と速さが大きく上がったイメージです。",
+    "example": "「5Gに対応したルーターなら、オフィス外でも快適に使えます」",
+    "related": [
+      "bandwidth",
+      "latency",
+      "iot"
+    ],
+    "level": 2
+  },
+  {
+    "id": "firewall",
+    "term": "ファイアウォール",
+    "reading": "ふぁいあうぉーる",
+    "fullName": "",
+    "category": "セキュリティ",
+    "summary": "外部からの不正な通信を防ぐ「防火壁」です。",
+    "description": "社内ネットワークとインターネットの境目などに置かれ、通してよい通信と止める通信を判断します。機器に入るソフトウェア型と、専用の機器型があります。",
+    "analogy": "建物の入口にいる警備員のように、怪しい人を通さずに見張る役目です。",
+    "example": "「ファイアウォールの設定で、その通信が止められていました」",
+    "related": [
+      "proxy",
+      "vulnerability",
+      "zero-trust"
+    ],
+    "level": 1
+  },
+  {
+    "id": "phishing",
+    "term": "フィッシング",
+    "reading": "ふぃっしんぐ",
+    "fullName": "Phishing",
+    "category": "セキュリティ",
+    "summary": "本物そっくりの偽メールや偽サイトでIDやパスワードを盗む詐欺です。",
+    "description": "銀行や通販会社を装ったメールのリンクから、偽のログイン画面へ誘導します。入力した情報が盗まれ、不正利用につながります。リンクを安易に押さず、公式のサイトから確認することが大切です。",
+    "analogy": "釣り針に本物そっくりのエサを付けて、人を釣り上げるようなものです。",
+    "example": "「怪しいメールはフィッシングかもしれないので、リンクを押さないでください」",
+    "related": [
+      "social-engineering",
+      "two-factor-auth",
+      "malware"
+    ],
+    "level": 1
+  },
+  {
+    "id": "ransomware",
+    "term": "ランサムウェア",
+    "reading": "らんさむうぇあ",
+    "fullName": "Ransomware",
+    "category": "セキュリティ",
+    "summary": "データを勝手に暗号化し、元に戻すお金を要求するウイルスです。",
+    "description": "感染するとファイルが開けなくなり、画面に身代金の要求が表示されます。支払っても元に戻る保証はありません。日頃のバックアップと、不審な添付ファイルを開かない習慣が対策になります。",
+    "analogy": "大事な書類を勝手に金庫へ閉じ込められ、鍵を返してほしければお金を払えと迫られるようなものです。",
+    "example": "「ランサムウェア対策として、バックアップを別の場所にも取っています」",
+    "related": [
+      "malware",
+      "backup",
+      "vulnerability"
+    ],
+    "level": 2
+  },
+  {
+    "id": "malware",
+    "term": "マルウェア",
+    "reading": "まるうぇあ",
+    "fullName": "Malicious Software",
+    "category": "セキュリティ",
+    "summary": "機器に害を与える悪意のあるソフトウェアの総称です。",
+    "description": "ウイルスやランサムウェア、情報を盗むスパイウェアなどをまとめた呼び方です。メールの添付ファイルや怪しいサイトからの入手などで感染します。",
+    "analogy": "家に入り込む泥棒や害虫など、悪さをするもの全般をまとめた呼び方です。",
+    "example": "「マルウェアに感染した疑いがあるので、すぐネットから切り離してください」",
+    "related": [
+      "antivirus",
+      "ransomware",
+      "phishing"
+    ],
+    "level": 1
+  },
+  {
+    "id": "antivirus",
+    "term": "ウイルス対策ソフト",
+    "reading": "ういるすたいさくそふと",
+    "fullName": "Antivirus Software",
+    "category": "セキュリティ",
+    "summary": "ウイルスなどの不正なソフトを見つけて取り除くソフトです。",
+    "description": "パソコンの中のファイルや通信を監視し、危険なものを検知すると隔離や削除をします。新しい脅威に対応するため、定義ファイルを常に最新に保つことが重要です。",
+    "analogy": "家の見回りをしてくれる警備員のようなものです。",
+    "example": "「ウイルス対策ソフトの更新が止まっていないか確認してください」",
+    "related": [
+      "malware",
+      "patch",
+      "vulnerability"
+    ],
+    "level": 1
+  },
+  {
+    "id": "two-factor-auth",
+    "term": "二要素認証",
+    "reading": "にようそにんしょう",
+    "fullName": "Two-Factor Authentication",
+    "category": "セキュリティ",
+    "summary": "パスワードに加えて、もう一つの方法で本人確認をする仕組みです。",
+    "description": "パスワードのあとに、スマートフォンに届くコードや指紋などで確認を行います。パスワードが漏れても、第三者がすぐにはログインできなくなります。",
+    "analogy": "玄関の鍵に加えて、さらに暗証番号の扉がある二重のロックのようなものです。",
+    "example": "「重要なシステムには二要素認証を必ず設定してください」",
+    "related": [
+      "password-manager",
+      "sso",
+      "phishing"
+    ],
+    "level": 1
+  },
+  {
+    "id": "ssl-tls",
+    "term": "SSL/TLS",
+    "reading": "えすえすえるてぃーえるえす",
+    "fullName": "Secure Sockets Layer / Transport Layer Security",
+    "category": "セキュリティ",
+    "summary": "インターネットの通信を暗号化する技術です。",
+    "description": "ウェブサイトとの間の通信を暗号化し、盗み見や改ざんを防ぎます。HTTPSは、この技術を使った通信のことです。サイトの運営者は証明書を取得して設定します。",
+    "analogy": "手紙を鍵付きのケースに入れて送るようなもので、途中で開けられても読めません。",
+    "example": "「サイトのSSL/TLS証明書の期限が切れそうです」",
+    "related": [
+      "https",
+      "encryption",
+      "domain"
+    ],
+    "level": 3
+  },
+  {
+    "id": "encryption",
+    "term": "暗号化",
+    "reading": "あんごうか",
+    "fullName": "Encryption",
+    "category": "セキュリティ",
+    "summary": "データを第三者に読めない形に変換して守る技術です。",
+    "description": "決まった方法で内容を別の文字列に変換し、鍵を持つ人だけが元に戻せるようにします。通信や保存データの保護に広く使われています。",
+    "analogy": "手紙を暗号文に書き換え、合言葉を知る人だけが読めるようにするのに似ています。",
+    "example": "「持ち出すノートパソコンは、ディスクを暗号化しておきます」",
+    "related": [
+      "ssl-tls",
+      "vpn",
+      "https"
+    ],
+    "level": 2
+  },
+  {
+    "id": "password-manager",
+    "term": "パスワード管理ツール",
+    "reading": "ぱすわーどかんりつーる",
+    "fullName": "Password Manager",
+    "category": "セキュリティ",
+    "summary": "たくさんのパスワードを安全に保管・入力してくれるツールです。",
+    "description": "サービスごとに異なる複雑なパスワードを作り、安全に保存します。利用者は一つの合言葉だけを覚えればよく、使い回しを避けられます。",
+    "analogy": "たくさんの鍵を、一つの頑丈な鍵束にまとめて管理するようなものです。",
+    "example": "「パスワードの使い回しをやめて、管理ツールを使いましょう」",
+    "related": [
+      "two-factor-auth",
+      "sso",
+      "phishing"
+    ],
+    "level": 2
+  },
+  {
+    "id": "sso",
+    "term": "シングルサインオン",
+    "reading": "しんぐるさいんおん",
+    "fullName": "Single Sign-On (SSO)",
+    "category": "セキュリティ",
+    "summary": "一度のログインで複数のサービスを使える仕組みです。",
+    "description": "毎回IDとパスワードを入力しなくても、一度ログインすればほかの対応サービスも使えます。利用者の手間が減り、パスワード管理の負担も軽くなります。",
+    "analogy": "遊園地のフリーパスのように、一度入場すれば各アトラクションを自由に利用できます。",
+    "example": "「シングルサインオンのおかげで、ログインが一回で済みます」",
+    "related": [
+      "two-factor-auth",
+      "password-manager",
+      "saas"
+    ],
+    "level": 2
+  },
+  {
+    "id": "zero-trust",
+    "term": "ゼロトラスト",
+    "reading": "ぜろとらすと",
+    "fullName": "Zero Trust",
+    "category": "セキュリティ",
+    "summary": "社内も社外も「信用しない」前提で、常に確認する考え方です。",
+    "description": "従来は社内ネットワークの中は安全と考えていました。ゼロトラストでは、誰がどの機器から使っているかを毎回確認し、必要な範囲だけを許可します。在宅勤務やクラウドの利用が増えた今、広まっています。",
+    "analogy": "社員証を持っていても、部屋に入るたびに確認する厳しい入退室管理のようなものです。",
+    "example": "「在宅勤務が増えたので、ゼロトラストの考え方を導入します」",
+    "related": [
+      "vpn",
+      "two-factor-auth",
+      "firewall"
+    ],
+    "level": 3
+  },
+  {
+    "id": "vulnerability",
+    "term": "脆弱性",
+    "reading": "ぜいじゃくせい",
+    "fullName": "Vulnerability",
+    "category": "セキュリティ",
+    "summary": "ソフトウェアに残っている、攻撃に悪用されかねない欠陥です。",
+    "description": "プログラムの不備により、不正アクセスなどを許してしまう弱点のことです。見つかると、開発元が修正プログラムを公開します。更新を放置すると攻撃の的になりやすくなります。",
+    "analogy": "家の鍵のかけ忘れや、壊れた窓のようなものです。",
+    "example": "「脆弱性が見つかったので、至急アップデートしてください」",
+    "related": [
+      "patch",
+      "malware",
+      "firewall"
+    ],
+    "level": 2
+  },
+  {
+    "id": "patch",
+    "term": "パッチ",
+    "reading": "ぱっち",
+    "fullName": "Patch",
+    "category": "セキュリティ",
+    "summary": "ソフトの不具合や弱点を直すための修正プログラムです。",
+    "description": "OSやアプリの欠陥を修正するために提供される小さな更新です。適用しないと、既知の弱点を狙った攻撃を受けるおそれがあります。",
+    "analogy": "服の破れ目に当てる継ぎ当てのようなものです。",
+    "example": "「今夜、セキュリティパッチを適用するので再起動をお願いします」",
+    "related": [
+      "vulnerability",
+      "antivirus",
+      "bug"
+    ],
+    "level": 2
+  },
+  {
+    "id": "ddos",
+    "term": "DDoS攻撃",
+    "reading": "でぃーでぃーおーえすこうげき",
+    "fullName": "Distributed Denial of Service",
+    "category": "セキュリティ",
+    "summary": "大量のアクセスを送りつけてサービスを止める攻撃です。",
+    "description": "たくさんの機器から同時に膨大なアクセスを送り、サーバーを処理しきれなくします。その結果、正規の利用者がサイトを使えなくなります。",
+    "analogy": "店に大勢の人が押し寄せて、本当のお客さんが入れなくなるようなものです。",
+    "example": "「DDoS攻撃を受けて、サイトがつながりにくくなりました」",
+    "related": [
+      "firewall",
+      "cdn",
+      "malware"
+    ],
+    "level": 3
+  },
+  {
+    "id": "social-engineering",
+    "term": "ソーシャルエンジニアリング",
+    "reading": "そーしゃるえんじにありんぐ",
+    "fullName": "Social Engineering",
+    "category": "セキュリティ",
+    "summary": "人の心理の隙を突いて情報を聞き出す手口です。",
+    "description": "システムの欠陥ではなく、人の油断や思い込みを利用します。上司や取引先を装った電話やメールで、パスワードや機密情報を聞き出そうとします。",
+    "analogy": "警備を破るのではなく、警備員をだまして鍵を借りるような手口です。",
+    "example": "「上司を名乗る依頼でも、ソーシャルエンジニアリングを疑って確認しましょう」",
+    "related": [
+      "phishing",
+      "two-factor-auth",
+      "password-manager"
+    ],
+    "level": 2
+  },
+  {
+    "id": "cloud",
+    "term": "クラウド",
+    "reading": "くらうど",
+    "fullName": "Cloud Computing",
+    "category": "クラウド",
+    "summary": "インターネット経由で、必要な分だけITの機能を借りる仕組みです。",
+    "description": "サーバーやソフトウェアを自社で持たず、事業者から借りて使います。使った分だけ料金を払い、必要に応じて増減できます。",
+    "analogy": "電気や水道のように、使いたいときに使った分だけ料金を払う仕組みです。",
+    "example": "「新しいシステムはクラウドで動かす予定です」",
+    "related": [
+      "saas",
+      "on-premises",
+      "data-center",
+      "hybrid-cloud"
+    ],
+    "level": 1
+  },
+  {
+    "id": "saas",
+    "term": "SaaS",
+    "reading": "さーす",
+    "fullName": "Software as a Service",
+    "category": "クラウド",
+    "summary": "ソフトをインストールせず、ネットで利用するサービスです。",
+    "description": "ブラウザやアプリからすぐ使えるサービス形態です。メールや会議システム、勤怠管理などが例です。更新や保守は提供事業者が行います。",
+    "analogy": "DVDを買う代わりに、動画配信サービスで見るようなものです。",
+    "example": "「勤怠管理はSaaSなので、導入が早いです」",
+    "related": [
+      "cloud",
+      "paas",
+      "iaas",
+      "sso"
+    ],
+    "level": 1
+  },
+  {
+    "id": "paas",
+    "term": "PaaS",
+    "reading": "ぱーす",
+    "fullName": "Platform as a Service",
+    "category": "クラウド",
+    "summary": "アプリ開発に必要な土台を借りられるサービスです。",
+    "description": "サーバーやOSの管理は事業者に任せ、開発者はアプリづくりに集中できます。",
+    "analogy": "キッチンと調理器具が揃った貸しスペースで、料理だけに集中できるようなものです。",
+    "example": "「PaaSを使えば、サーバー管理の手間が減ります」",
+    "related": [
+      "saas",
+      "iaas",
+      "cloud"
+    ],
+    "level": 3
+  },
+  {
+    "id": "iaas",
+    "term": "IaaS",
+    "reading": "いあーす",
+    "fullName": "Infrastructure as a Service",
+    "category": "クラウド",
+    "summary": "サーバーやネットワークなどの基盤を借りられるサービスです。",
+    "description": "仮想的なサーバーや保存領域を借り、OSやソフトは利用者が自由に設定します。自由度が高い分、管理の知識が必要です。",
+    "analogy": "何も置かれていない空き部屋を借りて、家具を自分で選んで置くようなものです。",
+    "example": "「IaaSで仮想サーバーを3台借りました」",
+    "related": [
+      "saas",
+      "paas",
+      "virtual-machine"
+    ],
+    "level": 3
+  },
+  {
+    "id": "aws",
+    "term": "AWS",
+    "reading": "えーだぶりゅーえす",
+    "fullName": "Amazon Web Services",
+    "category": "クラウド",
+    "summary": "Amazonが提供する、世界的に使われているクラウドサービスです。",
+    "description": "サーバーや保存領域、AIなど、多くの機能を必要に応じて利用できます。世界シェアの大きいクラウドの一つです。",
+    "analogy": "巨大な貸し倉庫兼工場で、必要な設備だけを選んで借りるようなものです。",
+    "example": "「そのシステムはAWS上で動いています」",
+    "related": [
+      "azure",
+      "gcp",
+      "cloud"
+    ],
+    "level": 2
+  },
+  {
+    "id": "azure",
+    "term": "Azure",
+    "reading": "あじゅーる",
+    "fullName": "Microsoft Azure",
+    "category": "クラウド",
+    "summary": "Microsoftが提供するクラウドサービスです。",
+    "description": "サーバーやデータベースなどを借りられます。WindowsやMicrosoft 365との相性が良く、企業で広く使われています。",
+    "analogy": "ビルのテナントのように、必要な分のスペースをMicrosoftから借りる感覚です。",
+    "example": "「社内の認証基盤はAzureを使っています」",
+    "related": [
+      "aws",
+      "gcp",
+      "cloud"
+    ],
+    "level": 2
+  },
+  {
+    "id": "gcp",
+    "term": "Google Cloud",
+    "reading": "ぐーぐるくらうど",
+    "fullName": "Google Cloud Platform (GCP)",
+    "category": "クラウド",
+    "summary": "Googleが提供するクラウドサービスです。",
+    "description": "データ分析やAIに強みがあるとされます。ウェブサイトの運営や、大量のデータ処理にも利用されます。",
+    "analogy": "Googleが自社で使う設備の一部を、貸し出してくれるようなものです。",
+    "example": "「データ分析にはGoogle Cloudを使います」",
+    "related": [
+      "aws",
+      "azure",
+      "big-data"
+    ],
+    "level": 2
+  },
+  {
+    "id": "serverless",
+    "term": "サーバーレス",
+    "reading": "さーばーれす",
+    "fullName": "Serverless",
+    "category": "クラウド",
+    "summary": "サーバーの管理を意識せずにプログラムを動かせる方式です。",
+    "description": "実際にはサーバーは存在しますが、管理は事業者が行います。処理が動いた分だけ料金がかかります。",
+    "analogy": "タクシーのように、使った分だけ払い、車の整備は気にしなくて済みます。",
+    "example": "「軽い処理はサーバーレスで動かしてコストを抑えます」",
+    "related": [
+      "cloud",
+      "paas",
+      "container"
+    ],
+    "level": 3
+  },
+  {
+    "id": "container",
+    "term": "コンテナ",
+    "reading": "こんてな",
+    "fullName": "Container",
+    "category": "クラウド",
+    "summary": "アプリと動作環境をひとまとめにして運ぶ技術です。",
+    "description": "アプリに必要な設定を一つの箱にまとめ、どの環境でも同じように動かせます。仮想マシンより軽く、起動が速いのが特徴です。",
+    "analogy": "引っ越しの荷物を箱詰めすれば、どこへ運んでも同じ状態で使えるのに似ています。",
+    "example": "「コンテナにしておけば、本番でも同じ動きになります」",
+    "related": [
+      "docker",
+      "kubernetes",
+      "virtual-machine"
+    ],
+    "level": 3
+  },
+  {
+    "id": "docker",
+    "term": "Docker",
+    "reading": "どっかー",
+    "fullName": "",
+    "category": "クラウド",
+    "summary": "コンテナを作って動かすための代表的な道具です。",
+    "description": "アプリと環境を「イメージ」としてまとめ、どこでも動かせます。開発の現場で広く使われています。",
+    "analogy": "荷物を決まった規格のコンテナ箱に詰める専用の機械のようなものです。",
+    "example": "「開発環境はDockerで統一しています」",
+    "related": [
+      "container",
+      "kubernetes",
+      "virtual-machine"
+    ],
+    "level": 3
+  },
+  {
+    "id": "kubernetes",
+    "term": "Kubernetes",
+    "reading": "くーばねてす",
+    "fullName": "",
+    "category": "クラウド",
+    "summary": "たくさんのコンテナをまとめて管理する仕組みです。",
+    "description": "コンテナの数が増えると、手作業では管理が大変です。コンテナの起動や増減、故障時の復旧を自動で行ってくれます。",
+    "analogy": "大きな港で、たくさんのコンテナ箱の積み降ろしを仕切る管制官のような存在です。",
+    "example": "「Kubernetesでアクセス増加に自動で対応しています」",
+    "related": [
+      "container",
+      "docker",
+      "cloud"
+    ],
+    "level": 3
+  },
+  {
+    "id": "virtual-machine",
+    "term": "仮想マシン",
+    "reading": "かそうましん",
+    "fullName": "Virtual Machine (VM)",
+    "category": "クラウド",
+    "summary": "一台の機械の中に作る、仮想的なコンピューターです。",
+    "description": "ソフトの力で、一台のサーバーを複数の独立したコンピューターのように分けて使えます。機材を有効活用でき、クラウドの基盤にもなっています。",
+    "analogy": "大きな家を壁で区切り、複数の部屋として貸し出すようなものです。",
+    "example": "「テスト用に仮想マシンを一台用意しました」",
+    "related": [
+      "iaas",
+      "container",
+      "server"
+    ],
+    "level": 2
+  },
+  {
+    "id": "data-center",
+    "term": "データセンター",
+    "reading": "でーたせんたー",
+    "fullName": "Data Center",
+    "category": "クラウド",
+    "summary": "サーバーなどを大量に置いて運用する専用の施設です。",
+    "description": "地震や停電に強い建物に、サーバーやネットワーク機器が並んでいます。クラウドサービスの実体は、このような施設です。",
+    "analogy": "貴重品を預ける、堅牢で見張りの厳重な巨大な貸し倉庫のようなものです。",
+    "example": "「そのサービスのデータは国内のデータセンターにあります」",
+    "related": [
+      "cloud",
+      "server",
+      "on-premises"
+    ],
+    "level": 2
+  },
+  {
+    "id": "on-premises",
+    "term": "オンプレミス",
+    "reading": "おんぷれみす",
+    "fullName": "On-Premises",
+    "category": "クラウド",
+    "summary": "自社でサーバーなどを持って運用する方式です。",
+    "description": "クラウドの反対に、自社の建物内などに機器を設置します。自由に管理できる反面、購入や保守の手間と費用がかかります。",
+    "analogy": "レンタルではなく、自宅に自分の設備を買って置くことにあたります。",
+    "example": "「基幹システムはオンプレミスで運用しています」",
+    "related": [
+      "cloud",
+      "data-center",
+      "hybrid-cloud"
+    ],
+    "level": 2
+  },
+  {
+    "id": "cdn",
+    "term": "CDN",
+    "reading": "しーでぃーえぬ",
+    "fullName": "Content Delivery Network",
+    "category": "クラウド",
+    "summary": "世界中に置いたサーバーから、データを素早く届ける仕組みです。",
+    "description": "画像や動画などを利用者に近いサーバーに置いておき、そこから配信します。表示が速くなり、アクセスの集中にも強くなります。",
+    "analogy": "全国のコンビニに商品を置いておき、近くの店で受け取れるようにするイメージです。",
+    "example": "「CDNを使って、海外からの表示も速くなりました」",
+    "related": [
+      "latency",
+      "bandwidth",
+      "ddos"
+    ],
+    "level": 3
+  },
+  {
+    "id": "hybrid-cloud",
+    "term": "ハイブリッドクラウド",
+    "reading": "はいぶりっどくらうど",
+    "fullName": "Hybrid Cloud",
+    "category": "クラウド",
+    "summary": "クラウドと自社設備を組み合わせて使う方法です。",
+    "description": "重要なデータは自社で守り、増減の大きい処理はクラウドで行うなど、良いところを使い分けます。",
+    "analogy": "自宅と貸しオフィスを使い分けて仕事をするような形です。",
+    "example": "「ハイブリッドクラウドで、機密データだけ社内に残します」",
+    "related": [
+      "cloud",
+      "on-premises",
+      "data-center"
+    ],
+    "level": 3
+  },
+  {
+    "id": "api",
+    "term": "API",
+    "reading": "えーぴーあい",
+    "fullName": "Application Programming Interface",
+    "category": "開発・プログラミング",
+    "summary": "ソフト同士が機能やデータをやり取りするための窓口です。",
+    "description": "あるソフトの機能を、別のソフトから呼び出して使うための決まりごとです。天気予報アプリが気象会社のデータを取得できるのも、APIのおかげです。",
+    "analogy": "レストランの注文窓口のようなものです。厨房の中を知らなくても、メニューを伝えれば料理が出てきます。",
+    "example": "「このサービスはAPIで他システムと連携できます」",
+    "related": [
+      "sdk",
+      "json",
+      "library",
+      "backend"
+    ],
+    "level": 2
+  },
+  {
+    "id": "git",
+    "term": "Git",
+    "reading": "ぎっと",
+    "fullName": "",
+    "category": "開発・プログラミング",
+    "summary": "プログラムなどの変更履歴を記録・管理する仕組みです。",
+    "description": "いつ、誰が、どこを変えたのかを記録し、過去の状態に戻したり、複数人で並行して作業したりできます。",
+    "analogy": "文書の「変更履歴」機能を、プロジェクト全体に広げたようなものです。",
+    "example": "「変更はGitで管理しているので、前の状態にも戻せます」",
+    "related": [
+      "github",
+      "version-control",
+      "repository"
+    ],
+    "level": 2
+  },
+  {
+    "id": "github",
+    "term": "GitHub",
+    "reading": "ぎっとはぶ",
+    "fullName": "",
+    "category": "開発・プログラミング",
+    "summary": "Gitで管理したプログラムを共有・共同開発できるウェブサービスです。",
+    "description": "世界中の開発者がコードを公開したり、チームで確認し合ったりするために使います。公開されたソフトを入手する場所としても知られています。",
+    "analogy": "みんなで書類を持ち寄って、編集や意見交換ができる共有の机のようなものです。",
+    "example": "「そのツールのソースコードはGitHubで公開されています」",
+    "related": [
+      "git",
+      "open-source",
+      "repository",
+      "source-code"
+    ],
+    "level": 2
+  },
+  {
+    "id": "open-source",
+    "term": "オープンソース",
+    "reading": "おーぷんそーす",
+    "fullName": "Open Source Software (OSS)",
+    "category": "開発・プログラミング",
+    "summary": "設計図であるソースコードが公開され、誰でも使える・改良できるソフトです。",
+    "description": "決められたライセンスの範囲で、無料または低コストで利用できます。多くの企業のシステムに、オープンソースが使われています。ただし利用条件は確認が必要です。",
+    "analogy": "レシピが公開されている料理のようなもので、誰でも作れ、アレンジもできます。",
+    "example": "「このシステムはオープンソースを使っているので、ライセンスを確認しましょう」",
+    "related": [
+      "github",
+      "source-code",
+      "library"
+    ],
+    "level": 2
+  },
+  {
+    "id": "python",
+    "term": "Python",
+    "reading": "ぱいそん",
+    "fullName": "",
+    "category": "開発・プログラミング",
+    "summary": "読みやすく書きやすい、人気の高いプログラミング言語です。",
+    "description": "文法がシンプルで、初心者にも学びやすいといわれます。データ分析やAI、業務の自動化など幅広い分野で使われています。",
+    "analogy": "日本語に近い平易な文章で指示を書ける言語、というイメージです。",
+    "example": "「データの集計にはPythonを使っています」",
+    "related": [
+      "machine-learning",
+      "library",
+      "javascript"
+    ],
+    "level": 2
+  },
+  {
+    "id": "javascript",
+    "term": "JavaScript",
+    "reading": "じゃばすくりぷと",
+    "fullName": "",
+    "category": "開発・プログラミング",
+    "summary": "ウェブページに動きをつけるためのプログラミング言語です。",
+    "description": "ボタンを押したときの反応や、画面の自動更新など、ブラウザ上の動きを担当します。現在はサーバー側の処理にも使われています。名前は似ていますが、Javaとは別の言語です。",
+    "analogy": "見た目を作る骨組みに、動く機能を足す電気配線のようなものです。",
+    "example": "「画面の動きはJavaScriptで実装されています」",
+    "related": [
+      "frontend",
+      "framework",
+      "python"
+    ],
+    "level": 2
+  },
+  {
+    "id": "framework",
+    "term": "フレームワーク",
+    "reading": "ふれーむわーく",
+    "fullName": "Framework",
+    "category": "開発・プログラミング",
+    "summary": "開発の土台となる、あらかじめ用意された枠組みです。",
+    "description": "よく使う機能や作り方の型が最初から用意されており、一から作る手間を減らせます。品質をそろえやすい利点もあります。",
+    "analogy": "家づくりで、骨組みが先に出来ているプレハブ住宅のようなものです。",
+    "example": "「フレームワークを使って、開発期間を短縮しました」",
+    "related": [
+      "library",
+      "frontend",
+      "backend"
+    ],
+    "level": 2
+  },
+  {
+    "id": "library",
+    "term": "ライブラリ",
+    "reading": "らいぶらり",
+    "fullName": "Library",
+    "category": "開発・プログラミング",
+    "summary": "よく使う機能をまとめた部品集です。",
+    "description": "ほかの人が作った便利な機能を、自分のプログラムに組み込んで使えます。毎回ゼロから作らずに済みます。",
+    "analogy": "道具箱から必要な道具だけ取り出して使うのに似ています。",
+    "example": "「PDF生成にはライブラリを使っています」",
+    "related": [
+      "framework",
+      "open-source",
+      "api"
+    ],
+    "level": 2
+  },
+  {
+    "id": "bug",
+    "term": "バグ",
+    "reading": "ばぐ",
+    "fullName": "Bug",
+    "category": "開発・プログラミング",
+    "summary": "プログラムの中にある誤りや不具合のことです。",
+    "description": "設計や書き間違いなどが原因で、思い通りに動かない状態を指します。見つけて直す作業をデバッグと呼びます。",
+    "analogy": "文章の誤字脱字のようなもので、あるとおかしな読み方になってしまいます。",
+    "example": "「ログイン時にバグが見つかったので、修正します」",
+    "related": [
+      "debug",
+      "patch",
+      "source-code"
+    ],
+    "level": 1
+  },
+  {
+    "id": "debug",
+    "term": "デバッグ",
+    "reading": "でばっぐ",
+    "fullName": "Debug",
+    "category": "開発・プログラミング",
+    "summary": "バグを見つけて取り除く作業です。",
+    "description": "動作を一つずつ確認し、原因を探って直します。地道ですが、開発の大切な工程です。",
+    "analogy": "文章の校正作業のように、誤りを探して直す作業です。",
+    "example": "「原因が分からないので、デバッグしながら調べます」",
+    "related": [
+      "bug",
+      "source-code",
+      "ide"
+    ],
+    "level": 2
+  },
+  {
+    "id": "source-code",
+    "term": "ソースコード",
+    "reading": "そーすこーど",
+    "fullName": "Source Code",
+    "category": "開発・プログラミング",
+    "summary": "プログラムの内容を人間が読める形で書いたものです。",
+    "description": "プログラミング言語で書かれた文章のようなものです。コンピューターが動かすには、これを変換する必要があります。",
+    "analogy": "料理のレシピのように、手順が文章で書かれたものです。",
+    "example": "「ソースコードを確認して、動作を調べました」",
+    "related": [
+      "compiler",
+      "repository",
+      "open-source"
+    ],
+    "level": 1
+  },
+  {
+    "id": "compiler",
+    "term": "コンパイラ",
+    "reading": "こんぱいら",
+    "fullName": "Compiler",
+    "category": "開発・プログラミング",
+    "summary": "ソースコードを、コンピューターが実行できる形に変換するソフトです。",
+    "description": "人が書いたコードを、機械が理解できる命令に翻訳します。翻訳の過程で、書き間違いの一部も見つけてくれます。",
+    "analogy": "日本語の文章を、外国語に翻訳する通訳のような役割です。",
+    "example": "「コンパイルエラーが出たので、コードを修正します」",
+    "related": [
+      "source-code",
+      "ide",
+      "debug"
+    ],
+    "level": 3
+  },
+  {
+    "id": "frontend",
+    "term": "フロントエンド",
+    "reading": "ふろんとえんど",
+    "fullName": "Front-end",
+    "category": "開発・プログラミング",
+    "summary": "利用者が直接目にする画面側の部分です。",
+    "description": "ウェブサイトのボタンや文字、画像など、見たり触ったりする部分を指します。見やすさや使いやすさに関わります。",
+    "analogy": "お店でいえば、お客さんが入る売り場にあたります。",
+    "example": "「フロントエンドの担当が、画面のデザインを調整します」",
+    "related": [
+      "backend",
+      "javascript",
+      "framework"
+    ],
+    "level": 2
+  },
+  {
+    "id": "backend",
+    "term": "バックエンド",
+    "reading": "ばっくえんど",
+    "fullName": "Back-end",
+    "category": "開発・プログラミング",
+    "summary": "利用者から見えない、裏側で処理する部分です。",
+    "description": "データの保存や計算、認証など、画面の裏で動く仕組みです。サーバーやデータベースが中心になります。",
+    "analogy": "お店でいえば、倉庫や調理場にあたります。",
+    "example": "「バックエンドで、データベースと連携しています」",
+    "related": [
+      "frontend",
+      "database",
+      "api",
+      "server"
+    ],
+    "level": 2
+  },
+  {
+    "id": "ci-cd",
+    "term": "CI/CD",
+    "reading": "しーあいしーでぃー",
+    "fullName": "Continuous Integration / Continuous Delivery",
+    "category": "開発・プログラミング",
+    "summary": "プログラムの確認と公開を自動で繰り返す仕組みです。",
+    "description": "変更のたびに、自動で動作確認を行い、問題がなければそのまま公開できます。ミスを減らし、リリースを速くできます。",
+    "analogy": "工場のベルトコンベアのように、検品から出荷までを自動で流す仕組みです。",
+    "example": "「CI/CDのおかげで、毎日安全にリリースできます」",
+    "related": [
+      "git",
+      "release",
+      "bug"
+    ],
+    "level": 3
+  },
+  {
+    "id": "version-control",
+    "term": "バージョン管理",
+    "reading": "ばーじょんかんり",
+    "fullName": "Version Control",
+    "category": "開発・プログラミング",
+    "summary": "ファイルの変更履歴を管理する仕組みです。",
+    "description": "誰がいつ何を変えたかを記録し、過去の版に戻せるようにします。複数人で同じファイルを扱うときにも役立ちます。",
+    "analogy": "「最終版_修正_本当の最終版」といった名前の乱立を防ぐ仕組みです。",
+    "example": "「バージョン管理をしているので、前の版にも戻せます」",
+    "related": [
+      "git",
+      "repository",
+      "github"
+    ],
+    "level": 2
+  },
+  {
+    "id": "repository",
+    "term": "リポジトリ",
+    "reading": "りぽじとり",
+    "fullName": "Repository",
+    "category": "開発・プログラミング",
+    "summary": "プログラムとその変更履歴を保管する場所です。",
+    "description": "Gitでは、プロジェクトのファイルと履歴をまとめて入れておく保管庫をリポジトリと呼びます。",
+    "analogy": "書類とその修正履歴を丸ごと入れておく書庫のようなものです。",
+    "example": "「新しいリポジトリを作って、コードを登録しました」",
+    "related": [
+      "git",
+      "github",
+      "version-control"
+    ],
+    "level": 2
+  },
+  {
+    "id": "ide",
+    "term": "統合開発環境",
+    "reading": "とうごうかいはつかんきょう",
+    "fullName": "Integrated Development Environment (IDE)",
+    "category": "開発・プログラミング",
+    "summary": "プログラムを書くための機能がそろった作業ソフトです。",
+    "description": "コードの入力補助や、動作確認、誤りの発見などを一つの画面で行えます。開発の作業効率が上がります。",
+    "analogy": "文書作成ソフトのように、書く・直す・確認するがまとまった道具です。",
+    "example": "「統合開発環境を使って、プログラムを作成します」",
+    "related": [
+      "source-code",
+      "compiler",
+      "debug"
+    ],
+    "level": 3
+  },
+  {
+    "id": "sdk",
+    "term": "SDK",
+    "reading": "えすでぃーけー",
+    "fullName": "Software Development Kit",
+    "category": "開発・プログラミング",
+    "summary": "アプリ開発に必要な道具一式をまとめたセットです。",
+    "description": "特定のサービスや機器向けのアプリを作るための、部品や説明書をまとめたものです。",
+    "analogy": "家具の組み立てセットのように、部品と説明書が一式そろっています。",
+    "example": "「スマホアプリ用のSDKが提供されています」",
+    "related": [
+      "api",
+      "library",
+      "framework"
+    ],
+    "level": 3
+  },
+  {
+    "id": "ai",
+    "term": "AI",
+    "reading": "えーあい",
+    "fullName": "Artificial Intelligence",
+    "category": "データ・AI",
+    "summary": "人間のように考えたり判断したりするコンピューターの技術です。",
+    "description": "大量のデータから学び、文章の理解や画像の判別、予測などを行います。身近な例には、スマートフォンの音声アシスタントなどがあります。",
+    "analogy": "経験を積んで上達していく新人のように、データから学んで賢くなる仕組みです。",
+    "example": "「問い合わせの一次対応にAIを活用しています」",
+    "related": [
+      "machine-learning",
+      "generative-ai",
+      "deep-learning"
+    ],
+    "level": 1
+  },
+  {
+    "id": "machine-learning",
+    "term": "機械学習",
+    "reading": "きかいがくしゅう",
+    "fullName": "Machine Learning",
+    "category": "データ・AI",
+    "summary": "コンピューターがデータから規則やパターンを学ぶ技術です。",
+    "description": "人が細かいルールを与えなくても、大量の例から傾向を見つけ出します。迷惑メールの判定や需要予測などに使われています。",
+    "analogy": "たくさんの問題集を解いて、コツをつかんでいく学習に似ています。",
+    "example": "「過去のデータから、機械学習で売上を予測します」",
+    "related": [
+      "ai",
+      "deep-learning",
+      "algorithm",
+      "big-data"
+    ],
+    "level": 2
+  },
+  {
+    "id": "deep-learning",
+    "term": "ディープラーニング",
+    "reading": "でぃーぷらーにんぐ",
+    "fullName": "Deep Learning",
+    "category": "データ・AI",
+    "summary": "人間の脳を参考にした仕組みで、深く学習する機械学習の一種です。",
+    "description": "多くの層からなる仕組みで、画像や音声を高い精度で認識できます。大量のデータと計算力が必要です。",
+    "analogy": "何段階にも分けて物事を見分けていく、熟練の職人の目のようなものです。",
+    "example": "「画像の検品には、ディープラーニングが使われています」",
+    "related": [
+      "machine-learning",
+      "ai",
+      "gpu"
+    ],
+    "level": 3
+  },
+  {
+    "id": "generative-ai",
+    "term": "生成AI",
+    "reading": "せいせいえーあい",
+    "fullName": "Generative AI",
+    "category": "データ・AI",
+    "summary": "文章や画像などを新しく作り出すAIです。",
+    "description": "質問や指示を入力すると、文章や画像、プログラムなどを生成します。便利な反面、誤った内容も作るため確認が必要です。",
+    "analogy": "指示を出すと何でも下書きしてくれる、優秀なアシスタントのようなものです。",
+    "example": "「会議の議事録のたたき台に、生成AIを使いました」",
+    "related": [
+      "llm",
+      "prompt",
+      "hallucination",
+      "ai"
+    ],
+    "level": 1
+  },
+  {
+    "id": "llm",
+    "term": "大規模言語モデル",
+    "reading": "だいきぼげんごもでる",
+    "fullName": "Large Language Model (LLM)",
+    "category": "データ・AI",
+    "summary": "大量の文章を学習し、人の言葉を扱えるAIの仕組みです。",
+    "description": "膨大な文章から言葉のつながりを学び、質問への回答や要約、翻訳などを行います。対話型の生成AIの中心となる技術です。",
+    "analogy": "本を大量に読み込んで、言葉の使い方に詳しくなった人のようなものです。",
+    "example": "「社内文書の検索に、LLMを活用しています」",
+    "related": [
+      "generative-ai",
+      "prompt",
+      "hallucination"
+    ],
+    "level": 3
+  },
+  {
+    "id": "prompt",
+    "term": "プロンプト",
+    "reading": "ぷろんぷと",
+    "fullName": "Prompt",
+    "category": "データ・AI",
+    "summary": "生成AIに与える指示や質問の文章です。",
+    "description": "AIへの伝え方によって、答えの質が大きく変わります。目的や条件を具体的に書くと、期待に近い答えが得られます。",
+    "analogy": "部下への仕事の依頼文のようなものです。曖昧だと、思った通りの成果が出ません。",
+    "example": "「プロンプトに条件を足したら、回答が良くなりました」",
+    "related": [
+      "generative-ai",
+      "llm",
+      "hallucination"
+    ],
+    "level": 2
+  },
+  {
+    "id": "hallucination",
+    "term": "ハルシネーション",
+    "reading": "はるしねーしょん",
+    "fullName": "Hallucination",
+    "category": "データ・AI",
+    "summary": "AIがもっともらしい嘘を答えてしまう現象です。",
+    "description": "存在しない情報や間違った内容を、自信ありげに出力することがあります。重要な内容は、必ず自分で確認する必要があります。",
+    "analogy": "知ったかぶりをして、堂々と間違ったことを話す人のようなものです。",
+    "example": "「ハルシネーションがあるので、AIの回答は裏取りしてください」",
+    "related": [
+      "generative-ai",
+      "llm",
+      "prompt"
+    ],
+    "level": 2
+  },
+  {
+    "id": "database",
+    "term": "データベース",
+    "reading": "でーたべーす",
+    "fullName": "Database",
+    "category": "データ・AI",
+    "summary": "データを整理して保存し、取り出しやすくした仕組みです。",
+    "description": "顧客や商品などの情報を、表の形で整理して蓄えます。条件を指定して素早く検索したり、更新したりできます。",
+    "analogy": "たくさんの書類を、きちんと分類して並べた巨大な書棚のようなものです。",
+    "example": "「顧客情報はデータベースで管理しています」",
+    "related": [
+      "sql",
+      "csv",
+      "backend",
+      "big-data"
+    ],
+    "level": 1
+  },
+  {
+    "id": "sql",
+    "term": "SQL",
+    "reading": "えすきゅーえる",
+    "fullName": "Structured Query Language",
+    "category": "データ・AI",
+    "summary": "データベースに指示を出すための言語です。",
+    "description": "データの検索や追加、削除などを、決められた書き方で命令します。データ分析の現場でも広く使われています。",
+    "analogy": "図書館の司書に、探したい本を依頼する際の決まった頼み方のようなものです。",
+    "example": "「SQLで、先月の売上を集計しました」",
+    "related": [
+      "database",
+      "csv",
+      "bi"
+    ],
+    "level": 3
+  },
+  {
+    "id": "big-data",
+    "term": "ビッグデータ",
+    "reading": "びっぐでーた",
+    "fullName": "Big Data",
+    "category": "データ・AI",
+    "summary": "従来の方法では扱いきれない、巨大で多様なデータです。",
+    "description": "インターネットの利用履歴やセンサーの記録など、大量のデータを指します。分析して、新しいサービスや改善に役立てます。",
+    "analogy": "大海原の水のようなもので、そこから価値ある情報をすくい上げます。",
+    "example": "「ビッグデータを分析して、需要を予測します」",
+    "related": [
+      "machine-learning",
+      "database",
+      "bi",
+      "iot"
+    ],
+    "level": 2
+  },
+  {
+    "id": "bi",
+    "term": "BI",
+    "reading": "びーあい",
+    "fullName": "Business Intelligence",
+    "category": "データ・AI",
+    "summary": "データを見やすくまとめ、経営や業務の判断に生かす仕組みです。",
+    "description": "売上や在庫などのデータをグラフや表にして、状況を把握しやすくします。専用のツールがよく使われます。",
+    "analogy": "車の運転席にあるメーターのように、会社の状態を一目で示してくれます。",
+    "example": "「BIツールで、売上の推移をグラフにします」",
+    "related": [
+      "big-data",
+      "database",
+      "kpi"
+    ],
+    "level": 2
+  },
+  {
+    "id": "csv",
+    "term": "CSV",
+    "reading": "しーえすぶい",
+    "fullName": "Comma-Separated Values",
+    "category": "データ・AI",
+    "summary": "カンマで区切って表を表現する、シンプルなデータ形式です。",
+    "description": "ExcelやデータベースからデータをCSVで書き出し、別のシステムに読み込ませる、といった場面でよく使われます。テキストなので軽いのが特徴です。",
+    "analogy": "項目を「、」で区切って並べた、シンプルなメモ書きの表のようなものです。",
+    "example": "「顧客一覧をCSVで出力してください」",
+    "related": [
+      "json",
+      "database",
+      "sql"
+    ],
+    "level": 2
+  },
+  {
+    "id": "json",
+    "term": "JSON",
+    "reading": "じぇいそん",
+    "fullName": "JavaScript Object Notation",
+    "category": "データ・AI",
+    "summary": "システム間でデータをやり取りするときによく使われる形式です。",
+    "description": "項目名と値を組にして、人間にも機械にも読みやすい形で書きます。APIの通信で広く使われています。",
+    "analogy": "項目名と答えが並んだ、アンケート用紙のようなものです。",
+    "example": "「APIの結果はJSONで返ってきます」",
+    "related": [
+      "api",
+      "csv",
+      "javascript"
+    ],
+    "level": 3
+  },
+  {
+    "id": "data-cleansing",
+    "term": "データクレンジング",
+    "reading": "でーたくれんじんぐ",
+    "fullName": "Data Cleansing",
+    "category": "データ・AI",
+    "summary": "データの誤りや重複を取り除いて整える作業です。",
+    "description": "表記の揺れや入力ミス、重複などを直し、分析に使える状態にします。分析の質を左右する大切な準備です。",
+    "analogy": "散らかった部屋を片付けて、使いやすく整える作業に似ています。",
+    "example": "「分析の前に、データクレンジングを行います」",
+    "related": [
+      "database",
+      "big-data",
+      "bi"
+    ],
+    "level": 3
+  },
+  {
+    "id": "algorithm",
+    "term": "アルゴリズム",
+    "reading": "あるごりずむ",
+    "fullName": "Algorithm",
+    "category": "データ・AI",
+    "summary": "問題を解くための手順や方法のことです。",
+    "description": "コンピューターに何かをさせるとき、どんな順序で処理するかを決めたものです。検索結果の並び順なども、アルゴリズムで決まります。",
+    "analogy": "料理のレシピのように、順番に従えば答えにたどり着く手順書です。",
+    "example": "「検索のアルゴリズムを改善して、精度を上げました」",
+    "related": [
+      "machine-learning",
+      "source-code",
+      "ai"
+    ],
+    "level": 2
+  },
+  {
+    "id": "cpu",
+    "term": "CPU",
+    "reading": "しーぴーゆー",
+    "fullName": "Central Processing Unit",
+    "category": "ハードウェア・組込み",
+    "summary": "コンピューターの頭脳にあたる、計算を行う部品です。",
+    "description": "プログラムの命令を読み取り、計算や判断を行います。性能が高いほど、処理が速くなります。",
+    "analogy": "人間の頭脳にあたる部分で、考える速さが処理速度を左右します。",
+    "example": "「CPUの使用率が高く、動作が重くなっています」",
+    "related": [
+      "ram",
+      "gpu",
+      "microcontroller"
+    ],
+    "level": 1
+  },
+  {
+    "id": "gpu",
+    "term": "GPU",
+    "reading": "じーぴーゆー",
+    "fullName": "Graphics Processing Unit",
+    "category": "ハードウェア・組込み",
+    "summary": "画像や映像の処理が得意な、計算用の部品です。",
+    "description": "もともとは画面表示のための部品ですが、同じ計算を大量に行うのが得意です。そのためAIの学習にも広く使われます。",
+    "analogy": "絵を描く専門の職人が、大勢で同時に作業するようなものです。",
+    "example": "「AIの学習には、高性能なGPUが必要です」",
+    "related": [
+      "cpu",
+      "deep-learning",
+      "ram"
+    ],
+    "level": 2
+  },
+  {
+    "id": "ram",
+    "term": "メモリ",
+    "reading": "めもり",
+    "fullName": "Random Access Memory (RAM)",
+    "category": "ハードウェア・組込み",
+    "summary": "作業中のデータを一時的に置いておく場所です。",
+    "description": "パソコンが同時に多くの作業をするとき、広いほど快適に動きます。電源を切ると、中身は消えます。",
+    "analogy": "作業机の広さにあたります。机が広いほど、たくさんの資料を広げて作業できます。",
+    "example": "「メモリが足りなくて、アプリが固まります」",
+    "related": [
+      "cpu",
+      "ssd",
+      "hdd"
+    ],
+    "level": 1
+  },
+  {
+    "id": "ssd",
+    "term": "SSD",
+    "reading": "えすえすでぃー",
+    "fullName": "Solid State Drive",
+    "category": "ハードウェア・組込み",
+    "summary": "データを保存する、高速で壊れにくい記憶装置です。",
+    "description": "半導体にデータを記録するため、動作が速く、衝撃にも強いのが特徴です。最近のパソコンの主流です。",
+    "analogy": "引き出しの中が整理されていて、すぐに書類を取り出せる収納のようなものです。",
+    "example": "「SSDに替えたら、起動が速くなりました」",
+    "related": [
+      "hdd",
+      "ram",
+      "nas"
+    ],
+    "level": 1
+  },
+  {
+    "id": "hdd",
+    "term": "HDD",
+    "reading": "えいちでぃーでぃー",
+    "fullName": "Hard Disk Drive",
+    "category": "ハードウェア・組込み",
+    "summary": "円盤にデータを記録する、従来型の記憶装置です。",
+    "description": "大容量を安く確保しやすい一方、動作は遅めで、衝撃には弱いです。バックアップ用などに今も使われます。",
+    "analogy": "大きな倉庫のように、たくさん入りますが、取り出すのに少し時間がかかります。",
+    "example": "「大容量のデータは、外付けHDDに保存しています」",
+    "related": [
+      "ssd",
+      "nas",
+      "backup"
+    ],
+    "level": 1
+  },
+  {
+    "id": "server",
+    "term": "サーバー",
+    "reading": "さーばー",
+    "fullName": "Server",
+    "category": "ハードウェア・組込み",
+    "summary": "データや機能を、ほかの機器に提供するコンピューターです。",
+    "description": "ウェブサイトの表示や、メールの送受信、ファイルの共有などを担当します。24時間動き続けるのが一般的です。",
+    "analogy": "レストランの厨房のように、注文を受けて料理（データ）を出す役割です。",
+    "example": "「サーバーが止まり、サイトが見られなくなりました」",
+    "related": [
+      "data-center",
+      "virtual-machine",
+      "nas",
+      "backend"
+    ],
+    "level": 1
+  },
+  {
+    "id": "embedded-system",
+    "term": "組込みシステム",
+    "reading": "くみこみしすてむ",
+    "fullName": "Embedded System",
+    "category": "ハードウェア・組込み",
+    "summary": "機械や家電の中に組み込まれ、特定の動きを制御するシステムです。",
+    "description": "洗濯機や自動車、医療機器などの中で動く小さなコンピューターです。決まった仕事を確実にこなすように作られます。",
+    "analogy": "機械の中に住み込んで、その機械専用に働く頭脳のようなものです。",
+    "example": "「炊飯器の制御は、組込みシステムで動いています」",
+    "related": [
+      "microcontroller",
+      "firmware",
+      "rtos",
+      "sensor"
+    ],
+    "level": 2
+  },
+  {
+    "id": "microcontroller",
+    "term": "マイコン",
+    "reading": "まいこん",
+    "fullName": "Microcontroller",
+    "category": "ハードウェア・組込み",
+    "summary": "小さな一つの部品に、頭脳と記憶を詰め込んだ制御用の部品です。",
+    "description": "家電や自動車などの機械を動かすために使われます。小さく、低消費電力で、安価なのが特徴です。",
+    "analogy": "機械の中にある、小さな頭脳です。",
+    "example": "「マイコンで、モーターの動きを制御しています」",
+    "related": [
+      "embedded-system",
+      "firmware",
+      "cpu",
+      "sensor"
+    ],
+    "level": 2
+  },
+  {
+    "id": "firmware",
+    "term": "ファームウェア",
+    "reading": "ふぁーむうぇあ",
+    "fullName": "Firmware",
+    "category": "ハードウェア・組込み",
+    "summary": "機器の中に組み込まれ、基本の動作を制御するソフトです。",
+    "description": "ルーターやプリンター、家電などの内部で、機器そのものの動きを司ります。更新により機能追加や不具合修正ができます。",
+    "analogy": "機器の「本能」のように、最初から備わっている基本的な動きを決める指示書です。",
+    "example": "「ルーターのファームウェアを最新版に更新しました」",
+    "related": [
+      "embedded-system",
+      "microcontroller",
+      "patch"
+    ],
+    "level": 2
+  },
+  {
+    "id": "rtos",
+    "term": "RTOS",
+    "reading": "あーるてぃーおーえす",
+    "fullName": "Real-Time Operating System",
+    "category": "ハードウェア・組込み",
+    "summary": "決められた時間内に、確実に処理を終えるためのOSです。",
+    "description": "自動車のブレーキ制御のように、遅れが許されない機器で使われます。パソコンのOSとは目的が異なります。",
+    "analogy": "決まった時刻に必ず電車を出発させる、時間に厳格な運行管理のようなものです。",
+    "example": "「この制御ソフトは、RTOSの上で動いています」",
+    "related": [
+      "embedded-system",
+      "microcontroller",
+      "firmware"
+    ],
+    "level": 3
+  },
+  {
+    "id": "iot",
+    "term": "IoT",
+    "reading": "あいおーてぃー",
+    "fullName": "Internet of Things",
+    "category": "ハードウェア・組込み",
+    "summary": "身の回りの機器をインターネットにつなぐ仕組みです。",
+    "description": "家電や工場の機械などにセンサーと通信機能を付け、状態を遠隔で確認したり、自動で制御したりします。",
+    "analogy": "モノがおしゃべりをして、状況を教えてくれるようになるイメージです。",
+    "example": "「IoTで、遠隔から機械の状態を監視しています」",
+    "related": [
+      "sensor",
+      "embedded-system",
+      "5g",
+      "big-data"
+    ],
+    "level": 2
+  },
+  {
+    "id": "sensor",
+    "term": "センサー",
+    "reading": "せんさー",
+    "fullName": "Sensor",
+    "category": "ハードウェア・組込み",
+    "summary": "温度や光、動きなどを検知して、データに変える部品です。",
+    "description": "人間の目や耳のように、周りの状況を数値として取り込みます。自動ドアや空調など、身近な機器に使われます。",
+    "analogy": "機械にとっての目や耳、肌のようなものです。",
+    "example": "「温度センサーで、室温を計測しています」",
+    "related": [
+      "iot",
+      "embedded-system",
+      "microcontroller"
+    ],
+    "level": 2
+  },
+  {
+    "id": "fpga",
+    "term": "FPGA",
+    "reading": "えふぴーじーえー",
+    "fullName": "Field-Programmable Gate Array",
+    "category": "ハードウェア・組込み",
+    "summary": "後から回路の中身を書き換えられる半導体です。",
+    "description": "用途に合わせて、内部の回路を自由に設計し直せます。高速な処理が必要な機器の開発などで使われます。",
+    "analogy": "レゴブロックのように、後から組み替えられる電子回路です。",
+    "example": "「試作段階では、FPGAを使って動作を確認します」",
+    "related": [
+      "microcontroller",
+      "embedded-system",
+      "cpu"
+    ],
+    "level": 3
+  },
+  {
+    "id": "raspberry-pi",
+    "term": "ラズベリーパイ",
+    "reading": "らずべりーぱい",
+    "fullName": "Raspberry Pi",
+    "category": "ハードウェア・組込み",
+    "summary": "手のひらサイズの、安価な小型コンピューターです。",
+    "description": "教育用に開発されましたが、IoTの試作や電子工作に広く使われています。",
+    "analogy": "名刺サイズの、手軽に実験できるパソコンです。",
+    "example": "「試作では、ラズベリーパイでセンサーの値を取得しました」",
+    "related": [
+      "iot",
+      "sensor",
+      "microcontroller"
+    ],
+    "level": 3
+  },
+  {
+    "id": "usb",
+    "term": "USB",
+    "reading": "ゆーえすびー",
+    "fullName": "Universal Serial Bus",
+    "category": "ハードウェア・組込み",
+    "summary": "パソコンと周辺機器をつなぐ、共通の接続規格です。",
+    "description": "マウスやキーボード、スマートフォンの充電など、幅広く使われます。形状にはいくつかの種類があります。",
+    "analogy": "機器をつなぐ、共通のコンセントのようなものです。",
+    "example": "「USBメモリでデータを受け渡します」",
+    "related": [
+      "bluetooth",
+      "ssd",
+      "hdd"
+    ],
+    "level": 1
+  },
+  {
+    "id": "bluetooth",
+    "term": "Bluetooth",
+    "reading": "ぶるーとぅーす",
+    "fullName": "",
+    "category": "ハードウェア・組込み",
+    "summary": "近い距離で機器どうしを無線でつなぐ規格です。",
+    "description": "ワイヤレスイヤホンやマウスなど、身近な機器で使われています。消費電力が少ないのが特徴です。",
+    "analogy": "近くにいる人どうしの、手軽なトランシーバーのようなものです。",
+    "example": "「ワイヤレスイヤホンをBluetoothでつなぎます」",
+    "related": [
+      "wifi",
+      "usb",
+      "iot"
+    ],
+    "level": 1
+  },
+  {
+    "id": "nas",
+    "term": "NAS",
+    "reading": "なす",
+    "fullName": "Network Attached Storage",
+    "category": "ハードウェア・組込み",
+    "summary": "ネットワークにつなぐ、共有用の記憶装置です。",
+    "description": "会社の複数人が同じファイルを使えるよう、ネットワーク上に置くファイル置き場です。",
+    "analogy": "みんなで使える、事務所の共有書庫のようなものです。",
+    "example": "「資料はNASの共有フォルダに保存しています」",
+    "related": [
+      "server",
+      "hdd",
+      "backup",
+      "lan"
+    ],
+    "level": 2
+  },
+  {
+    "id": "backup",
+    "term": "バックアップ",
+    "reading": "ばっくあっぷ",
+    "fullName": "Backup",
+    "category": "ハードウェア・組込み",
+    "summary": "万一に備えて、データの複製を別の場所に保存することです。",
+    "description": "故障や誤操作、ウイルス被害などでデータを失っても、元に戻せるようにします。複製は別の機器や場所に置くのが基本です。",
+    "analogy": "大切な書類のコピーを、別の場所に保管しておく備えです。",
+    "example": "「障害に備えて、毎晩バックアップを取っています」",
+    "related": [
+      "nas",
+      "hdd",
+      "ransomware"
+    ],
+    "level": 1
+  },
+  {
+    "id": "agile",
+    "term": "アジャイル",
+    "reading": "あじゃいる",
+    "fullName": "Agile",
+    "category": "プロジェクト・業務",
+    "summary": "短い期間で作って確認することを繰り返す開発の進め方です。",
+    "description": "最初に全てを決めず、小さな単位で作りながら、利用者の反応を見て改善していきます。変化に強いのが特徴です。",
+    "analogy": "少しずつ味見をしながら、味付けを整える料理のようなやり方です。",
+    "example": "「仕様が変わりやすいので、アジャイルで進めます」",
+    "related": [
+      "scrum",
+      "waterfall",
+      "mvp"
+    ],
+    "level": 2
+  },
+  {
+    "id": "scrum",
+    "term": "スクラム",
+    "reading": "すくらむ",
+    "fullName": "Scrum",
+    "category": "プロジェクト・業務",
+    "summary": "アジャイル開発の代表的なチーム運営の方法です。",
+    "description": "1〜4週間程度の短い期間ごとに、計画・実行・振り返りを繰り返します。毎日の短い打ち合わせで状況を共有します。",
+    "analogy": "ラグビーのスクラムのように、チーム全員で息を合わせて前に進みます。",
+    "example": "「毎朝のスクラムで、進捗を確認しています」",
+    "related": [
+      "agile",
+      "retrospective",
+      "backlog"
+    ],
+    "level": 3
+  },
+  {
+    "id": "waterfall",
+    "term": "ウォーターフォール",
+    "reading": "うぉーたーふぉーる",
+    "fullName": "Waterfall Model",
+    "category": "プロジェクト・業務",
+    "summary": "要件から設計、開発、テストへ順番に進める開発の進め方です。",
+    "description": "前の工程が終わってから次へ進むため、計画が立てやすいです。一方で、途中での変更には弱いです。",
+    "analogy": "上から下へ流れ落ちる滝のように、後戻りせず順に進みます。",
+    "example": "「大規模な案件なので、ウォーターフォールで進めます」",
+    "related": [
+      "agile",
+      "requirements-definition",
+      "uat"
+    ],
+    "level": 2
+  },
+  {
+    "id": "requirements-definition",
+    "term": "要件定義",
+    "reading": "ようけんていぎ",
+    "fullName": "Requirements Definition",
+    "category": "プロジェクト・業務",
+    "summary": "システムで何を実現したいかを整理して決める工程です。",
+    "description": "利用者の要望や必要な機能を話し合い、文書にまとめます。ここが曖昧だと、後で大きな手戻りが起こります。",
+    "analogy": "家を建てる前に、どんな間取りにしたいか施主と決める打ち合わせにあたります。",
+    "example": "「要件定義で、必要な機能を整理しました」",
+    "related": [
+      "rfp",
+      "waterfall",
+      "stakeholder"
+    ],
+    "level": 2
+  },
+  {
+    "id": "wbs",
+    "term": "WBS",
+    "reading": "だぶりゅーびーえす",
+    "fullName": "Work Breakdown Structure",
+    "category": "プロジェクト・業務",
+    "summary": "作業を細かく分けて、一覧にした図や表です。",
+    "description": "大きな仕事を小さな作業に分解し、担当や期間を割り当てやすくします。抜け漏れの防止にも役立ちます。",
+    "analogy": "大きな引っ越しを「荷造り」「運搬」「荷解き」と細かく分けた作業リストです。",
+    "example": "「WBSを作って、作業の抜け漏れがないか確認します」",
+    "related": [
+      "gantt-chart",
+      "milestone",
+      "kickoff"
+    ],
+    "level": 2
+  },
+  {
+    "id": "gantt-chart",
+    "term": "ガントチャート",
+    "reading": "がんとちゃーと",
+    "fullName": "Gantt Chart",
+    "category": "プロジェクト・業務",
+    "summary": "作業の予定と進み具合を横棒で表した図です。",
+    "description": "各作業の開始日と終了日を並べ、全体のスケジュールを一目で把握できます。",
+    "analogy": "旅行の日程表のように、いつ何をするかを横に並べた図です。",
+    "example": "「ガントチャートで、遅れている作業を確認します」",
+    "related": [
+      "wbs",
+      "milestone",
+      "kickoff"
+    ],
+    "level": 2
+  },
+  {
+    "id": "milestone",
+    "term": "マイルストーン",
+    "reading": "まいるすとーん",
+    "fullName": "Milestone",
+    "category": "プロジェクト・業務",
+    "summary": "プロジェクトの途中に置く、重要な節目です。",
+    "description": "「設計完了」「テスト開始」など、進み具合を確認するための目印です。",
+    "analogy": "道路の一里塚のように、進んだ距離を確かめる目印です。",
+    "example": "「次のマイルストーンは、来月の設計完了です」",
+    "related": [
+      "wbs",
+      "gantt-chart",
+      "release"
+    ],
+    "level": 2
+  },
+  {
+    "id": "kickoff",
+    "term": "キックオフ",
+    "reading": "きっくおふ",
+    "fullName": "Kickoff Meeting",
+    "category": "プロジェクト・業務",
+    "summary": "プロジェクトの開始時に行う、最初の会議です。",
+    "description": "関係者が集まり、目的や役割、進め方を共有します。全員の認識をそろえる大切な場です。",
+    "analogy": "サッカーの試合開始の合図のように、プロジェクトの出発点となる集まりです。",
+    "example": "「来週、新規案件のキックオフを行います」",
+    "related": [
+      "stakeholder",
+      "wbs",
+      "milestone"
+    ],
+    "level": 2
+  },
+  {
+    "id": "poc",
+    "term": "PoC",
+    "reading": "ぴーおーしー",
+    "fullName": "Proof of Concept",
+    "category": "プロジェクト・業務",
+    "summary": "アイデアが実現できるかを、小さく試して確かめることです。",
+    "description": "本格的に始める前に、技術や効果が使えるかを小規模に検証します。失敗しても損失が小さいのが利点です。",
+    "analogy": "本番の前に行う、試作品のお試し運転のようなものです。",
+    "example": "「本格導入の前に、PoCで効果を検証します」",
+    "related": [
+      "mvp",
+      "agile",
+      "requirements-definition"
+    ],
+    "level": 2
+  },
+  {
+    "id": "mvp",
+    "term": "MVP",
+    "reading": "えむぶいぴー",
+    "fullName": "Minimum Viable Product",
+    "category": "プロジェクト・業務",
+    "summary": "必要最小限の機能だけを備えた、最初の製品です。",
+    "description": "完璧を目指さず、小さく作って早く利用者に使ってもらい、反応を見ながら改善します。",
+    "analogy": "屋台で試しに売ってみて、評判を見てから店を出すようなものです。",
+    "example": "「まずMVPを出して、反応を見ましょう」",
+    "related": [
+      "poc",
+      "agile",
+      "release"
+    ],
+    "level": 3
+  },
+  {
+    "id": "sla",
+    "term": "SLA",
+    "reading": "えすえるえー",
+    "fullName": "Service Level Agreement",
+    "category": "プロジェクト・業務",
+    "summary": "サービスの品質について、提供側と利用側で約束した内容です。",
+    "description": "「稼働率99.9%以上」のように、守るべき水準を数字で決めます。守れなかった場合の対応も取り決めます。",
+    "analogy": "宅配便の「翌日配達」のように、サービスの水準を約束するものです。",
+    "example": "「このサービスのSLAでは、稼働率99.9%が保証されています」",
+    "related": [
+      "maintenance",
+      "release",
+      "stakeholder"
+    ],
+    "level": 3
+  },
+  {
+    "id": "nda",
+    "term": "NDA",
+    "reading": "えぬでぃーえー",
+    "fullName": "Non-Disclosure Agreement",
+    "category": "プロジェクト・業務",
+    "summary": "取引で知った秘密を外に漏らさないと約束する契約です。",
+    "description": "共同開発や取引の前に、互いの機密情報を守ることを取り決めます。守らないと責任を問われます。",
+    "analogy": "「ここだけの話」を、正式な書面で約束するようなものです。",
+    "example": "「打ち合わせの前に、NDAを結びましょう」",
+    "related": [
+      "stakeholder",
+      "rfp",
+      "sla"
+    ],
+    "level": 2
+  },
+  {
+    "id": "uat",
+    "term": "UAT",
+    "reading": "ゆーえーてぃー",
+    "fullName": "User Acceptance Test",
+    "category": "プロジェクト・業務",
+    "summary": "利用する側が、完成したシステムを確認するテストです。",
+    "description": "開発側のテストが終わった後、実際に使う人が、要望どおりに動くか確かめます。",
+    "analogy": "新築の家の引き渡し前に、住む人が確認する内覧のようなものです。",
+    "example": "「来週からUATを始めるので、ご協力をお願いします」",
+    "related": [
+      "requirements-definition",
+      "release",
+      "waterfall"
+    ],
+    "level": 3
+  },
+  {
+    "id": "stakeholder",
+    "term": "ステークホルダー",
+    "reading": "すてーくほるだー",
+    "fullName": "Stakeholder",
+    "category": "プロジェクト・業務",
+    "summary": "プロジェクトに関わる、利害関係のある人や組織です。",
+    "description": "お客様や社内の各部門、取引先など、結果に影響を受ける、または影響を与える関係者を指します。",
+    "analogy": "イベントに関わる、主催者・出演者・来場者など、関係する全ての人です。",
+    "example": "「ステークホルダーに、進捗を報告します」",
+    "related": [
+      "kickoff",
+      "requirements-definition",
+      "nda"
+    ],
+    "level": 2
+  },
+  {
+    "id": "retrospective",
+    "term": "振り返り",
+    "reading": "ふりかえり",
+    "fullName": "Retrospective",
+    "category": "プロジェクト・業務",
+    "summary": "終わった期間の進め方を見直し、次に生かす会議です。",
+    "description": "うまくいった点や困った点を出し合い、次の改善策を決めます。スクラムなどで定期的に行います。",
+    "analogy": "試合のあとの反省会のように、次に勝つための作戦会議です。",
+    "example": "「スプリントの終わりに、振り返りを行います」",
+    "related": [
+      "scrum",
+      "agile",
+      "kickoff"
+    ],
+    "level": 2
+  },
+  {
+    "id": "backlog",
+    "term": "バックログ",
+    "reading": "ばっくろぐ",
+    "fullName": "Backlog",
+    "category": "プロジェクト・業務",
+    "summary": "これから行う作業や要望を、優先順位順に並べた一覧です。",
+    "description": "やるべきことを書き出し、重要なものから順に着手します。状況に応じて並べ替えます。",
+    "analogy": "上から順に片付けていく、やることリストのようなものです。",
+    "example": "「バックログの優先順位を、毎週見直しています」",
+    "related": [
+      "scrum",
+      "agile",
+      "milestone"
+    ],
+    "level": 3
+  },
+  {
+    "id": "release",
+    "term": "リリース",
+    "reading": "りりーす",
+    "fullName": "Release",
+    "category": "プロジェクト・業務",
+    "summary": "完成したシステムや機能を、実際に使える状態で公開することです。",
+    "description": "開発やテストを終えた成果物を、本番環境で利用者に提供します。公開の日程は事前に調整します。",
+    "analogy": "新商品を、店頭に並べて発売する日にあたります。",
+    "example": "「新機能は、来週の火曜日にリリース予定です」",
+    "related": [
+      "ci-cd",
+      "milestone",
+      "maintenance",
+      "uat"
+    ],
+    "level": 1
+  },
+  {
+    "id": "maintenance",
+    "term": "保守",
+    "reading": "ほしゅ",
+    "fullName": "Maintenance",
+    "category": "プロジェクト・業務",
+    "summary": "システムが安定して動き続けるよう、点検や修正を行う業務です。",
+    "description": "不具合の修正や、更新、利用者からの問い合わせ対応などを含みます。公開後も必要な業務です。",
+    "analogy": "車の定期点検や修理のように、長く使うための手入れです。",
+    "example": "「保守契約で、障害時の対応を依頼しています」",
+    "related": [
+      "sla",
+      "release",
+      "patch"
+    ],
+    "level": 2
+  },
+  {
+    "id": "rfp",
+    "term": "RFP",
+    "reading": "あーるえふぴー",
+    "fullName": "Request for Proposal",
+    "category": "プロジェクト・業務",
+    "summary": "システム導入などで、依頼先に提案を求める文書です。",
+    "description": "実現したい内容や条件を書いて、複数の会社に提案と見積りを依頼します。比べて依頼先を選べます。",
+    "analogy": "工事を頼むとき、希望をまとめて何社かに見積りを依頼する依頼書のようなものです。",
+    "example": "「RFPを作成して、複数社に提案を依頼します」",
+    "related": [
+      "requirements-definition",
+      "stakeholder",
+      "nda"
+    ],
+    "level": 3
+  },
+  {
+    "id": "dx",
+    "term": "DX",
+    "reading": "でぃーえっくす",
+    "fullName": "Digital Transformation",
+    "category": "よく聞く略語",
+    "summary": "デジタル技術で、仕事や会社のあり方を変えることです。",
+    "description": "単にツールを入れるだけでなく、業務の進め方やサービスを根本から見直します。競争力を高める狙いがあります。",
+    "analogy": "手書きの帳簿を電卓に替えるだけでなく、仕事の流れ自体を作り直すイメージです。",
+    "example": "「DXの一環として、紙の申請をオンラインにしました」",
+    "related": [
+      "ict",
+      "rpa",
+      "cloud",
+      "ai"
+    ],
+    "level": 1
+  },
+  {
+    "id": "ict",
+    "term": "ICT",
+    "reading": "あいしーてぃー",
+    "fullName": "Information and Communication Technology",
+    "category": "よく聞く略語",
+    "summary": "情報通信技術のことで、ITにコミュニケーションの意味を加えた言葉です。",
+    "description": "パソコンやインターネット、スマートフォンなど、情報を扱い、伝える技術を幅広く指します。",
+    "analogy": "「IT」とほぼ同じ意味で、人と人をつなぐ側面を強調した言い方です。",
+    "example": "「学校では、ICTを活用した授業が増えています」",
+    "related": [
+      "dx",
+      "iot",
+      "cloud"
+    ],
+    "level": 1
+  },
+  {
+    "id": "kpi",
+    "term": "KPI",
+    "reading": "けーぴーあい",
+    "fullName": "Key Performance Indicator",
+    "category": "よく聞く略語",
+    "summary": "目標の達成度を測るための、重要な指標です。",
+    "description": "「月間の新規契約数」「問い合わせの対応時間」など、成果を数字で追えるように決めます。",
+    "analogy": "健康診断の数値のように、状態を客観的に確認するための目印です。",
+    "example": "「今月のKPIは、新規契約数20件です」",
+    "related": [
+      "roi",
+      "bi",
+      "milestone"
+    ],
+    "level": 1
+  },
+  {
+    "id": "roi",
+    "term": "ROI",
+    "reading": "あーるおーあい",
+    "fullName": "Return on Investment",
+    "category": "よく聞く略語",
+    "summary": "投資したお金に対して、どれだけ利益が得られたかを表す指標です。",
+    "description": "新しいシステムの導入などで、かけた費用に見合う効果があるか判断するときに使います。",
+    "analogy": "投入した費用に対して、どれだけ見返りがあったかの通信簿です。",
+    "example": "「このツールは、ROIが高いので導入しましょう」",
+    "related": [
+      "kpi",
+      "dx",
+      "poc"
+    ],
+    "level": 2
+  },
+  {
+    "id": "faq",
+    "term": "FAQ",
+    "reading": "えふえーきゅー",
+    "fullName": "Frequently Asked Questions",
+    "category": "よく聞く略語",
+    "summary": "よくある質問と、その答えをまとめたものです。",
+    "description": "問い合わせが多い内容を、あらかじめ整理して公開します。利用者も対応する側も手間が減ります。",
+    "analogy": "お店の入口に貼ってある、「よくあるご質問」の掲示のようなものです。",
+    "example": "「FAQにまとめておけば、問い合わせが減ります」",
+    "related": [
+      "ux",
+      "crm",
+      "url"
+    ],
+    "level": 1
+  },
+  {
+    "id": "os",
+    "term": "OS",
+    "reading": "おーえす",
+    "fullName": "Operating System",
+    "category": "よく聞く略語",
+    "summary": "パソコンやスマートフォンを動かす、基本のソフトです。",
+    "description": "WindowsやmacOS、Android、iOSなどが代表例です。アプリは、OSの上で動きます。",
+    "analogy": "お店でいえば、店長のような存在で、全体を取り仕切っています。",
+    "example": "「OSのバージョンが古いと、アプリが動かないことがあります」",
+    "related": [
+      "patch",
+      "firmware",
+      "antivirus"
+    ],
+    "level": 1
+  },
+  {
+    "id": "url",
+    "term": "URL",
+    "reading": "ゆーあーるえる",
+    "fullName": "Uniform Resource Locator",
+    "category": "よく聞く略語",
+    "summary": "ウェブページなどの場所を示す、インターネット上の住所です。",
+    "description": "「https://」から始まる文字列で、アドレス欄に表示されます。クリックすると、その場所へ移動します。",
+    "analogy": "インターネット上の、ページの住所表示です。",
+    "example": "「資料のURLをメールで送ります」",
+    "related": [
+      "domain",
+      "https",
+      "dns"
+    ],
+    "level": 1
+  },
+  {
+    "id": "ui",
+    "term": "UI",
+    "reading": "ゆーあい",
+    "fullName": "User Interface",
+    "category": "よく聞く略語",
+    "summary": "利用者が機器やサービスを操作する、画面や仕組みのことです。",
+    "description": "ボタンの配置や文字の大きさ、色など、見た目や操作のしやすさを指します。",
+    "analogy": "自動販売機のボタンの並び方や、表示の分かりやすさにあたります。",
+    "example": "「UIを見直して、ボタンを大きくしました」",
+    "related": [
+      "ux",
+      "frontend",
+      "faq"
+    ],
+    "level": 1
+  },
+  {
+    "id": "ux",
+    "term": "UX",
+    "reading": "ゆーえっくす",
+    "fullName": "User Experience",
+    "category": "よく聞く略語",
+    "summary": "サービスを使って得られる、体験全体のことです。",
+    "description": "使いやすさだけでなく、使ったときの満足感や分かりやすさを含めた体験です。UIは、UXを構成する要素の一つです。",
+    "analogy": "お店に入って、買い物を終えて帰るまでの、心地よさ全体にあたります。",
+    "example": "「UXを改善するため、利用者の声を聞きます」",
+    "related": [
+      "ui",
+      "faq",
+      "frontend"
+    ],
+    "level": 2
+  },
+  {
+    "id": "ocr",
+    "term": "OCR",
+    "reading": "おーしーあーる",
+    "fullName": "Optical Character Recognition",
+    "category": "よく聞く略語",
+    "summary": "紙や画像の文字を、読み取ってデータにする技術です。",
+    "description": "スキャンした書類や写真の文字を認識し、編集できる文字データに変換します。帳票の入力作業の自動化などに使われます。",
+    "analogy": "紙の文字を、目で読み取って打ち込んでくれる人の代わりをします。",
+    "example": "「OCRで、請求書の内容をデータ化しています」",
+    "related": [
+      "rpa",
+      "ai",
+      "csv"
+    ],
+    "level": 2
+  },
+  {
+    "id": "qr-code",
+    "term": "QRコード",
+    "reading": "きゅーあーるこーど",
+    "fullName": "Quick Response Code",
+    "category": "よく聞く略語",
+    "summary": "白黒の四角い模様で、情報を記録した二次元コードです。",
+    "description": "スマートフォンのカメラで読み取ると、ウェブサイトの表示や決済などができます。",
+    "analogy": "たくさんの情報を、小さな四角に詰め込んだ暗号のような模様です。",
+    "example": "「QRコードを読み取って、アンケートに回答してください」",
+    "related": [
+      "url",
+      "ocr",
+      "ui"
+    ],
+    "level": 1
+  },
+  {
+    "id": "erp",
+    "term": "ERP",
+    "reading": "いーあーるぴー",
+    "fullName": "Enterprise Resource Planning",
+    "category": "よく聞く略語",
+    "summary": "会社全体の情報を、一つの仕組みでまとめて管理する考え方です。",
+    "description": "会計や販売、在庫、人事などを一体で管理し、経営に役立てます。そのためのソフトもERPと呼ばれます。",
+    "analogy": "部署ごとの帳簿を、一冊の大きな帳簿にまとめるようなものです。",
+    "example": "「会計と在庫は、ERPで一元管理しています」",
+    "related": [
+      "crm",
+      "database",
+      "dx"
+    ],
+    "level": 3
+  },
+  {
+    "id": "crm",
+    "term": "CRM",
+    "reading": "しーあーるえむ",
+    "fullName": "Customer Relationship Management",
+    "category": "よく聞く略語",
+    "summary": "顧客の情報を管理し、良い関係を築くための仕組みです。",
+    "description": "問い合わせの履歴や購入の記録などを蓄積し、顧客ごとに適切な対応をします。",
+    "analogy": "お客様の好みを覚えている、行きつけのお店の店主のような仕組みです。",
+    "example": "「顧客対応の履歴は、CRMに登録しています」",
+    "related": [
+      "erp",
+      "database",
+      "faq"
+    ],
+    "level": 2
+  },
+  {
+    "id": "rpa",
+    "term": "RPA",
+    "reading": "あーるぴーえー",
+    "fullName": "Robotic Process Automation",
+    "category": "よく聞く略語",
+    "summary": "パソコン上の定型作業を、ソフトに自動で代行させる仕組みです。",
+    "description": "データの転記や、決まった操作の繰り返しを、ロボット（ソフト）が人の代わりに行います。ミスが減り、時間が節約できます。",
+    "analogy": "毎日同じ作業をこなしてくれる、疲れない事務アシスタントのようなものです。",
+    "example": "「毎月の転記作業は、RPAで自動化しました」",
+    "related": [
+      "dx",
+      "ocr",
+      "ai"
+    ],
+    "level": 2
+  },
+  {
+    "id": "byod",
+    "term": "BYOD",
+    "reading": "びーよーでぃー",
+    "fullName": "Bring Your Own Device",
+    "category": "よく聞く略語",
+    "summary": "社員が個人の端末を、仕事に使うことです。",
+    "description": "私物のスマートフォンやパソコンで、業務を行います。便利な反面、情報漏えいを防ぐ対策が必要です。",
+    "analogy": "マイ箸を持ち込むように、自分の道具を仕事に使うことです。",
+    "example": "「BYODを認める場合は、セキュリティルールが必要です」",
+    "related": [
+      "vpn",
+      "two-factor-auth",
+      "sso"
+    ],
+    "level": 2
+  },
+  {
+    "id": "bcp",
+    "term": "BCP",
+    "reading": "びーしーぴー",
+    "fullName": "Business Continuity Plan",
+    "category": "よく聞く略語",
+    "summary": "災害や障害のときでも、事業を続けるための計画です。",
+    "description": "地震やシステム障害が起きても、重要な業務を止めない、または早く復旧させる備えを決めておきます。",
+    "analogy": "非常用の備蓄や避難計画のように、万一に備えた準備です。",
+    "example": "「BCPとして、データのバックアップ体制を整えます」",
+    "related": [
+      "backup",
+      "data-center",
+      "sla"
+    ],
+    "level": 2
+  }
+]
