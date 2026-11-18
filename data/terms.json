@@ -306,7 +306,8 @@
     "related": [
       "social-engineering",
       "two-factor-auth",
-      "malware"
+      "malware",
+      "spam-mail"
     ],
     "level": 1
   },
@@ -374,7 +375,8 @@
     "related": [
       "password-manager",
       "sso",
-      "phishing"
+      "phishing",
+      "login"
     ],
     "level": 1
   },
@@ -444,7 +446,8 @@
       "two-factor-auth",
       "password-manager",
       "saas",
-      "byod"
+      "byod",
+      "account"
     ],
     "level": 2
   },
@@ -495,7 +498,8 @@
     "related": [
       "vulnerability",
       "antivirus",
-      "bug"
+      "bug",
+      "update"
     ],
     "level": 2
   },
@@ -547,7 +551,8 @@
       "saas",
       "on-premises",
       "data-center",
-      "hybrid-cloud"
+      "hybrid-cloud",
+      "cloud-storage"
     ],
     "level": 1
   },
@@ -978,7 +983,8 @@
     "related": [
       "bug",
       "source-code",
-      "ide"
+      "ide",
+      "log"
     ],
     "level": 2
   },
@@ -1064,7 +1070,8 @@
     "related": [
       "git",
       "release",
-      "bug"
+      "bug",
+      "devops"
     ],
     "level": 3
   },
@@ -1202,7 +1209,8 @@
       "llm",
       "prompt",
       "hallucination",
-      "ai"
+      "ai",
+      "chatbot"
     ],
     "level": 1
   },
@@ -1219,7 +1227,8 @@
     "related": [
       "generative-ai",
       "prompt",
-      "hallucination"
+      "hallucination",
+      "ai-agent"
     ],
     "level": 3
   },
@@ -1460,7 +1469,8 @@
     "related": [
       "hdd",
       "ram",
-      "nas"
+      "nas",
+      "storage"
     ],
     "level": 1
   },
@@ -1477,7 +1487,8 @@
     "related": [
       "ssd",
       "nas",
-      "backup"
+      "backup",
+      "storage"
     ],
     "level": 1
   },
@@ -1775,7 +1786,8 @@
     "related": [
       "rfp",
       "waterfall",
-      "stakeholder"
+      "stakeholder",
+      "se"
     ],
     "level": 2
   },
@@ -1928,7 +1940,8 @@
     "related": [
       "requirements-definition",
       "release",
-      "waterfall"
+      "waterfall",
+      "spec"
     ],
     "level": 3
   },
@@ -2066,7 +2079,8 @@
     "related": [
       "dx",
       "iot",
-      "cloud"
+      "cloud",
+      "it"
     ],
     "level": 1
   },
@@ -2152,7 +2166,8 @@
       "domain",
       "https",
       "dns",
-      "qr-code"
+      "qr-code",
+      "browser"
     ],
     "level": 1
   },
@@ -2272,7 +2287,8 @@
     "related": [
       "dx",
       "ocr",
-      "ai"
+      "ai",
+      "ai-agent"
     ],
     "level": 2
   },
@@ -2307,6 +2323,304 @@
       "backup",
       "data-center",
       "sla"
+    ],
+    "level": 2
+  },
+  {
+    "id": "it",
+    "term": "IT",
+    "reading": "あいてぃー",
+    "fullName": "Information Technology",
+    "category": "よく聞く略語",
+    "summary": "コンピューターやネットワークを使って情報を扱う技術の総称です。",
+    "description": "パソコン、インターネット、スマートフォン、業務システムなど、情報を処理したりやり取りしたりする技術全般を指します。日本語では「情報技術」と訳されます。会社では、社内のパソコンやシステムを管理する部門を「IT部門」と呼ぶこともあります。",
+    "analogy": "「乗り物」という言葉が車や電車や飛行機をまとめて指すように、ITも情報を扱う道具や仕組みをまとめて指す言葉です。",
+    "example": "「業務のIT化を進めて、紙の書類を減らしましょう」",
+    "related": [
+      "ict",
+      "dx",
+      "os"
+    ],
+    "level": 1
+  },
+  {
+    "id": "se",
+    "term": "SE",
+    "reading": "えすいー",
+    "fullName": "System Engineer（システムエンジニア）",
+    "category": "よく聞く略語",
+    "summary": "システムの設計や開発のまとめ役を担う技術者です。",
+    "description": "お客様の要望を聞き取り、どんなシステムを作るかを考えて設計書にまとめる仕事が中心です。プログラムを書くプログラマーと協力しながら、開発全体の進み具合や品質にも気を配ります。会社によっては、プログラミングまで担当する人をSEと呼ぶ場合もあります。",
+    "analogy": "家づくりでいう「設計士」にあたります。施主の希望を聞いて図面を引き、大工さんと協力して家を完成させます。",
+    "example": "「この案件の要件は、担当SEに確認してから回答します」",
+    "related": [
+      "requirements-definition",
+      "spec",
+      "stakeholder"
+    ],
+    "level": 1
+  },
+  {
+    "id": "browser",
+    "term": "ブラウザ",
+    "reading": "ぶらうざ",
+    "fullName": "Web Browser",
+    "category": "ネットワーク",
+    "summary": "Webサイトを見るためのソフトです。",
+    "description": "Google Chrome、Microsoft Edge、Safari などが代表的なブラウザです。URLを入力したり検索したりすると、Webページを画面に表示してくれます。最近は、会社の業務システムもブラウザから使うものが増えています。",
+    "analogy": "インターネットという広い世界をのぞくための「窓」のようなものです。",
+    "example": "「表示がおかしいときは、ブラウザを再起動してみてください」",
+    "related": [
+      "url",
+      "cookie",
+      "cache",
+      "https"
+    ],
+    "level": 1
+  },
+  {
+    "id": "cookie",
+    "term": "Cookie",
+    "reading": "くっきー",
+    "fullName": "HTTP Cookie",
+    "category": "ネットワーク",
+    "summary": "Webサイトがブラウザに保存する小さなメモ情報です。",
+    "description": "ログイン状態や買い物かごの中身などを覚えておくために使われます。次に同じサイトを開いたとき、このメモのおかげで再ログインせずに済みます。一方で、閲覧履歴の追跡に使われることもあるため、サイトによっては利用の同意を求められます。",
+    "analogy": "お店でもらう「会員カード」のようなものです。カードを見せると、お店があなたのことを思い出してくれます。",
+    "example": "「Cookieを削除したら、ログインし直しになりました」",
+    "related": [
+      "browser",
+      "login",
+      "cache"
+    ],
+    "level": 2
+  },
+  {
+    "id": "cache",
+    "term": "キャッシュ",
+    "reading": "きゃっしゅ",
+    "fullName": "Cache",
+    "category": "ネットワーク",
+    "summary": "一度使ったデータを手元に一時保存して、次から速く表示する仕組みです。",
+    "description": "Webページの画像などをブラウザが保存しておき、次に開いたときに素早く表示します。便利な反面、サイトが更新されても古い内容が表示されることがあります。その場合は「キャッシュを削除」すると最新の内容が表示されます。",
+    "analogy": "よく使う書類を、毎回倉庫に取りに行かず、机の引き出しに入れておくようなものです。",
+    "example": "「画面が古いままなので、キャッシュをクリアして再読み込みしてください」",
+    "related": [
+      "browser",
+      "cookie",
+      "cdn"
+    ],
+    "level": 2
+  },
+  {
+    "id": "upload",
+    "term": "アップロード",
+    "reading": "あっぷろーど",
+    "fullName": "Upload",
+    "category": "ネットワーク",
+    "summary": "手元のファイルをインターネット上のサーバーなどへ送ることです。",
+    "description": "写真をSNSに投稿したり、資料を共有フォルダーに置いたりする操作がアップロードです。逆に、インターネット上からファイルを手元に保存することを「ダウンロード」と呼びます。社外のサービスにアップロードしてよいかは、情報の扱いのルールを確認しましょう。",
+    "analogy": "手紙をポストに「出す」のがアップロード、郵便受けから「受け取る」のがダウンロードです。",
+    "example": "「議事録はTeamsのファイルにアップロードしておきました」",
+    "related": [
+      "cloud-storage",
+      "server",
+      "bandwidth"
+    ],
+    "level": 1
+  },
+  {
+    "id": "login",
+    "term": "ログイン",
+    "reading": "ろぐいん",
+    "fullName": "Log in / Sign in",
+    "category": "セキュリティ",
+    "summary": "IDとパスワードなどで本人確認をして、サービスを使える状態にすることです。",
+    "description": "メールや業務システムを使う前に、自分のアカウントであることを証明する手続きです。「サインイン」とも呼ばれます。使い終わったら「ログアウト」して、他の人に使われないようにします。",
+    "analogy": "会社の入口で社員証をかざして入館するのと同じです。",
+    "example": "「新しいPCでは、最初に社内アカウントでログインしてください」",
+    "related": [
+      "account",
+      "two-factor-auth",
+      "sso",
+      "password-manager"
+    ],
+    "level": 1
+  },
+  {
+    "id": "account",
+    "term": "アカウント",
+    "reading": "あかうんと",
+    "fullName": "Account",
+    "category": "セキュリティ",
+    "summary": "サービスを利用するための、利用者ごとの登録情報です。",
+    "description": "IDやパスワード、名前などの情報をまとめたもので、これがあるとサービスにログインできます。アカウントごとに使える機能や見られる情報が決められています。アカウントを他人と共有すると、誰が何をしたか分からなくなるため避けましょう。",
+    "analogy": "銀行の「口座」のようなものです。口座ごとに持ち主が決まっていて、通帳と暗証番号で本人確認をします。",
+    "example": "「新入社員のアカウントは、入社日の朝に発行されます」",
+    "related": [
+      "login",
+      "sso",
+      "password-manager"
+    ],
+    "level": 1
+  },
+  {
+    "id": "spam-mail",
+    "term": "迷惑メール",
+    "reading": "めいわくめーる",
+    "fullName": "Spam Mail",
+    "category": "セキュリティ",
+    "summary": "受け取る側が望んでいない、一方的に大量に送られてくるメールです。",
+    "description": "広告目的のものが多いですが、中には偽サイトへ誘導したり、ウイルス付きのファイルを送りつけたりする危険なものもあります。心当たりのないメールのリンクや添付ファイルは開かないようにしましょう。迷ったときは、情報システム担当に相談するのが安全です。",
+    "analogy": "郵便受けに勝手に入れられるチラシのようなものですが、中には開けると危ない「罠」が混ざっています。",
+    "example": "「迷惑メールに入っていたURLは、絶対にクリックしないでください」",
+    "related": [
+      "phishing",
+      "malware",
+      "antivirus"
+    ],
+    "level": 1
+  },
+  {
+    "id": "cloud-storage",
+    "term": "クラウドストレージ",
+    "reading": "くらうどすとれーじ",
+    "fullName": "Cloud Storage",
+    "category": "クラウド",
+    "summary": "インターネット上にファイルを保存できるサービスです。",
+    "description": "OneDrive、Google ドライブ、Dropbox などが代表例です。インターネットにつながっていれば、会社でも外出先でも同じファイルを開けます。複数人で同じファイルを共有したり、同時に編集したりすることもできます。",
+    "analogy": "自宅の押し入れではなく、どこからでも出し入れできる「貸し倉庫」に荷物を預けるようなものです。",
+    "example": "「資料はクラウドストレージに置いて、リンクで共有します」",
+    "related": [
+      "cloud",
+      "storage",
+      "upload",
+      "backup"
+    ],
+    "level": 1
+  },
+  {
+    "id": "log",
+    "term": "ログ",
+    "reading": "ろぐ",
+    "fullName": "Log",
+    "category": "開発・プログラミング",
+    "summary": "システムやソフトが動いた記録を、時系列で残したものです。",
+    "description": "いつ、誰が、どんな操作をしたか、どんなエラーが起きたかなどが記録されます。トラブルが起きたとき、原因を調べる大切な手がかりになります。セキュリティの面でも、不正な操作がなかったかを確認するために使われます。",
+    "analogy": "船の「航海日誌」や飛行機の「フライトレコーダー」のようなものです。後から何が起きたかをたどれます。",
+    "example": "「エラーの原因を調べるので、そのときのログを送ってください」",
+    "related": [
+      "debug",
+      "bug",
+      "server"
+    ],
+    "level": 2
+  },
+  {
+    "id": "devops",
+    "term": "DevOps",
+    "reading": "でぶおぷす",
+    "fullName": "Development and Operations",
+    "category": "開発・プログラミング",
+    "summary": "開発チームと運用チームが協力して、素早く安定してサービスを届ける考え方です。",
+    "description": "以前は、作る人（開発）と動かし続ける人（運用）が別々に動くことが多く、連携に時間がかかっていました。DevOpsでは両者が一体となり、自動化の仕組みも使って改善を短い間隔で繰り返します。新しい機能を早く、しかも安全に届けられるのが利点です。",
+    "analogy": "料理を作る厨房と、お客様に出すホールが別々ではなく、一つのチームとして店を回すようなものです。",
+    "example": "「DevOpsを取り入れてから、リリースの回数が月1回から週1回に増えました」",
+    "related": [
+      "ci-cd",
+      "agile",
+      "release",
+      "maintenance"
+    ],
+    "level": 3
+  },
+  {
+    "id": "update",
+    "term": "アップデート",
+    "reading": "あっぷでーと",
+    "fullName": "Update",
+    "category": "開発・プログラミング",
+    "summary": "ソフトウェアを新しい状態に更新することです。",
+    "description": "不具合の修正、新しい機能の追加、セキュリティの強化などが行われます。パソコンやスマートフォンで「更新してください」と表示されるのがこれです。特にセキュリティに関わる更新は、後回しにせず早めに適用することが大切です。",
+    "analogy": "スマートフォンのアプリが、知らないうちに新しい機能付きの新版に変わっているのと同じです。",
+    "example": "「今夜OSのアップデートがあるので、PCの電源は切らずに帰ってください」",
+    "related": [
+      "patch",
+      "release",
+      "vulnerability",
+      "os"
+    ],
+    "level": 1
+  },
+  {
+    "id": "storage",
+    "term": "ストレージ",
+    "reading": "すとれーじ",
+    "fullName": "Storage",
+    "category": "ハードウェア・組込み",
+    "summary": "データを長く保存しておくための装置や場所のことです。",
+    "description": "SSDやHDD、USBメモリ、クラウドストレージなどがストレージにあたります。電源を切っても中身が消えないのが特徴です。「容量がいっぱい」という場合は、多くはストレージの空きが足りないことを指します。",
+    "analogy": "書類をしまっておく「書庫」や「キャビネット」にあたります。一方、作業中に使うRAMは「机の上」にあたります。",
+    "example": "「ストレージの空きが少ないので、古い動画ファイルを整理してください」",
+    "related": [
+      "ssd",
+      "hdd",
+      "ram",
+      "cloud-storage",
+      "nas"
+    ],
+    "level": 1
+  },
+  {
+    "id": "spec",
+    "term": "仕様書",
+    "reading": "しようしょ",
+    "fullName": "Specification",
+    "category": "プロジェクト・業務",
+    "summary": "作るものの機能や動きを、具体的に書き表した文書です。",
+    "description": "画面にどんな項目を表示するか、ボタンを押したら何が起きるかなどを詳しく定めます。開発する人はこれを見て作り、テストする人はこれと照らし合わせて確認します。「スペック」と略して呼ばれることもあります。",
+    "analogy": "料理でいう「レシピ」にあたります。材料や手順が決まっているので、誰が作っても同じ料理になります。",
+    "example": "「その動きは仕様書に書かれていないので、お客様に確認しましょう」",
+    "related": [
+      "requirements-definition",
+      "se",
+      "uat"
+    ],
+    "level": 2
+  },
+  {
+    "id": "chatbot",
+    "term": "チャットボット",
+    "reading": "ちゃっとぼっと",
+    "fullName": "Chatbot",
+    "category": "データ・AI",
+    "summary": "文章のやり取りで、自動的に質問に答えてくれるプログラムです。",
+    "description": "Webサイトの問い合わせ窓口や、社内のヘルプデスクなどで使われています。以前は決められた質問にしか答えられないものが中心でしたが、生成AIの登場で自然な会話ができるようになりました。ただし、間違った内容を答えることもあるため、大事な判断は人が確認しましょう。",
+    "analogy": "24時間いつでも対応してくれる「自動受付係」のようなものです。",
+    "example": "「よくある質問は、まず社内のチャットボットに聞いてみてください」",
+    "related": [
+      "generative-ai",
+      "llm",
+      "faq",
+      "ai-agent"
+    ],
+    "level": 1
+  },
+  {
+    "id": "ai-agent",
+    "term": "AIエージェント",
+    "reading": "えーあいえーじぇんと",
+    "fullName": "AI Agent",
+    "category": "データ・AI",
+    "summary": "目的を伝えると、手順を自分で考えて作業を進めてくれるAIです。",
+    "description": "質問に答えるだけのAIとは違い、調べもの、資料作成、システムの操作などを、複数の手順に分けて自動で進めます。人は「何をしてほしいか」を伝え、結果を確認する役割になります。便利な一方で、どこまで任せてよいか、権限やルールを決めておくことが大切です。",
+    "analogy": "細かく指示しなくても、目的を伝えれば段取りを考えて動いてくれる「頼れるアシスタント」のようなものです。",
+    "example": "「会議の日程調整は、AIエージェントに任せてみましょう」",
+    "related": [
+      "generative-ai",
+      "llm",
+      "chatbot",
+      "rpa"
     ],
     "level": 2
   }
