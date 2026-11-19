@@ -254,7 +254,24 @@
     }
   }
 
+  // 用語検索と問題集の切り替え（#quiz なら問題集）
+  var currentMode = null;
+  function setMode() {
+    var mode = location.hash === '#quiz' ? 'quiz' : 'search';
+    if (mode === currentMode) return;
+    currentMode = mode;
+    var isQuiz = mode === 'quiz';
+    $('quiz-view').hidden = !isQuiz;
+    $('search-view').hidden = isQuiz;
+    $('search-box').hidden = isQuiz;
+    $('nav-search').setAttribute('aria-current', isQuiz ? 'false' : 'page');
+    $('nav-quiz').setAttribute('aria-current', isQuiz ? 'page' : 'false');
+    document.title = isQuiz ? '問題集 - IT用語やさしい辞典' : 'IT用語やさしい辞典';
+    window.dispatchEvent(new CustomEvent('glossary:mode', { detail: mode }));
+  }
+
   function handleHash() {
+    setMode();
     var m = /^#term=(.+)$/.exec(location.hash);
     var dlg = $('detail');
     if (m) {
@@ -411,7 +428,15 @@
     window.addEventListener('hashchange', handleHash);
   }
 
+  // 問題集（quiz.js）に渡す最小限の窓口
+  window.GlossaryApp = {
+    categories: CATEGORIES,
+    getTerms: function () { return state.all; },
+    toast: toast
+  };
+
   function init() {
+    setMode();
     state.favs = readJSON(FAV_KEY);
     var local = Lib.validateTerms(readJSON(LOCAL_KEY));
     state.local = local.valid;
@@ -427,6 +452,7 @@
       recompute();
       render();
       handleHash();
+      window.dispatchEvent(new CustomEvent('glossary:data'));
     }).catch(function () {
       showMessage('用語データを読み込めませんでした。index.html をファイルとして直接開いている場合は、Webサーバー経由（またはGitHub Pages）で開いてください。');
       recompute();

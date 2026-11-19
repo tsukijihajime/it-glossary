@@ -10,8 +10,14 @@
 <body>
 <header class="site-header">
   <div class="wrap">
-    <h1 class="site-title">IT用語やさしい辞典</h1>
-    <div class="search">
+    <div class="header-row">
+      <h1 class="site-title">IT用語やさしい辞典</h1>
+      <nav class="mode-nav" aria-label="メニュー">
+        <a href="#" id="nav-search" data-mode="search">用語検索</a>
+        <a href="#quiz" id="nav-quiz" data-mode="quiz">問題集</a>
+      </nav>
+    </div>
+    <div class="search" id="search-box">
       <label for="search" class="visually-hidden">用語を検索</label>
       <input id="search" type="search" placeholder="用語を入力（例：クラウド、API）" autocomplete="off">
     </div>
@@ -20,6 +26,60 @@
 
 <main class="wrap">
   <div id="message" class="message" role="alert" hidden></div>
+
+  <section id="quiz-view" class="quiz" aria-labelledby="quiz-title" hidden>
+    <h2 id="quiz-title" class="quiz-title" tabindex="-1">問題集</h2>
+
+    <div id="quiz-setup">
+      <p class="note">用語の説明を見て正しい用語を選ぶ問題と、用語を見て正しい説明を選ぶ問題が出ます（4択）。</p>
+      <fieldset class="quiz-field">
+        <legend>分野</legend>
+        <div id="quiz-cats" class="tabs"></div>
+      </fieldset>
+      <fieldset class="quiz-field">
+        <legend>難易度（未選択ならすべて）</legend>
+        <div id="quiz-levels" class="levels"></div>
+      </fieldset>
+      <fieldset class="quiz-field">
+        <legend>問題数</legend>
+        <div id="quiz-counts" class="levels"></div>
+      </fieldset>
+      <p id="quiz-pool" class="note" aria-live="polite"></p>
+      <button type="button" id="quiz-start" class="primary">スタート</button>
+      <p id="quiz-best" class="note"></p>
+    </div>
+
+    <div id="quiz-play" hidden>
+      <p class="quiz-progress"><span id="quiz-progress"></span><span id="quiz-score"></span></p>
+      <p id="quiz-kind" class="quiz-kind"></p>
+      <p id="quiz-prompt" class="quiz-prompt"></p>
+      <div id="quiz-choices" class="quiz-choices"></div>
+      <div id="quiz-feedback" class="quiz-feedback" aria-live="polite" hidden>
+        <p id="quiz-judge" class="quiz-judge"></p>
+        <p id="quiz-explain"></p>
+        <p id="quiz-analogy" class="note"></p>
+      </div>
+      <div class="btn-row quiz-actions">
+        <button type="button" id="quiz-next" class="primary" hidden>次へ</button>
+        <button type="button" id="quiz-quit">やめる</button>
+      </div>
+    </div>
+
+    <div id="quiz-result" hidden>
+      <p id="quiz-total" class="quiz-total"></p>
+      <div id="quiz-wrong-wrap">
+        <h3>まちがえた用語</h3>
+        <ul id="quiz-wrong" class="quiz-wrong"></ul>
+      </div>
+      <div class="btn-row">
+        <button type="button" id="quiz-retry-wrong" class="primary">まちがえた問題だけ復習</button>
+        <button type="button" id="quiz-again">もう一度</button>
+        <button type="button" id="quiz-back">条件を変える</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="search-view">
 
   <section id="today" class="today" aria-labelledby="today-label" hidden>
     <h2 id="today-label" class="today-label">今日の用語</h2>
@@ -56,6 +116,7 @@
       <button type="button" id="clear-local" class="danger">ローカル追加分をすべて削除</button>
     </div>
   </details>
+  </div>
 </main>
 
 <footer class="site-footer wrap">IT用語やさしい辞典</footer>
@@ -91,5 +152,6 @@
 
 <script src="lib.js"></script>
 <script src="app.js"></script>
+<script src="quiz.js"></script>
 </body>
 </html>

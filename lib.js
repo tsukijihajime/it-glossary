@@ -93,6 +93,60 @@
     return scored.slice(0, limit || 10).map(function (x) { return x.t; });
   }
 
+  // ---------- 問題集 ----------
+  function shuffle(list, rng) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(rng() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  // 用語名・括弧内の名前・別の呼び方を「〇〇」に伏せる（答えが問題文に出てしまうのを防ぐ）
+  function maskTermName(text, t) {
+    var names = [str(t.term), str(t.term).replace(/[（(].*?[）)]/g, '')];
+    str(t.term).replace(/[（(](.*?)[）)]/g, function (_, inner) { names.push(inner); return ''; });
+    names = names.concat(t.aliases || []).map(function (n) { return n.trim(); })
+      .filter(function (n) { return n.length >= 2; })
+      .sort(function (a, b) { return b.length - a.length; });
+    return names.reduce(function (acc, n) {
+      var src = escapeRegExp(n);
+      if (/^[\x20-\x7e]+$/.test(n)) src = '(?<![A-Za-z])' + src + '(?![A-Za-z])';
+      return acc.replace(new RegExp(src, 'gi'), '〇〇');
+    }, str(text));
+  }
+
+  // pool から最大 count 問の 4 択問題を作る。まちがいの選択肢は allTerms の同じ分野を優先する
+  function buildQuiz(pool, allTerms, count, rng) {
+    rng = rng || Math.random;
+    if (allTerms.length < 4) return [];
+    return shuffle(pool, rng).slice(0, count).map(function (answer) {
+      var type = rng() < 0.5 ? 'summary-to-term' : 'term-to-summary';
+      var textOf = type === 'summary-to-term'
+        ? function (t) { return str(t.term); }
+        : function (t) { return maskTermName(t.summary, t); };
+      var others = allTerms.filter(function (t) { return t.id !== answer.id; });
+      var same = shuffle(others.filter(function (t) { return t.category === answer.category; }), rng);
+      var rest = shuffle(others.filter(function (t) { return t.category !== answer.category; }), rng);
+      var picked = [answer], seen = {};
+      seen[textOf(answer)] = true;
+      same.concat(rest).forEach(function (t) {
+        if (picked.length < 4 && !seen[textOf(t)]) { picked.push(t); seen[textOf(t)] = true; }
+      });
+      var choices = shuffle(picked, rng).map(function (t) { return { id: t.id, text: textOf(t) }; });
+      return {
+        type: type,
+        termId: answer.id,
+        prompt: type === 'summary-to-term' ? maskTermName(answer.summary, answer) : str(answer.term),
+        choices: choices,
+        answerIndex: choices.findIndex(function (c) { return c.id === answer.id; })
+      };
+    });
+  }
+
   function csvCell(v) {
     var s = Array.isArray(v) ? v.join('|') : String(v == null ? '' : v);
     return /[",\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
@@ -216,7 +270,7 @@
   }
 
   return {
-    normalize: normalize, searchTerms: searchTerms, fuzzySearch: fuzzySearch, toCSV: toCSV, parseCSV: parseCSV,
+    normalize: normalize, searchTerms: searchTerms, fuzzySearch: fuzzySearch, buildQuiz: buildQuiz, toCSV: toCSV, parseCSV: parseCSV,
     validateTerms: validateTerms, mergeTerms: mergeTerms, termOfTheDay: termOfTheDay,
     initialOf: initialOf
   };

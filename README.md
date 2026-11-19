@@ -12,6 +12,7 @@
   - お気に入り登録
   - 関連用語へのリンク
   - 「データの入出力」パネルから、JSON / CSV のエクスポート・インポート
+  - 問題集（右上のメニューで切り替え。分野・難易度・問題数を選んで 4 択に挑戦。`#quiz` で直接開けます）
 
 ## 重要な注意（掲載ルール）
 
@@ -100,10 +101,11 @@ CSV を Excel で編集する場合の注意:
 ```
 index.html        画面
 style.css         スタイル
+quiz.js           問題集の画面
 app.js            画面の動作
 lib.js            検索・CSV/JSON 変換などのロジック
 data/terms.json   用語データ
-tests/            テスト（lib.test.js, data.test.js）
+tests/            テスト（lib.test.js, data.test.js, quiz.test.js）
 .nojekyll         GitHub Pages で Jekyll 処理を無効にする
 ```
 
