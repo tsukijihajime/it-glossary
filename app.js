@@ -237,6 +237,7 @@
       }
       return;
     }
+    if (currentId !== id) stopDetailSpeech();
     currentId = id;
     renderDetail(t);
     var dlg = $('detail');
@@ -248,26 +249,54 @@
   }
 
   function closeDetail() {
+    stopDetailSpeech();
     currentId = null;
     if (/^#term=/.test(location.hash)) {
       history.replaceState(null, '', location.pathname + location.search);
     }
   }
 
-  // 用語検索と問題集の切り替え（#quiz なら問題集）
+  // 用語検索・問題集・ストーリーの切り替え（#quiz / #story / #story=<id>）
+  var MODES = { search: '', quiz: '問題集', story: 'ストーリー' };
   var currentMode = null;
+  function modeOf(hash) {
+    if (hash === '#quiz') return 'quiz';
+    if (/^#story(=|$)/.test(hash)) return 'story';
+    return 'search';
+  }
   function setMode() {
-    var mode = location.hash === '#quiz' ? 'quiz' : 'search';
-    if (mode === currentMode) return;
-    currentMode = mode;
-    var isQuiz = mode === 'quiz';
-    $('quiz-view').hidden = !isQuiz;
-    $('search-view').hidden = isQuiz;
-    $('search-box').hidden = isQuiz;
-    $('nav-search').setAttribute('aria-current', isQuiz ? 'false' : 'page');
-    $('nav-quiz').setAttribute('aria-current', isQuiz ? 'page' : 'false');
-    document.title = isQuiz ? '問題集 - IT用語やさしい辞典' : 'IT用語やさしい辞典';
+    var mode = modeOf(location.hash);
+    if (mode !== currentMode) {
+      if (currentMode && window.GlossarySpeech) window.GlossarySpeech.stop();
+      currentMode = mode;
+      $('quiz-view').hidden = mode !== 'quiz';
+      $('story-view').hidden = mode !== 'story';
+      $('search-view').hidden = mode !== 'search';
+      $('search-box').hidden = mode !== 'search';
+      Object.keys(MODES).forEach(function (m) {
+        $('nav-' + m).setAttribute('aria-current', m === mode ? 'page' : 'false');
+      });
+      document.title = (MODES[mode] ? MODES[mode] + ' - ' : '') + 'IT用語やさしい辞典';
+    }
     window.dispatchEvent(new CustomEvent('glossary:mode', { detail: mode }));
+  }
+
+  // 詳細画面の読み上げ
+  function stopDetailSpeech() {
+    var S = window.GlossarySpeech;
+    if (S && S.getOwner() === 'detail') S.stop();
+  }
+  function speakDetail() {
+    var S = window.GlossarySpeech;
+    var t = findTerm(currentId);
+    if (!t) return;
+    if (S.getOwner() === 'detail') { S.stop(); return; }
+    var items = [t.reading || t.term, t.summary, t.description,
+      t.analogy ? '例えるなら、' + t.analogy : ''].filter(Boolean)
+      .map(function (text) { return { text: text, index: 0 }; });
+    S.speak(items, { owner: 'detail', onState: function (s) {
+      $('d-speak').textContent = s === 'idle' ? '🔊 読み上げ' : '■ 読み上げを止める';
+    } });
   }
 
   function handleHash() {
@@ -279,6 +308,7 @@
       try { id = decodeURIComponent(m[1]); } catch (e) { id = m[1]; }
       if (id !== currentId) openDetail(id, true);
     } else if (dlg.open) {
+      stopDetailSpeech();
       currentId = null;
       dlg.close();
     }
@@ -412,10 +442,15 @@
     });
     $('fav-only').addEventListener('change', function (e) { state.favOnly = e.target.checked; render(); });
     $('detail').addEventListener('close', closeDetail);
-    $('detail').addEventListener('click', function (e) { if (e.target === $('detail')) $('detail').close(); });
-    $('d-close').addEventListener('click', function () { $('detail').close(); });
+    // close イベントは遅れて届く環境があるため、閉じる操作の時点でも読み上げを止める
+    var hideDetail = function () { stopDetailSpeech(); $('detail').close(); };
+    $('detail').addEventListener('cancel', stopDetailSpeech);
+    $('detail').addEventListener('click', function (e) { if (e.target === $('detail')) hideDetail(); });
+    $('d-close').addEventListener('click', hideDetail);
     $('d-fav').addEventListener('click', function () { if (currentId) toggleFav(currentId); });
     $('d-copy').addEventListener('click', copyURL);
+    $('d-speak').hidden = !(window.GlossarySpeech && window.GlossarySpeech.supported);
+    $('d-speak').addEventListener('click', speakDetail);
     $('d-delete').addEventListener('click', deleteLocalTerm);
     $('import-file').addEventListener('change', function (e) {
       handleImport(e.target.files[0]);
@@ -432,6 +467,9 @@
   window.GlossaryApp = {
     categories: CATEGORIES,
     getTerms: function () { return state.all; },
+    findTerm: findTerm,
+    // URL を変えずに用語の詳細を開く（ストーリーなど別画面から使う）
+    showTerm: function (id) { openDetail(id, true); },
     toast: toast
   };
 

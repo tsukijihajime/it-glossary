@@ -147,6 +147,45 @@
     });
   }
 
+  // ---------- ストーリー（用語をつなげた例文） ----------
+  var STORY_MARK = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g;
+
+  // 本文の [[id]] / [[id|表示名]] を用語の区切りに分ける。存在しない id は普通の文字として残す
+  function parseStory(text, termsById) {
+    var out = [], last = 0, m;
+    text = str(text);
+    STORY_MARK.lastIndex = 0;
+    while ((m = STORY_MARK.exec(text))) {
+      if (m.index > last) out.push({ type: 'text', text: text.slice(last, m.index) });
+      var t = termsById[m[1]];
+      if (t) out.push({ type: 'term', id: m[1], label: m[2] || t.term });
+      else out.push({ type: 'text', text: m[2] || m[1] });
+      last = STORY_MARK.lastIndex;
+    }
+    if (last < text.length) out.push({ type: 'text', text: text.slice(last) });
+    return out;
+  }
+
+  function storyTermIds(text) {
+    var ids = [], m;
+    STORY_MARK.lastIndex = 0;
+    while ((m = STORY_MARK.exec(str(text)))) if (ids.indexOf(m[1]) === -1) ids.push(m[1]);
+    return ids;
+  }
+
+  // 読み上げ用の文字列。用語の表示名に含まれる英字の名前は、その用語の読みがなに置き換える
+  function speechText(segments, termsById) {
+    return segments.map(function (s) {
+      if (s.type !== 'term') return s.text;
+      var t = termsById[s.id];
+      var names = [str(t.term), str(t.term).replace(/[（(].*?[）)]/g, '')].concat(t.aliases || [])
+        .map(normalize);
+      return s.label.replace(/[A-Za-z][A-Za-z0-9.#+\/-]*/g, function (w) {
+        return t.reading && names.indexOf(normalize(w)) !== -1 ? t.reading : w;
+      });
+    }).join('');
+  }
+
   function csvCell(v) {
     var s = Array.isArray(v) ? v.join('|') : String(v == null ? '' : v);
     return /[",\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
@@ -270,7 +309,8 @@
   }
 
   return {
-    normalize: normalize, searchTerms: searchTerms, fuzzySearch: fuzzySearch, buildQuiz: buildQuiz, toCSV: toCSV, parseCSV: parseCSV,
+    normalize: normalize, searchTerms: searchTerms, fuzzySearch: fuzzySearch, buildQuiz: buildQuiz,
+    parseStory: parseStory, storyTermIds: storyTermIds, speechText: speechText, toCSV: toCSV, parseCSV: parseCSV,
     validateTerms: validateTerms, mergeTerms: mergeTerms, termOfTheDay: termOfTheDay,
     initialOf: initialOf
   };

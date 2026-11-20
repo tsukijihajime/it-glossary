@@ -15,6 +15,7 @@
       <nav class="mode-nav" aria-label="メニュー">
         <a href="#" id="nav-search" data-mode="search">用語検索</a>
         <a href="#quiz" id="nav-quiz" data-mode="quiz">問題集</a>
+        <a href="#story" id="nav-story" data-mode="story">ストーリー</a>
       </nav>
     </div>
     <div class="search" id="search-box">
@@ -77,6 +78,35 @@
         <button type="button" id="quiz-back">条件を変える</button>
       </div>
     </div>
+  </section>
+
+  <section id="story-view" class="story" aria-labelledby="story-heading" hidden>
+    <div id="story-list-panel">
+      <h2 id="story-heading" class="quiz-title" tabindex="-1">ストーリー</h2>
+      <p class="note">用語をつなげた短いお話です。読み上げ機能で、耳からも用語を覚えられます。本文の用語を押すと解説が開きます。</p>
+      <ul id="story-list" class="story-list"></ul>
+    </div>
+    <article id="story-detail" hidden>
+      <p><a href="#story" class="back-link">← ストーリー一覧へ</a></p>
+      <h2 id="story-title" class="quiz-title" tabindex="-1"></h2>
+      <p id="story-summary" class="note"></p>
+      <div id="story-player" class="story-player" hidden>
+        <button type="button" id="story-play" class="primary">▶ 読み上げ</button>
+        <button type="button" id="story-stop">■ 停止</button>
+        <label class="rate">速さ
+          <select id="story-rate">
+            <option value="0.8">ゆっくり</option>
+            <option value="1" selected>ふつう</option>
+            <option value="1.2">やや速い</option>
+            <option value="1.5">速い</option>
+          </select>
+        </label>
+      </div>
+      <div id="story-body" class="story-body"></div>
+      <h3 class="story-terms-title">このお話に出てきた用語</h3>
+      <div id="story-terms" class="btn-row"></div>
+      <p class="story-nav"><button type="button" id="story-next"></button></p>
+    </article>
   </section>
 
   <div id="search-view">
@@ -142,6 +172,7 @@
     </div>
     <div class="btn-row d-actions">
       <button type="button" id="d-fav"></button>
+      <button type="button" id="d-speak" hidden>🔊 読み上げ</button>
       <button type="button" id="d-copy">URLをコピー</button>
       <button type="button" id="d-delete" class="danger" hidden>この用語をローカルから削除</button>
     </div>
@@ -151,7 +182,9 @@
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="lib.js"></script>
+<script src="speech.js"></script>
 <script src="app.js"></script>
 <script src="quiz.js"></script>
+<script src="stories.js"></script>
 </body>
 </html>
